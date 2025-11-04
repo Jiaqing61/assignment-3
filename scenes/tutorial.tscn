@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://bubextlgkr1mo"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_c13y7"]
-[ext_resource type="Texture2D" uid="uid://cohxpoasjf855" path="res://assets/Tiles/tile_0097.png" id="2_8ho6b"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_ph3nu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
 texture = ExtResource("1_c13y7")
@@ -335,6 +335,5 @@ shape = SubResource("RectangleShape2D_4kmhl")
 position = Vector2(104, 104)
 zoom = Vector2(3, 3)
 
-[node name="Player" type="Sprite2D" parent="."]
-position = Vector2(72, 134)
-texture = ExtResource("2_8ho6b")
+[node name="player" parent="." instance=ExtResource("3_ph3nu")]
+position = Vector2(40, 133)
