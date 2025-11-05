@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://bubextlgkr1mo"]
+[gd_scene load_steps=12 format=4 uid="uid://bubextlgkr1mo"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_c13y7"]
+[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="3_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_ph3nu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
@@ -337,3 +338,17 @@ zoom = Vector2(3, 3)
 
 [node name="player" parent="." instance=ExtResource("3_ph3nu")]
 position = Vector2(40, 133)
+
+[node name="mirrors" type="Node2D" parent="."]
+
+[node name="mirror" parent="mirrors" instance=ExtResource("3_4kmhl")]
+position = Vector2(53, 110)
+
+[node name="mirror2" parent="mirrors" instance=ExtResource("3_4kmhl")]
+position = Vector2(153, 83)
+rotation = 1.5708
+
+[node name="mirror3" parent="mirrors" instance=ExtResource("3_4kmhl")]
+position = Vector2(104, 46)
+rotation = -0.785398
+scale = Vector2(1, 1)

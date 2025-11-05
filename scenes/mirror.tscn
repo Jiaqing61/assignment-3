@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwn0leaklhyuk"]
+
+[ext_resource type="Script" uid="uid://bv8xdqdbch4af" path="res://scripts/mirror.gd" id="1_652kc"]
+[ext_resource type="Texture2D" uid="uid://c1qdmrtuanuv1" path="res://assets/New Piskel-11.png" id="2_652kc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o7h0"]
+size = Vector2(25, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_652kc"]
+size = Vector2(46, 31)
+
+[node name="mirror" type="StaticBody2D"]
+script = ExtResource("1_652kc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.765625, 0.437172)
+texture = ExtResource("2_652kc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5o7h0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_652kc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
