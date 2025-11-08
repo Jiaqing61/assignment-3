@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvprtuxgi6q46"]
+
+[ext_resource type="Script" uid="uid://d1u1w33v8wm41" path="res://scripts/laser_emitter.gd" id="1_pjse3"]
+[ext_resource type="Texture2D" uid="uid://tuutvm7poa5g" path="res://assets/Tiles/tile_0029.png" id="2_ngkl2"]
+
+[node name="LaserEmitter" type="Node2D"]
+script = ExtResource("1_pjse3")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(1155, 567)
+width = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 3.8147e-06)
+scale = Vector2(8.65625, 7.09375)
+texture = ExtResource("2_ngkl2")

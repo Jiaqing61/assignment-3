@@ -304,9 +304,11 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAEAAQAABABAAEAAAAAAAQAAAABAAIAAAAAAAQ
 tile_set = SubResource("TileSet_8ho6b")
 
 [node name="TileMapLayer - Lasers" type="TileMapLayer" parent="TileMaps"]
-visible = false
-tile_map_data = PackedByteArray("AAADAAwAAAAHAAoAAAAMAAUAAAAHAAoAAGAFAAAAAAAHAAoAADA=")
+tile_map_data = PackedByteArray("AAAMAAUAAAAHAAoAAGAFAAAAAAAHAAoAADADAAwAAAAHAAoAAAA=")
 tile_set = SubResource("TileSet_ph3nu")
+
+[node name="LaserEmitter" parent="TileMaps" instance=ExtResource("2_4kmhl")]
+position = Vector2(82, 26)
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -353,6 +355,3 @@ rotation = 1.5708
 [node name="mirror3" parent="mirrors" instance=ExtResource("3_4kmhl")]
 position = Vector2(104, 46)
 rotation = -0.785398
-
-[node name="LaserEmitter" parent="." instance=ExtResource("2_4kmhl")]
-position = Vector2(105, 77)
