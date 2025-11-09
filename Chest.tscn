@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://jetuensknpgg"]
+
+[ext_resource type="Script" uid="uid://f3jh8idoc178" path="res://scripts/chest.gd" id="1_s2tek"]
+[ext_resource type="Texture2D" uid="uid://be33looibkkax" path="res://assets/Tiles/tile_0089.png" id="2_rkgax"]
+[ext_resource type="Texture2D" uid="uid://bahopyxshht85" path="res://assets/Tiles/tile_0092.png" id="3_rkgax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psq76"]
+
+[node name="Chest" type="Area2D"]
+script = ExtResource("1_s2tek")
+closed_texture = ExtResource("2_rkgax")
+lit_texture = ExtResource("3_rkgax")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rkgax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_psq76")
+
+[node name="DecayTimer" type="Timer" parent="."]
+wait_time = 0.12
+one_shot = true
