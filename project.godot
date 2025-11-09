@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=624
 window/size/viewport_height=624
 
+[global_group]
+
+Player=""
+
 [input]
 
 left={

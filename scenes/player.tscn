@@ -204,7 +204,8 @@ animations = [{
 radius = 6.5
 height = 14.0
 
-[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("animator") groups=["Player"]]
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_dqkch")
 animator = NodePath("AnimatedSprite2D")
