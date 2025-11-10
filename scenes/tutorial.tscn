@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="2_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="3_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_ph3nu"]
-[ext_resource type="PackedScene" uid="uid://jetuensknpgg" path="res://scenes/chest.tscn" id="5_cq4me"]
+[ext_resource type="PackedScene" uid="uid://jetuensknpgg" path="res://scenes/Chest.tscn" id="5_cq4me"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_6yjpi"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_gbqnl"]
 
@@ -40,11 +40,13 @@ separation = Vector2i(1, 1)
 2:2/0 = 0
 3:2/0 = 0
 4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:2/0 = 0
 6:2/0 = 0
 7:2/0 = 0
 8:2/0 = 0
 9:2/0 = 0
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:2/0 = 0
 11:2/0 = 0
 0:3/0 = 0
@@ -52,6 +54,7 @@ separation = Vector2i(1, 1)
 2:3/0 = 0
 3:3/0 = 0
 4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
 6:3/0 = 0
 7:3/0 = 0
@@ -69,8 +72,10 @@ separation = Vector2i(1, 1)
 7:4/0 = 0
 8:4/0 = 0
 9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:4/0 = 0
 11:4/0 = 0
+11:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -145,6 +150,7 @@ separation = Vector2i(1, 1)
 11:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_8ho6b"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_c13y7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ho6b"]
