@@ -4,6 +4,8 @@ extends Node2D
 @export var max_reflections: int = 10
 @export_flags_2d_physics var collision_mask := 1
 
+@export var color = Color.WHITE
+
 var _points: PackedVector2Array = PackedVector2Array()
 
 @onready var muzzle: Node2D = $Muzzle
@@ -44,7 +46,7 @@ func _update_laser() -> void:
 		_points.append(to_local(hit_pos))
 
 		if collider != null and collider.has_method("laser_hit"):
-			collider.call("laser_hit", hit_pos, 1.0)
+			collider.call("laser_hit", color, hit_pos, 1.0)
 
 		var node: Node = collider as Node
 		var is_mirror: bool = (node != null and node.is_in_group("Mirror"))
@@ -72,3 +74,4 @@ func _update_laser() -> void:
 		break
 
 	$Line2D.points = _points
+	$Line2D.default_color = color

@@ -6,6 +6,9 @@ signal lit_changed(lit: bool)
 @export var lit_texture: Texture2D
 @export var decay_seconds: float = 0.12
 
+# added for color laser
+@export var color = Color.WHITE
+
 var _lit := false
 
 @onready var _decay_timer: Timer = $DecayTimer
@@ -17,9 +20,10 @@ func _ready() -> void:
 	_decay_timer.timeout.connect(_on_decay_timeout)
 	_apply_visual()
 
-func laser_hit(hit_point: Vector2, power: float = 1.0) -> void:
-	_set_lit(true)
-	_decay_timer.start()
+func laser_hit(laser_color, hit_point: Vector2, power: float = 1.0) -> void:
+	if laser_color == Color.WHITE or laser_color == color:
+		_set_lit(true)
+		_decay_timer.start()
 
 func _on_decay_timeout() -> void:
 	_set_lit(false)
