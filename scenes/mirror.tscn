@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwn0leaklhyuk"]
+[gd_scene load_steps=7 format=3 uid="uid://dwn0leaklhyuk"]
 
 [ext_resource type="Script" uid="uid://bv8xdqdbch4af" path="res://scripts/mirror.gd" id="1_652kc"]
 [ext_resource type="Texture2D" uid="uid://c1qdmrtuanuv1" path="res://assets/New Piskel-11.png" id="2_652kc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5o7h0"]
-size = Vector2(25, 4)
+size = Vector2(17, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_652kc"]
 size = Vector2(46, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nha6m"]
+size = Vector2(3.5, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5823m"]
+size = Vector2(17, 2)
 
 [node name="mirror" type="StaticBody2D" groups=["Mirror"]]
 script = ExtResource("1_652kc")
@@ -17,12 +23,33 @@ scale = Vector2(0.765625, 0.437172)
 texture = ExtResource("2_652kc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_5o7h0")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_652kc")
+
+[node name="StaticBodies" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodies/StaticBody2D"]
+position = Vector2(-10.5, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodies/StaticBody2D2"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_5823m")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodies/StaticBody2D3"]
+position = Vector2(9.75, 0)
+shape = SubResource("RectangleShape2D_nha6m")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

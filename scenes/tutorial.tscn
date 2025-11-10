@@ -1,10 +1,10 @@
-[gd_scene load_steps=19 format=4 uid="uid://bubextlgkr1mo"]
+[gd_scene load_steps=16 format=4 uid="uid://bubextlgkr1mo"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_c13y7"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="2_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="3_4kmhl"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_ph3nu"]
-[ext_resource type="PackedScene" uid="uid://jetuensknpgg" path="res://scenes/Chest.tscn" id="5_cq4me"]
+[ext_resource type="PackedScene" uid="uid://jetuensknpgg" path="res://scenes/chest.tscn" id="5_cq4me"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_6yjpi"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_gbqnl"]
 
@@ -304,15 +304,6 @@ size = Vector2(248, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kmhl"]
 size = Vector2(248, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbqnl"]
-size = Vector2(44, 31)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckvwl"]
-size = Vector2(13, 18)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlqja"]
-size = Vector2(11, 13)
-
 [node name="Tutorial" type="Node2D"]
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -357,6 +348,7 @@ position = Vector2(104, 104)
 zoom = Vector2(3, 3)
 
 [node name="player" parent="." instance=ExtResource("3_ph3nu")]
+z_index = 1
 position = Vector2(40, 133)
 
 [node name="mirrors" type="Node2D" parent="."]
@@ -399,18 +391,3 @@ position = Vector2(135, 136)
 script = ExtResource("7_gbqnl")
 chests = Array[NodePath]([NodePath("../Chest1"), NodePath("../Chest2"), NodePath("../Chest3")])
 final_gate = NodePath("../FinalGate")
-
-[node name="WallCollison" type="StaticBody2D" parent="."]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollison"]
-position = Vector2(136, 112.5)
-shape = SubResource("RectangleShape2D_gbqnl")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="WallCollison"]
-position = Vector2(119, 136)
-shape = SubResource("RectangleShape2D_ckvwl")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="WallCollison"]
-position = Vector2(152, 136)
-shape = SubResource("RectangleShape2D_nlqja")
