@@ -15,6 +15,10 @@ run/main_scene="uid://bubextlgkr1mo"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LaserVisibilityMask="*res://scripts/laser_visibility_mask.gd"
+
 [display]
 
 window/size/viewport_width=624
@@ -23,6 +27,11 @@ window/size/viewport_height=624
 [global_group]
 
 Player=""
+Revealables=""
+LaserMask=""
+Mirror=""
+LaserEmitter=""
+AlwaysReveal=""
 
 [input]
 

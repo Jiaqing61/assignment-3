@@ -33,7 +33,7 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1oaj3"]
 size = Vector2(7, 11)
 
-[node name="FinalGate" type="StaticBody2D"]
+[node name="FinalGate" type="StaticBody2D" groups=["AlwaysReveal"]]
 script = ExtResource("1_1oaj3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

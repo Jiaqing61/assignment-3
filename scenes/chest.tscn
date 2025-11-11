@@ -10,7 +10,7 @@ size = Vector2(16, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqd3d"]
 size = Vector2(14, 12)
 
-[node name="Chest" type="Area2D"]
+[node name="Chest" type="Area2D" groups=["Revealables"]]
 script = ExtResource("1_s2tek")
 closed_texture = ExtResource("2_rkgax")
 lit_texture = ExtResource("3_rkgax")

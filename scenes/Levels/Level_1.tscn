@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bubextlgkr1mo"]
+[gd_scene load_steps=20 format=4 uid="uid://bubextlgkr1mo"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_c13y7"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="2_4kmhl"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://jetuensknpgg" path="res://scenes/chest.tscn" id="5_cq4me"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_6yjpi"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_gbqnl"]
+[ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="8_lhtqu"]
+[ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="8_ux01m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
 texture = ExtResource("1_c13y7")
@@ -304,6 +306,14 @@ size = Vector2(248, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kmhl"]
 size = Vector2(248, 20)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_6rlyg"]
+viewport_path = NodePath("DarknessLayer/MaskViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jd4oq"]
+resource_local_to_scene = true
+shader = ExtResource("8_lhtqu")
+shader_parameter/mask_tex = SubResource("ViewportTexture_6rlyg")
+
 [node name="Tutorial" type="Node2D"]
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -364,14 +374,14 @@ rotation = 1.5708
 position = Vector2(104, 46)
 rotation = -0.785398
 
-[node name="LaserEmitter" parent="." instance=ExtResource("2_4kmhl")]
+[node name="LaserEmitter" parent="." groups=["LaserEmitters"] instance=ExtResource("2_4kmhl")]
 position = Vector2(104, 198)
 
-[node name="LaserEmitter2" parent="." instance=ExtResource("2_4kmhl")]
+[node name="LaserEmitter2" parent="." groups=["LaserEmitters"] instance=ExtResource("2_4kmhl")]
 position = Vector2(11, 110)
 rotation = 1.5708
 
-[node name="LaserEmitter3" parent="." instance=ExtResource("2_4kmhl")]
+[node name="LaserEmitter3" parent="." groups=["LaserEmitters"] instance=ExtResource("2_4kmhl")]
 position = Vector2(11, 84)
 rotation = 1.5708
 
@@ -391,3 +401,22 @@ position = Vector2(135, 136)
 script = ExtResource("7_gbqnl")
 chests = Array[NodePath]([NodePath("../Chest1"), NodePath("../Chest2"), NodePath("../Chest3")])
 final_gate = NodePath("../FinalGate")
+
+[node name="DarknessLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="MaskViewport" type="SubViewport" parent="DarknessLayer"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(624, 624)
+
+[node name="LaserMaskDrawer" type="Node2D" parent="DarknessLayer/MaskViewport" groups=["LaserMask"]]
+script = ExtResource("8_ux01m")
+
+[node name="Darkness" type="ColorRect" parent="DarknessLayer"]
+material = SubResource("ShaderMaterial_jd4oq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
