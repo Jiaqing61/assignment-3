@@ -9,7 +9,10 @@ var is_open: bool = false
 func _ready() -> void:
 	if _anim and _anim.sprite_frames and _anim.sprite_frames.has_animation("close"):
 		_anim.play("close")
-
+		
+func door_is_open() -> bool:
+	return is_open
+	
 func open_gate() -> void:
 	if is_open:
 		return

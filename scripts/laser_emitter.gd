@@ -75,3 +75,9 @@ func _update_laser() -> void:
 
 	$Line2D.points = _points
 	$Line2D.default_color = color
+
+func get_points_global() -> PackedVector2Array:
+	var gp := PackedVector2Array()
+	for p in _points:
+		gp.append(to_global(p))
+	return gp

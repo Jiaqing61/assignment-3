@@ -5,6 +5,7 @@ signal lit_changed(lit: bool)
 @export var closed_texture: Texture2D
 @export var lit_texture: Texture2D
 @export var decay_seconds: float = 0.12
+@export var reveal_radius := 36.0
 
 # added for color laser
 @export var color = Color.WHITE
@@ -14,6 +15,12 @@ var _lit := false
 @onready var _decay_timer: Timer = $DecayTimer
 @onready var _sprite: Sprite2D = get_node_or_null("Sprite2D")
 
+func is_lit() -> bool:
+	return _lit
+
+func get_reveal_position() -> Vector2:
+	return global_position
+		
 func _ready() -> void:
 	_decay_timer.wait_time = decay_seconds
 	_decay_timer.one_shot = true
