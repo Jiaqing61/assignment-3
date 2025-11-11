@@ -24,8 +24,12 @@ func _process(_dt):
 	
 	var player : CharacterBody2D = get_tree().get_first_node_in_group("Player")
 	if player:
-		LaserVisibilityMask.add_reveal_world(player.global_position, reveal_radius, reveal_feather)
-				
+		var pos: Vector2 = player.global_position
+		LaserVisibilityMask.add_reveal_world(pos, reveal_radius, reveal_feather)
+		
+	for door in get_tree().get_nodes_in_group("AlwaysReveal"):
+		var pos: Vector2 = door.global_position
+		LaserVisibilityMask.add_reveal_world(pos, reveal_radius, reveal_feather)			
 
 
 func _ready() -> void:
