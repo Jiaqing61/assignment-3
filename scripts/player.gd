@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var animator : AnimatedSprite2D
 
 var last_facing: String = "down" # start facing down
+var has_key: bool = false
 
 func _physics_process(delta: float) -> void:
 	var input_vec := Input.get_vector("left", "right", "up", "down")
