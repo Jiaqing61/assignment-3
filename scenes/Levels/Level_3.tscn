@@ -234,14 +234,32 @@ rotation = -0.785398
 position = Vector2(104, 198)
 
 [node name="LaserEmitter1" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_7fsuu")]
+max_distance = 2000.0
+max_reflections = 10
+collision_mask = 1
+color = Color(1, 1, 1, 1)
+follow_offset = Vector2(0, 0)
+rotate_speed_deg = 90.0
 
 [node name="LaserEmitter2" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_7fsuu")]
 position = Vector2(-93, -88)
 rotation = 1.5708
+max_distance = 2000.0
+max_reflections = 10
+collision_mask = 1
+color = Color(1, 1, 1, 1)
+follow_offset = Vector2(0, 0)
+rotate_speed_deg = 90.0
 
 [node name="LaserEmitter3" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_7fsuu")]
 position = Vector2(-93, -114)
 rotation = 1.5708
+max_distance = 2000.0
+max_reflections = 10
+collision_mask = 1
+color = Color(1, 1, 1, 1)
+follow_offset = Vector2(0, 0)
+rotate_speed_deg = 90.0
 
 [node name="Chests" type="Node2D" parent="."]
 position = Vector2(197, 47)
@@ -274,6 +292,7 @@ size = Vector2i(624, 624)
 script = ExtResource("8_adch5")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer"]
+visible = false
 material = SubResource("ShaderMaterial_jd4oq")
 anchors_preset = 15
 anchor_right = 1.0
