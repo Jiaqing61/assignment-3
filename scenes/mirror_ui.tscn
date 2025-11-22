@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://btqjvht4rxdul"]
+
+[ext_resource type="Script" uid="uid://btx8q0urnm31s" path="res://scripts/mirror_ui.gd" id="1_mtm2i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_anli3"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[node name="Mirror UI" type="CanvasLayer"]
+script = ExtResource("1_mtm2i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 352.0
+offset_top = 567.0
+offset_right = 607.0
+offset_bottom = 607.0
+color = Color(0.827333, 0.49079, 0.460081, 1)
+
+[node name="Text" type="Label" parent="."]
+offset_left = 359.0
+offset_top = 577.0
+offset_right = 600.0
+offset_bottom = 600.0
+text = "Move mirror - Left/Right arrow keys"
+label_settings = SubResource("LabelSettings_anli3")

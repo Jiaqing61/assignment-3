@@ -15,7 +15,7 @@ size = Vector2(3.5, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5823m"]
 size = Vector2(17, 2)
 
-[node name="mirror" type="StaticBody2D" groups=["Mirror"]]
+[node name="Mirror" type="StaticBody2D" groups=["Mirror"]]
 script = ExtResource("1_652kc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

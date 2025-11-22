@@ -9,7 +9,7 @@ size = Vector2(12, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fowk"]
 size = Vector2(20, 21)
 
-[node name="LaserEmitter" type="Node2D" groups=["LaserEmitter"]]
+[node name="Laser Emitter" type="Node2D" groups=["LaserEmitter"]]
 script = ExtResource("1_pjse3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
