@@ -14,10 +14,12 @@ func _process(delta):
 
 
 func _on_Area2D_body_entered(body):
-	if body.name == "player":
+	if body.name == "Player":
 		player_touching = true
+		Global.mirror_ui = true
 
 
 func _on_Area2D_body_exited(body):
-	if body.name == "player":
+	if body.name == "Player":
 		player_touching = false
+		Global.mirror_ui = false

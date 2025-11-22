@@ -5,6 +5,7 @@ extends Node2D
 @export var max_reflections: int = 10          # Maximum number of reflections
 @export_flags_2d_physics var collision_mask := 1  # Physics layers the laser ray should hit
 @export var color: Color = Color.WHITE         # Laser color (also used for laser_hit())
+@export var turned_on = false
 
 # === Player interaction (grab & rotate) ===
 @export var follow_offset: Vector2 = Vector2.ZERO   # Offset from player while grabbed
@@ -51,7 +52,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	_handle_input(delta)
 	_update_grab_follow(delta)
-	_update_laser()
+	if turned_on:
+		_update_laser()
+	else:
+		_points.clear()
+		line.points = _points
 
 
 # ============================
