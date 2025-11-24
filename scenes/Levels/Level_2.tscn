@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_ml1qv"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="3_ccked"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="4_0g6pg"]
-[ext_resource type="PackedScene" uid="uid://jetuensknpgg" path="res://scenes/chest.tscn" id="5_fn4ql"]
+[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="5_fn4ql"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_e1qoi"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_pklsh"]
 [ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="8_ccked"]
 [ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="9_0g6pg"]
-[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/LaserRail.tscn" id="10_0g6pg"]
+[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="10_0g6pg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
 texture = ExtResource("1_13jjs")
@@ -236,14 +236,17 @@ rotation = -0.785398
 position = Vector2(104, 198)
 
 [node name="LaserEmitter1" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_0g6pg")]
+turned_on = true
 
 [node name="LaserEmitter2" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_0g6pg")]
 position = Vector2(-94, -80)
 rotation = 1.5708
+turned_on = true
 
 [node name="LaserEmitter3" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_0g6pg")]
 position = Vector2(-93, -114)
 rotation = 1.5708
+turned_on = true
 
 [node name="Chests" type="Node2D" parent="."]
 position = Vector2(197, 47)
@@ -276,7 +279,6 @@ size = Vector2i(624, 624)
 script = ExtResource("8_ccked")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer"]
-visible = false
 material = SubResource("ShaderMaterial_jd4oq")
 anchors_preset = 15
 anchor_right = 1.0
@@ -286,4 +288,4 @@ grow_vertical = 2
 
 [node name="LaserRail" parent="." instance=ExtResource("10_0g6pg")]
 position = Vector2(0, 30)
-tile_map_data = PackedByteArray("AAAAAAYAAAALAAYAAAAAAAcAAAALAAYAAAAAAAgAAAALAAYAAAAAAAkAAAALAAYAAAAAAAUAAAAHAAUAAAAAAAoAAAAIAAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcAAAALAAYAAAAAAAgAAAALAAYAAAAAAAkAAAALAAYAAAAAAAoAAAAIAAUAAAAAAAYAAAALAAYAAAAAAAUAAAAHAAUAAAA=")

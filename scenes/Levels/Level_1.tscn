@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_6q3ph"]
 [ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="8_bk6va"]
 [ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="9_euy30"]
-[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/LaserRail.tscn" id="10_e5mxv"]
+[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="10_e5mxv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
 texture = ExtResource("1_06j12")
@@ -236,16 +236,19 @@ rotation = -0.785398
 position = Vector2(104, 198)
 
 [node name="LaserEmitter1" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("4_y2vpr")]
+turned_on = true
 rail_tilemap = NodePath("../../LaserRail")
 
 [node name="LaserEmitter2" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("4_y2vpr")]
 position = Vector2(-93, -155)
 rotation = 1.5708
+turned_on = true
 rail_tilemap = NodePath("../../LaserRail")
 
 [node name="LaserEmitter3" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("4_y2vpr")]
 position = Vector2(-96, -91)
 rotation = 1.5708
+turned_on = true
 rail_tilemap = NodePath("../../LaserRail")
 
 [node name="Chests" type="Node2D" parent="."]
@@ -264,8 +267,6 @@ position = Vector2(135, 136)
 
 [node name="level_controller" type="Node" parent="."]
 script = ExtResource("7_6q3ph")
-chests = Array[NodePath]([NodePath("../Chests/Chest1"), NodePath("../Chests/Chest2"), NodePath("../Chests/Chest3")])
-final_gate = NodePath("../FinalGate")
 
 [node name="DarknessLayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -279,7 +280,6 @@ size = Vector2i(624, 624)
 script = ExtResource("8_bk6va")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer"]
-visible = false
 material = SubResource("ShaderMaterial_jd4oq")
 anchors_preset = 15
 anchor_right = 1.0
