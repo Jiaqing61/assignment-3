@@ -51,7 +51,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	_handle_input(delta)
-	_update_grab_follow(delta)
+	if _grabbed:
+		_update_grab_follow(delta)
 	if turned_on:
 		_update_laser()
 	else:
