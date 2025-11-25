@@ -1,10 +1,10 @@
-[gd_scene load_steps=19 format=4 uid="uid://bltqt6hw6aa3f"]
+[gd_scene load_steps=19 format=4 uid="uid://ed4glb41yrvu"]
 
 [ext_resource type="Script" uid="uid://c2hw11eq1wudd" path="res://scripts/tutorial.gd" id="1_iivfr"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="2_mroje"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_xtst0"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="4_gdpwc"]
-[ext_resource type="PackedScene" uid="uid://dseltwe85kk66" path="res://scenes/six_mirrors.tscn" id="4_xtst0"]
+[ext_resource type="PackedScene" path="res://scenes/six_mirrors.tscn" id="4_xtst0"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="5_u22f7"]
 [ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="6_5vrl7"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="7_577x7"]
@@ -428,13 +428,13 @@ tile_map_data = PackedByteArray("AAD+/wkAAAAHAAUAAAD+/woAAAAHAAUAAAD+/wsAAAAHAAU
 [node name="LaserRail3" parent="." instance=ExtResource("9_mroje")]
 position = Vector2(380, 3)
 rotation = 1.5708
-tile_map_data = PackedByteArray("AAAAAAoAAAAHAAUAAAAAAAsAAAAHAAUAAAAAAAwAAAAHAAUAAAAAAAgAAAAHAAUAAAAAAAkAAAAHAAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAAgAAAAHAAUAAAAAAAkAAAAHAAUAAAAAAAoAAAAHAAUAAAAAAAsAAAAHAAUAAAAAAAwAAAAHAAUAAAA=")
 
 [node name="LaserRail" parent="." instance=ExtResource("9_mroje")]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(0, 148)
-tile_map_data = PackedByteArray("AAAAAAMAAAAHAAUAAAAAAAQAAAAHAAUAAAAAAAUAAAAHAAUAAAAAAAYAAAAHAAUAAAAAAAcAAAAHAAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcAAAAHAAUAAAAAAAYAAAAHAAUAAAAAAAMAAAAHAAUAAAAAAAQAAAAHAAUAAAAAAAUAAAAHAAUAAAA=")
 
 [node name="LaserRail2" parent="." instance=ExtResource("9_mroje")]
 position = Vector2(332, 9)

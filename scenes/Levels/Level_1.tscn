@@ -237,16 +237,19 @@ rotation = -0.785398
 position = Vector2(104, 198)
 
 [node name="LaserEmitter1" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("4_y2vpr")]
+z_index = 0
 turned_on = true
 rail_tilemap = NodePath("../../LaserRail")
 
 [node name="LaserEmitter2" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("4_y2vpr")]
+z_index = 0
 position = Vector2(-93, -155)
 rotation = 1.5708
 turned_on = true
 rail_tilemap = NodePath("../../LaserRail")
 
 [node name="LaserEmitter3" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("4_y2vpr")]
+z_index = 0
 position = Vector2(-96, -91)
 rotation = 1.5708
 turned_on = true
@@ -290,4 +293,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LaserRail" parent="." instance=ExtResource("10_e5mxv")]
+z_index = -1
 position = Vector2(0, 3)
+rotation = -0.0022525
