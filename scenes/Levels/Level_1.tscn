@@ -163,10 +163,10 @@ size = Vector2(20, 208)
 size = Vector2(20, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ph3nu"]
-size = Vector2(248, 20)
+size = Vector2(344, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kmhl"]
-size = Vector2(248, 20)
+size = Vector2(344, 20)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6rlyg"]
 viewport_path = NodePath("DarknessLayer/MaskViewport")
@@ -175,6 +175,7 @@ viewport_path = NodePath("DarknessLayer/MaskViewport")
 resource_local_to_scene = true
 shader = ExtResource("9_euy30")
 shader_parameter/mask_tex = SubResource("ViewportTexture_6rlyg")
+shader_parameter/darkness_amount = 1.0
 
 [node name="Level_1" type="Node2D"]
 
@@ -280,6 +281,7 @@ size = Vector2i(624, 624)
 script = ExtResource("8_bk6va")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer"]
+visible = false
 material = SubResource("ShaderMaterial_jd4oq")
 anchors_preset = 15
 anchor_right = 1.0

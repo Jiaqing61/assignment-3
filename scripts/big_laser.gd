@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var decay_seconds: float = 0.01
+@export var decay_seconds: float = 0.5
 @export var colors: Array[Color] = []
 
 @onready var _decay_timer_1: Timer = $"Decay Timer 1"
@@ -29,7 +29,21 @@ func _ready() -> void:
 	_decay_timer_2.one_shot = true
 	_decay_timer_1.timeout.connect(_on_decay1_timeout)
 	_decay_timer_2.timeout.connect(_on_decay2_timeout)
-	laser_emitter.color = colors[0] + colors[1]
+
+	if colors.size() >= 2:
+		var mixed := colors[0] + colors[1]
+		
+		mixed = Color(
+			clamp(mixed.r, 0.0, 1.0),
+			clamp(mixed.g, 0.0, 1.0),
+			clamp(mixed.b, 0.0, 1.0),
+			1.0
+		)
+		
+
+		laser_emitter.color = mixed
+
+
 
 func laser_hit(laser_color, hit_point: Vector2, power: float = 1.0) -> void:
 	if laser_color in colors:

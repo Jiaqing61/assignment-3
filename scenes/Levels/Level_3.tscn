@@ -174,6 +174,7 @@ viewport_path = NodePath("DarknessLayer/MaskViewport")
 resource_local_to_scene = true
 shader = ExtResource("9_7fsuu")
 shader_parameter/mask_tex = SubResource("ViewportTexture_6rlyg")
+shader_parameter/darkness_amount = 1.0
 
 [node name="Level_3" type="Node2D"]
 
@@ -277,6 +278,7 @@ size = Vector2i(624, 624)
 script = ExtResource("8_adch5")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer"]
+visible = false
 material = SubResource("ShaderMaterial_jd4oq")
 anchors_preset = 15
 anchor_right = 1.0
