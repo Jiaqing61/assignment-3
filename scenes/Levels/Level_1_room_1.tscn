@@ -1,18 +1,17 @@
-[gd_scene load_steps=19 format=4 uid="uid://bubextlgkr1mo"]
+[gd_scene load_steps=18 format=4 uid="uid://bubextlgkr1mo"]
 
-[ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_06j12"]
-[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_e5mxv"]
-[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="3_6wnyt"]
-[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="4_y2vpr"]
-[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="5_cxgh7"]
-[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_l2fsl"]
-[ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_6q3ph"]
-[ext_resource type="Script" path="res://scripts/laser_mask_drawer.gd" id="8_bk6va"]
-[ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="9_euy30"]
-[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="10_e5mxv"]
+[ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_fweee"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_6nuxs"]
+[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="3_if6hw"]
+[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="4_yjowi"]
+[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="5_gle0o"]
+[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_okhlt"]
+[ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_oo21j"]
+[ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="8_ppvw7"]
+[ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="9_esrc0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
-texture = ExtResource("1_06j12")
+texture = ExtResource("1_fweee")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -173,11 +172,11 @@ viewport_path = NodePath("DarknessLayer/MaskViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jd4oq"]
 resource_local_to_scene = true
-shader = ExtResource("9_euy30")
+shader = ExtResource("9_esrc0")
 shader_parameter/mask_tex = SubResource("ViewportTexture_6rlyg")
 shader_parameter/darkness_amount = 1.0
 
-[node name="Level_1" type="Node2D"]
+[node name="Tutorial" type="Node2D"]
 
 [node name="TileMaps" type="Node2D" parent="."]
 
@@ -212,65 +211,64 @@ shape = SubResource("RectangleShape2D_ph3nu")
 position = Vector2(104, 218)
 shape = SubResource("RectangleShape2D_4kmhl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(104, 104)
-zoom = Vector2(3, 3)
-
-[node name="Player" parent="." instance=ExtResource("2_e5mxv")]
+[node name="Player" parent="." instance=ExtResource("2_6nuxs")]
 z_index = 1
 position = Vector2(40, 133)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(64, -29)
+zoom = Vector2(3, 3)
+
 [node name="Mirrors" type="Node2D" parent="."]
 
-[node name="Mirror1" parent="Mirrors" instance=ExtResource("3_6wnyt")]
-position = Vector2(53, 110)
+[node name="Mirror1" parent="Mirrors" instance=ExtResource("3_if6hw")]
+position = Vector2(48, 110)
 
-[node name="Mirror2" parent="Mirrors" instance=ExtResource("3_6wnyt")]
+[node name="Mirror2" parent="Mirrors" instance=ExtResource("3_if6hw")]
 position = Vector2(153, 83)
 rotation = 1.5708
 
-[node name="Mirror3" parent="Mirrors" instance=ExtResource("3_6wnyt")]
-position = Vector2(104, 46)
+[node name="Mirror3" parent="Mirrors" instance=ExtResource("3_if6hw")]
+position = Vector2(88, 38)
 rotation = -0.785398
 
 [node name="LaserEmitters" type="Node2D" parent="."]
 position = Vector2(104, 198)
 
-[node name="LaserEmitter1" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("4_y2vpr")]
+[node name="LaserEmitter1" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_yjowi")]
 z_index = 0
+position = Vector2(-10, -1)
 turned_on = true
-rail_tilemap = NodePath("../../LaserRail")
 
-[node name="LaserEmitter2" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("4_y2vpr")]
+[node name="LaserEmitter2" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_yjowi")]
 z_index = 0
-position = Vector2(-93, -155)
+position = Vector2(-95, -131)
 rotation = 1.5708
 turned_on = true
-rail_tilemap = NodePath("../../LaserRail")
 
-[node name="LaserEmitter3" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("4_y2vpr")]
+[node name="LaserEmitter3" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_yjowi")]
 z_index = 0
 position = Vector2(-96, -91)
 rotation = 1.5708
 turned_on = true
-rail_tilemap = NodePath("../../LaserRail")
 
 [node name="Chests" type="Node2D" parent="."]
 position = Vector2(197, 47)
 
-[node name="Chest1" parent="Chests" instance=ExtResource("5_cxgh7")]
+[node name="Chest1" parent="Chests" instance=ExtResource("5_gle0o")]
+position = Vector2(0, -6)
 
-[node name="Chest2" parent="Chests" instance=ExtResource("5_cxgh7")]
+[node name="Chest2" parent="Chests" instance=ExtResource("5_gle0o")]
 position = Vector2(-47, -37)
 
-[node name="Chest3" parent="Chests" instance=ExtResource("5_cxgh7")]
+[node name="Chest3" parent="Chests" instance=ExtResource("5_gle0o")]
 position = Vector2(-146, 150)
 
-[node name="FinalGate" parent="." groups=["LaserEmitters"] instance=ExtResource("6_l2fsl")]
+[node name="FinalGate" parent="." groups=["LaserEmitters"] instance=ExtResource("6_okhlt")]
 position = Vector2(135, 136)
 
 [node name="level_controller" type="Node" parent="."]
-script = ExtResource("7_6q3ph")
+script = ExtResource("7_oo21j")
 
 [node name="DarknessLayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -281,7 +279,7 @@ transparent_bg = true
 size = Vector2i(624, 624)
 
 [node name="LaserMaskDrawer" type="Node2D" parent="DarknessLayer/MaskViewport" groups=["LaserMask"]]
-script = ExtResource("8_bk6va")
+script = ExtResource("8_ppvw7")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer"]
 visible = false
@@ -291,8 +289,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="LaserRail" parent="." instance=ExtResource("10_e5mxv")]
-z_index = -1
-position = Vector2(0, 3)
-rotation = -0.0022525

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://x6v1w0bay6r6"]
+[gd_scene load_steps=19 format=4 uid="uid://b2pof4u51inq"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_13jjs"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_ml1qv"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="5_fn4ql"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_e1qoi"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_pklsh"]
-[ext_resource type="Script" path="res://scripts/laser_mask_drawer.gd" id="8_ccked"]
+[ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="8_ccked"]
 [ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="9_0g6pg"]
 [ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="10_0g6pg"]
 
@@ -212,13 +212,13 @@ shape = SubResource("RectangleShape2D_ph3nu")
 position = Vector2(104, 218)
 shape = SubResource("RectangleShape2D_4kmhl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(104, 104)
-zoom = Vector2(3, 3)
-
 [node name="Player" parent="." instance=ExtResource("2_ml1qv")]
 z_index = 1
 position = Vector2(40, 133)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(64, -29)
+zoom = Vector2(3, 3)
 
 [node name="Mirrors" type="Node2D" parent="."]
 

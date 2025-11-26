@@ -1,17 +1,17 @@
 [gd_scene load_steps=18 format=4 uid="uid://6x5ov44yihs"]
 
-[ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_auo4u"]
-[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_k5ffs"]
-[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="3_k5ffs"]
-[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="4_q4utc"]
-[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="5_lua7t"]
-[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="6_0435t"]
-[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="7_j87di"]
-[ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="8_scmv8"]
-[ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/mirror_ui.tscn" id="9_clxnv"]
+[ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_nrqmj"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_qy6w3"]
+[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="3_d6lwf"]
+[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="4_apxf8"]
+[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="5_jh6kd"]
+[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="6_q47ol"]
+[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="7_acw61"]
+[ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="8_mtr10"]
+[ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/mirror_ui.tscn" id="9_f7tix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4utc"]
-texture = ExtResource("1_auo4u")
+texture = ExtResource("1_nrqmj")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -149,8 +149,8 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_lua7t"]
 sources/0 = SubResource("TileSetAtlasSource_q4utc")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0435t"]
-texture = ExtResource("1_auo4u")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clxnv"]
+texture = ExtResource("1_nrqmj")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -290,7 +290,7 @@ separation = Vector2i(1, 1)
 
 [sub_resource type="TileSet" id="TileSet_j87di"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_0435t")
+sources/0 = SubResource("TileSetAtlasSource_clxnv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lua7t"]
 size = Vector2(20, 208)
@@ -304,7 +304,7 @@ size = Vector2(344, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scmv8"]
 size = Vector2(344, 20)
 
-[node name="Laser Moving Room" type="Node2D"]
+[node name="LaserMoving" type="Node2D"]
 
 [node name="TileMaps" type="Node2D" parent="."]
 position = Vector2(-1, 0)
@@ -318,53 +318,21 @@ tile_set = SubResource("TileSet_lua7t")
 tile_map_data = PackedByteArray("AAAHAAQAAAAJAAQAAAAHAAMAAAAJAAQAAAAHAAIAAAAJAAQAAAAHAAEAAAAJAAQAAAAIAAQAAAALAAQAAAAIAAMAAAALAAQAAAAIAAIAAAALAAQAAAAIAAEAAAALAAQAAAAEAAsAAAALAAQAAFAFAAsAAAALAAQAAFAGAAsAAAALAAQAAFAEAAoAAAAJAAQAAFAFAAoAAAAJAAQAAFAGAAoAAAAJAAQAAFAPAAUAAAAJAAQAAAAPAAYAAAAJAAQAAAAPAAcAAAAJAAQAAAAQAAUAAAALAAQAAAAQAAYAAAALAAQAAAAQAAcAAAALAAQAAAAPAAsAAAAJAAQAAAAPAAoAAAAJAAQAAAARAAsAAAALAAQAAAARAAoAAAALAAQAAAAQAAoAAAAEAAIAAAA=")
 tile_set = SubResource("TileSet_j87di")
 
-[node name="Player" parent="." instance=ExtResource("2_k5ffs")]
-position = Vector2(170, 99)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2.5, 2.5)
-
-[node name="Chests" type="Node2D" parent="."]
-
-[node name="Blue Chest" type="Node2D" parent="Chests"]
+[node name="Laser Rails" type="Node2D" parent="TileMaps"]
 position = Vector2(1, 0)
 
-[node name="Chest" parent="Chests/Blue Chest" instance=ExtResource("3_k5ffs")]
-position = Vector2(71, 12)
-color = Color(0.388235, 0.556863, 1, 1)
+[node name="LaserRail Blue" parent="TileMaps/Laser Rails" instance=ExtResource("4_apxf8")]
+top_level = true
+visibility_layer = 2
+position = Vector2(320, 192)
+rotation = 1.5708
 
-[node name="Color" type="ColorRect" parent="Chests/Blue Chest"]
-offset_left = 69.0
-offset_top = 14.0
-offset_right = 73.0
-offset_bottom = 18.0
-color = Color(0.388235, 0.556863, 1, 1)
+[node name="LaserRail Red" parent="TileMaps/Laser Rails" instance=ExtResource("4_apxf8")]
+position = Vector2(111, 16)
+rotation = -1.5708
 
-[node name="Red Chest" type="Node2D" parent="Chests"]
-
-[node name="Chest" parent="Chests/Red Chest" instance=ExtResource("3_k5ffs")]
-position = Vector2(10, 75)
-color = Color(1, 0.223529, 0.345098, 1)
-
-[node name="Color" type="ColorRect" parent="Chests/Red Chest"]
-offset_left = 8.0
-offset_top = 77.0
-offset_right = 12.0
-offset_bottom = 81.0
-color = Color(1, 0.223529, 0.345098, 1)
-
-[node name="Green Chest" type="Node2D" parent="Chests"]
-
-[node name="Chest" parent="Chests/Green Chest" instance=ExtResource("3_k5ffs")]
-position = Vector2(292, 140)
-color = Color(0.282353, 1, 0.443137, 1)
-
-[node name="Color" type="ColorRect" parent="Chests/Green Chest"]
-offset_left = 290.0
-offset_top = 142.0
-offset_right = 294.0
-offset_bottom = 146.0
-color = Color(0.282353, 1, 0.443137, 1)
+[node name="LaserRail Green" parent="TileMaps/Laser Rails" instance=ExtResource("4_apxf8")]
+position = Vector2(287, -80)
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -396,80 +364,113 @@ position = Vector2(-11, -10)
 position = Vector2(162, 0)
 shape = SubResource("RectangleShape2D_scmv8")
 
-[node name="Laser Rails" type="Node2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("2_qy6w3")]
+position = Vector2(170, 99)
 
-[node name="LaserRail Blue" parent="Laser Rails" instance=ExtResource("4_q4utc")]
-top_level = true
-visibility_layer = 2
-position = Vector2(320, 192)
-rotation = 1.5708
-
-[node name="LaserRail Red" parent="Laser Rails" instance=ExtResource("4_q4utc")]
-position = Vector2(111, 16)
-rotation = -1.5708
-
-[node name="LaserRail Green" parent="Laser Rails" instance=ExtResource("4_q4utc")]
-position = Vector2(287, -80)
-
-[node name="Laser Emitters" type="Node2D" parent="."]
-
-[node name="Laser Emitter Blue" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("5_lua7t")]
-position = Vector2(152, 199)
-color = Color(0.388235, 0.556863, 1, 1)
-turned_on = true
-rail_tilemap = NodePath("../../Laser Rails/LaserRail Blue")
-
-[node name="Laser Emitter Red" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("5_lua7t")]
-position = Vector2(215, 9)
-rotation = -2.23402
-color = Color(1, 0.223529, 0.345098, 1)
-turned_on = true
-rail_tilemap = NodePath("../../Laser Rails/LaserRail Red")
-
-[node name="Laser Emitter Green" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("5_lua7t")]
-position = Vector2(294, 42)
-rotation = -1.5708
-color = Color(0.282353, 1, 0.443137, 1)
-turned_on = true
-rail_tilemap = NodePath("../../Laser Rails/LaserRail Green")
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.5, 2.5)
 
 [node name="Mirrors" type="Node2D" parent="."]
 
-[node name="Mirror 1" parent="Mirrors" instance=ExtResource("6_0435t")]
+[node name="Mirror 1" parent="Mirrors" instance=ExtResource("6_q47ol")]
 position = Vector2(217, 105)
 rotation = 0.453786
 rotation_degree = 5.0
 rotation_speed = 70.0
 
-[node name="Mirror 2" parent="Mirrors" instance=ExtResource("6_0435t")]
+[node name="Mirror 2" parent="Mirrors" instance=ExtResource("6_q47ol")]
 position = Vector2(71, 106)
 rotation = -1.32645
 rotation_degree = 5.0
 rotation_speed = 70.0
 
-[node name="Mirror 3" parent="Mirrors" instance=ExtResource("6_0435t")]
+[node name="Mirror 3" parent="Mirrors" instance=ExtResource("6_q47ol")]
 position = Vector2(102, 146)
 rotation = 2.37365
 rotation_degree = 5.0
 rotation_speed = 70.0
 
-[node name="Mirror 4" parent="Mirrors" instance=ExtResource("6_0435t")]
+[node name="Mirror 4" parent="Mirrors" instance=ExtResource("6_q47ol")]
 position = Vector2(163, 71)
 rotation = 0.610865
 rotation_degree = 5.0
 rotation_speed = 70.0
 
-[node name="Mirror 5" parent="Mirrors" instance=ExtResource("6_0435t")]
+[node name="Mirror 5" parent="Mirrors" instance=ExtResource("6_q47ol")]
 position = Vector2(165, 143)
 rotation_degree = 5.0
 rotation_speed = 70.0
 
-[node name="FinalGate" parent="." instance=ExtResource("7_j87di")]
+[node name="Laser Emitters" type="Node2D" parent="."]
+
+[node name="Laser Emitter Blue" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("5_jh6kd")]
+position = Vector2(152, 199)
+color = Color(0.388235, 0.556863, 1, 1)
+turned_on = true
+rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Blue")
+
+[node name="Laser Emitter Red" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("5_jh6kd")]
+position = Vector2(215, 9)
+rotation = -2.23402
+color = Color(1, 0.223529, 0.345098, 1)
+turned_on = true
+rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Red")
+
+[node name="Laser Emitter Green" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("5_jh6kd")]
+position = Vector2(294, 42)
+rotation = -1.5708
+color = Color(0.282353, 1, 0.443137, 1)
+turned_on = true
+rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Green")
+
+[node name="Chests" type="Node2D" parent="."]
+
+[node name="Blue Chest" type="Node2D" parent="Chests"]
+position = Vector2(1, 0)
+
+[node name="Chest" parent="Chests/Blue Chest" instance=ExtResource("3_d6lwf")]
+position = Vector2(71, 12)
+color = Color(0.388235, 0.556863, 1, 1)
+
+[node name="Color" type="ColorRect" parent="Chests/Blue Chest"]
+offset_left = 69.0
+offset_top = 14.0
+offset_right = 73.0
+offset_bottom = 18.0
+color = Color(0.388235, 0.556863, 1, 1)
+
+[node name="Red Chest" type="Node2D" parent="Chests"]
+
+[node name="Chest" parent="Chests/Red Chest" instance=ExtResource("3_d6lwf")]
+position = Vector2(10, 75)
+color = Color(1, 0.223529, 0.345098, 1)
+
+[node name="Color" type="ColorRect" parent="Chests/Red Chest"]
+offset_left = 8.0
+offset_top = 77.0
+offset_right = 12.0
+offset_bottom = 81.0
+color = Color(1, 0.223529, 0.345098, 1)
+
+[node name="Green Chest" type="Node2D" parent="Chests"]
+
+[node name="Chest" parent="Chests/Green Chest" instance=ExtResource("3_d6lwf")]
+position = Vector2(292, 140)
+color = Color(0.282353, 1, 0.443137, 1)
+
+[node name="Color" type="ColorRect" parent="Chests/Green Chest"]
+offset_left = 290.0
+offset_top = 142.0
+offset_right = 294.0
+offset_bottom = 146.0
+color = Color(0.282353, 1, 0.443137, 1)
+
+[node name="FinalGate" parent="." instance=ExtResource("7_acw61")]
 position = Vector2(263, 184)
 
 [node name="Level Controller" type="Node" parent="."]
-script = ExtResource("8_scmv8")
+script = ExtResource("8_mtr10")
 chests = Array[NodePath]([NodePath("../Chests/Blue Chest/Chest"), NodePath("../Chests/Red Chest/Chest"), NodePath("../Chests/Green Chest/Chest")])
 final_gate = NodePath("../FinalGate")
 
-[node name="Mirror UI" parent="." instance=ExtResource("9_clxnv")]
+[node name="Mirror UI" parent="." instance=ExtResource("9_f7tix")]
