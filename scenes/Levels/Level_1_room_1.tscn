@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=4 uid="uid://bahk3ng82w8qr"]
+[gd_scene load_steps=19 format=4 uid="uid://bubextlgkr1mo"]
 
+<<<<<<< HEAD:scenes/Levels/Level_3.tscn
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_vxhox"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_qycpt"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="3_adch5"]
@@ -9,9 +10,21 @@
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_uo84v"]
 [ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="8_adch5"]
 [ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="9_7fsuu"]
+=======
+[ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_fweee"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_6nuxs"]
+[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="3_if6hw"]
+[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="4_yjowi"]
+[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="5_gle0o"]
+[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_okhlt"]
+[ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_oo21j"]
+[ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="8_ppvw7"]
+[ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="9_esrc0"]
+[ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/mirror_ui.tscn" id="10_6nuxs"]
+>>>>>>> 83baf5f25d5222fdd372bc0c5f32218e1a5d49ad:scenes/Levels/Level_1_room_1.tscn
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
-texture = ExtResource("1_vxhox")
+texture = ExtResource("1_fweee")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -162,26 +175,27 @@ size = Vector2(20, 208)
 size = Vector2(20, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ph3nu"]
-size = Vector2(248, 20)
+size = Vector2(344, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kmhl"]
-size = Vector2(248, 20)
+size = Vector2(344, 20)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6rlyg"]
 viewport_path = NodePath("DarknessLayer/MaskViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jd4oq"]
 resource_local_to_scene = true
-shader = ExtResource("9_7fsuu")
+shader = ExtResource("9_esrc0")
 shader_parameter/mask_tex = SubResource("ViewportTexture_6rlyg")
 shader_parameter/darkness_amount = 1.0
 
-[node name="Level_3" type="Node2D"]
+[node name="Tutorial" type="Node2D"]
 
 [node name="TileMaps" type="Node2D" parent="."]
 
 [node name="TileMapLayer - Background" type="TileMapLayer" parent="TileMaps"]
-tile_map_data = PackedByteArray("AAAAAAAAAAAEAAQAABABAAEAAAAAAAQAAAABAAIAAAAAAAQAAAACAAIAAAAAAAQAAAACAAMAAAAAAAQAAAADAAMAAAAAAAQAAAAEAAQAAAAAAAQAAAAFAAQAAAAAAAQAAAAGAAQAAAAAAAQAAAAGAAUAAAAAAAQAAAAAAAEAAAACAAQAAEAAAAIAAAACAAQAAEAAAAMAAAACAAQAAEAAAAQAAAACAAQAAEAAAAUAAAADAAQAAGABAAUAAAAAAAQAAAACAAUAAAAAAAQAAAADAAUAAAAAAAQAAAAEAAUAAAAAAAQAAAAFAAUAAAAAAAQAAAADAAQAAAABAAQAAFACAAQAAAAAAAQAAAABAAQAAAAAAAQAAAABAAMAAAABAAQAAAABAAAAAAACAAQAAAACAAAAAAACAAQAAAADAAAAAAACAAQAAAAEAAAAAAACAAQAAAAFAAAAAAADAAQAAAAGAAAAAAACAAQAAAAHAAAAAAACAAQAAAAIAAAAAAADAAQAAAAJAAAAAAACAAQAAAAKAAAAAAACAAQAAAALAAAAAAACAAQAAAAMAAAAAAAEAAQAAAAMAAwAAAAEAAQAACAMAAsAAAADAAQAAFAMAAoAAAACAAQAAHAMAAkAAAACAAQAAHAMAAgAAAACAAQAAHAMAAcAAAACAAQAAHAMAAYAAAACAAQAAHAMAAUAAAACAAQAAHAMAAQAAAACAAQAAHALAAMAAAABAAQAAAALAAIAAAAAAAQAAAAMAAIAAAACAAQAAHAMAAEAAAADAAQAAFAMAAMAAAACAAQAAHAAAAYAAAACAAQAAEAAAAcAAAACAAQAAEAAAAgAAAACAAQAAEAAAAkAAAACAAQAAEAAAAoAAAACAAQAAEAAAAsAAAADAAQAAGAAAAwAAAAEAAQAADABAAwAAAACAAQAACACAAwAAAACAAQAACADAAwAAAACAAQAACAEAAwAAAACAAQAACAEAAsAAAAAAAQAAAAFAAsAAAABAAQAAAAGAAsAAAAAAAQAAAAHAAsAAAAAAAQAAAAIAAsAAAAAAAQAAAAJAAsAAAAAAAQAAAAKAAsAAAAAAAQAAAAKAAwAAAACAAQAACALAAwAAAACAAQAACAJAAwAAAADAAQAADAIAAwAAAACAAQAACAHAAwAAAACAAQAACAFAAwAAAACAAQAACADAAsAAAAGAAMAAAACAAsAAAAAAAQAAAABAAsAAAAAAAQAAAABAAoAAAAAAAQAAAALAAsAAAAAAAQAAAALAAoAAAAAAAQAAAAKAAoAAAAAAAQAAAAJAAoAAAAGAAMAAAAIAAoAAAAAAAQAAAAHAAoAAAABAAQAAFAGAAoAAAAAAAQAAAAFAAoAAAAAAAQAAAAEAAoAAAAAAAQAAAADAAoAAAAAAAQAAAACAAoAAAAAAAQAAAACAAkAAAABAAQAAAABAAkAAAAAAAQAAAABAAgAAAAAAAQAAAACAAgAAAAAAAQAAAADAAgAAAAAAAQAAAAEAAgAAAAAAAQAAAAFAAkAAAAAAAQAAAAGAAkAAAAAAAQAAAAHAAkAAAAAAAQAAAAIAAkAAAAAAAQAAAAJAAkAAAAAAAQAAAAKAAkAAAAAAAQAAAALAAkAAAAAAAQAAAALAAgAAAABAAQAAAAKAAgAAAAAAAQAAAAJAAcAAAALAAQAAAAIAAcAAAAEAAIAAAAHAAcAAAAJAAQAAAAGAAcAAAAAAAQAAAAGAAgAAAAAAAQAAAAFAAgAAAAGAAMAAAAEAAkAAAAAAAQAAAAHAAgAAAAJAAQAAAADAAkAAAAAAAQAAAAGAAwAAAACAAQAACAJAAgAAAALAAQAAAABAAYAAAAAAAQAAAACAAYAAAAGAAMAAAACAAcAAAAAAAQAAAADAAcAAAAAAAQAAAAEAAcAAAAAAAQAAAAFAAYAAAABAAQAAAAGAAYAAAAAAAQAAAAEAAYAAAAAAAQAAAADAAYAAAAAAAQAAAABAAcAAAAAAAQAAAAFAAcAAAAAAAQAAAAHAAYAAAAJAAQAAAAIAAYAAAAEAAMAAAAJAAYAAAALAAQAAAAKAAYAAAAGAAMAAAAKAAcAAAAAAAQAAAALAAcAAAAAAAQAAAALAAYAAAAAAAQAAAALAAUAAAAAAAQAAAALAAQAAAAAAAQAAAAKAAQAAAAAAAQAAAAJAAQAAAAAAAQAAAAIAAQAAAAAAAQAAAAHAAQAAAAAAAQAAAAIAAUAAAABAAQAAAAJAAUAAAAAAAQAAAAKAAUAAAAAAAQAAAAKAAMAAAAAAAQAAAAJAAMAAAAAAAQAAAAHAAUAAAAAAAQAAAAIAAMAAAAAAAQAAAAHAAMAAAAGAAMAAAAGAAMAAAAAAAQAAAAFAAMAAAAAAAQAAAAEAAMAAAAAAAQAAAADAAIAAAAAAAQAAAAEAAIAAAABAAQAAAACAAEAAAAGAAMAAAADAAEAAAAAAAQAAAAEAAEAAAAAAAQAAAAFAAEAAAAAAAQAAAAGAAEAAAAAAAQAAAAHAAEAAAAAAAQAAAAIAAEAAAAAAAQAAAAJAAEAAAAAAAQAAAAKAAEAAAAGAAMAAAALAAEAAAAAAAQAAAAKAAIAAAAAAAQAAAAJAAIAAAABAAQAAFAIAAIAAAAAAAQAAAAHAAIAAAAAAAQAAAAGAAIAAAAAAAQAAAAFAAIAAAAAAAQAAAA=")
+z_index = -1
+tile_map_data = PackedByteArray("AAAAAAAAAAAEAAQAABABAAEAAAAAAAQAAAABAAIAAAAAAAQAAAACAAIAAAAAAAQAAAACAAMAAAAAAAQAAAADAAMAAAAAAAQAAAAEAAQAAAAAAAQAAAAFAAQAAAAAAAQAAAAGAAQAAAAAAAQAAAAGAAUAAAAAAAQAAAAAAAEAAAACAAQAAEAAAAIAAAACAAQAAEAAAAMAAAACAAQAAEAAAAQAAAACAAQAAEAAAAUAAAADAAQAAGABAAUAAAAAAAQAAAACAAUAAAAAAAQAAAADAAUAAAAAAAQAAAAEAAUAAAAAAAQAAAAFAAUAAAAAAAQAAAADAAQAAAABAAQAAFACAAQAAAAAAAQAAAABAAQAAAAAAAQAAAABAAMAAAABAAQAAAABAAAAAAACAAQAAAACAAAAAAACAAQAAAADAAAAAAACAAQAAAAEAAAAAAACAAQAAAAFAAAAAAADAAQAAAAGAAAAAAACAAQAAAAHAAAAAAACAAQAAAAIAAAAAAADAAQAAAAJAAAAAAACAAQAAAAKAAAAAAACAAQAAAALAAAAAAACAAQAAAAMAAAAAAAEAAQAAAAMAAwAAAAEAAQAACAMAAsAAAADAAQAAFAMAAoAAAACAAQAAHAMAAkAAAACAAQAAHAMAAgAAAACAAQAAHAMAAcAAAACAAQAAHAMAAYAAAACAAQAAHAMAAUAAAACAAQAAHAMAAQAAAACAAQAAHALAAMAAAABAAQAAAALAAIAAAAAAAQAAAAMAAIAAAACAAQAAHAMAAEAAAADAAQAAFAMAAMAAAACAAQAAHAAAAYAAAACAAQAAEAAAAcAAAACAAQAAEAAAAgAAAACAAQAAEAAAAkAAAACAAQAAEAAAAoAAAACAAQAAEAAAAsAAAADAAQAAGAAAAwAAAAEAAQAADABAAwAAAACAAQAACACAAwAAAACAAQAACADAAwAAAACAAQAACAEAAwAAAACAAQAACAEAAsAAAAAAAQAAAAFAAsAAAABAAQAAAAGAAsAAAAAAAQAAAAHAAsAAAAAAAQAAAAIAAsAAAAAAAQAAAAJAAsAAAAAAAQAAAAKAAsAAAAAAAQAAAAKAAwAAAACAAQAACALAAwAAAACAAQAACAJAAwAAAADAAQAADAIAAwAAAACAAQAACAHAAwAAAACAAQAACAFAAwAAAACAAQAACADAAsAAAAGAAMAAAACAAsAAAAAAAQAAAABAAsAAAAAAAQAAAABAAoAAAAAAAQAAAALAAsAAAAGAAMAAAALAAoAAAABAAQAAAAKAAoAAAAAAAQAAAAIAAoAAAAAAAQAAAAHAAoAAAABAAQAAFAGAAoAAAAAAAQAAAAFAAoAAAAAAAQAAAAEAAoAAAAAAAQAAAADAAoAAAAAAAQAAAACAAoAAAAAAAQAAAACAAkAAAABAAQAAAABAAkAAAAAAAQAAAABAAgAAAAAAAQAAAACAAgAAAAAAAQAAAADAAgAAAAAAAQAAAAEAAgAAAAAAAQAAAAFAAkAAAAAAAQAAAAGAAkAAAAAAAQAAAAHAAkAAAAAAAQAAAAIAAkAAAAAAAQAAAAJAAkAAAABAAQAAAAKAAkAAAAAAAQAAAALAAkAAAAGAAMAAAALAAgAAAABAAQAAAAKAAgAAAAAAAQAAAAGAAcAAAAAAAQAAAAGAAgAAAAAAAQAAAAFAAgAAAAGAAMAAAAEAAkAAAAAAAQAAAADAAkAAAAAAAQAAAAGAAwAAAACAAQAACABAAYAAAAAAAQAAAACAAYAAAAGAAMAAAACAAcAAAAAAAQAAAADAAcAAAAAAAQAAAAEAAcAAAAAAAQAAAAFAAYAAAABAAQAAAAGAAYAAAAAAAQAAAAEAAYAAAAAAAQAAAADAAYAAAAAAAQAAAABAAcAAAAAAAQAAAAFAAcAAAAAAAQAAAAKAAYAAAAGAAMAAAAKAAcAAAAAAAQAAAALAAcAAAAAAAQAAAALAAYAAAAAAAQAAAALAAUAAAAAAAQAAAALAAQAAAAAAAQAAAAKAAQAAAAAAAQAAAAJAAQAAAAAAAQAAAAIAAQAAAAAAAQAAAAHAAQAAAAAAAQAAAAIAAUAAAABAAQAAAAJAAUAAAAAAAQAAAAKAAUAAAAAAAQAAAAKAAMAAAAAAAQAAAAJAAMAAAAAAAQAAAAHAAUAAAAAAAQAAAAIAAMAAAAAAAQAAAAHAAMAAAAGAAMAAAAGAAMAAAAAAAQAAAAFAAMAAAAAAAQAAAAEAAMAAAAAAAQAAAADAAIAAAAAAAQAAAAEAAIAAAABAAQAAAACAAEAAAAGAAMAAAADAAEAAAAAAAQAAAAEAAEAAAAAAAQAAAAFAAEAAAAAAAQAAAAGAAEAAAAAAAQAAAAHAAEAAAAAAAQAAAAIAAEAAAAAAAQAAAAJAAEAAAAAAAQAAAAKAAEAAAAGAAMAAAALAAEAAAAAAAQAAAAKAAIAAAAAAAQAAAAJAAIAAAABAAQAAFAIAAIAAAAAAAQAAAAHAAIAAAAAAAQAAAAGAAIAAAAAAAQAAAAFAAIAAAAAAAQAAAAJAAgAAAAAAAQAAAAJAAoAAAAAAAQAAAAHAAYAAAAGAAMAAAAIAAYAAAABAAQAAAAJAAYAAAAAAAQAAAAJAAcAAAAGAAMAAAAIAAcAAAAAAAQAAAAHAAcAAAABAAQAAAAHAAgAAAABAAQAAAAIAAgAAAABAAQAAAA=")
 tile_set = SubResource("TileSet_8ho6b")
 
 [node name="Walls" type="Node2D" parent="."]
@@ -210,64 +224,68 @@ shape = SubResource("RectangleShape2D_ph3nu")
 position = Vector2(104, 218)
 shape = SubResource("RectangleShape2D_4kmhl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(104, 104)
-zoom = Vector2(3, 3)
-
-[node name="Player" parent="." instance=ExtResource("2_qycpt")]
+[node name="Player" parent="." instance=ExtResource("2_6nuxs")]
 z_index = 1
 position = Vector2(40, 133)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(64, -29)
+zoom = Vector2(3, 3)
+
 [node name="Mirrors" type="Node2D" parent="."]
 
-[node name="Mirror1" parent="Mirrors" instance=ExtResource("3_adch5")]
-position = Vector2(53, 110)
+[node name="Mirror1" parent="Mirrors" instance=ExtResource("3_if6hw")]
+position = Vector2(48, 110)
 
-[node name="Mirror2" parent="Mirrors" instance=ExtResource("3_adch5")]
+[node name="Mirror2" parent="Mirrors" instance=ExtResource("3_if6hw")]
 position = Vector2(153, 83)
 rotation = 1.5708
 
-[node name="Mirror3" parent="Mirrors" instance=ExtResource("3_adch5")]
-position = Vector2(104, 46)
+[node name="Mirror3" parent="Mirrors" instance=ExtResource("3_if6hw")]
+position = Vector2(88, 38)
 rotation = -0.785398
 
 [node name="LaserEmitters" type="Node2D" parent="."]
 position = Vector2(104, 198)
 
-[node name="LaserEmitter1" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_7fsuu")]
+[node name="LaserEmitter1" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_yjowi")]
+z_index = 0
+position = Vector2(-10, -1)
 turned_on = true
 
-[node name="LaserEmitter2" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_7fsuu")]
-position = Vector2(-93, -88)
+[node name="LaserEmitter2" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_yjowi")]
+z_index = 0
+position = Vector2(-95, -130)
 rotation = 1.5708
 turned_on = true
 
-[node name="LaserEmitter3" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_7fsuu")]
-position = Vector2(-93, -114)
+[node name="LaserEmitter3" parent="LaserEmitters" groups=["LaserEmitters"] instance=ExtResource("4_yjowi")]
+z_index = 0
+position = Vector2(-96, -91)
 rotation = 1.5708
 turned_on = true
 
 [node name="Chests" type="Node2D" parent="."]
 position = Vector2(197, 47)
 
-[node name="Chest1" parent="Chests" instance=ExtResource("5_7ovq3")]
+[node name="Chest1" parent="Chests" instance=ExtResource("5_gle0o")]
+position = Vector2(0, -6)
 
-[node name="Chest2" parent="Chests" instance=ExtResource("5_7ovq3")]
+[node name="Chest2" parent="Chests" instance=ExtResource("5_gle0o")]
 position = Vector2(-47, -37)
 
-[node name="Chest3" parent="Chests" instance=ExtResource("5_7ovq3")]
+[node name="Chest3" parent="Chests" instance=ExtResource("5_gle0o")]
 position = Vector2(-146, 150)
 
-[node name="FinalGate" parent="." groups=["LaserEmitters"] instance=ExtResource("6_3181l")]
-position = Vector2(135, 136)
+[node name="FinalGate" parent="." groups=["LaserEmitters"] instance=ExtResource("6_okhlt")]
+position = Vector2(199, 140)
 
 [node name="level_controller" type="Node" parent="."]
-script = ExtResource("7_uo84v")
-chests = Array[NodePath]([NodePath("../Chests/Chest1"), NodePath("../Chests/Chest2"), NodePath("../Chests/Chest3")])
-final_gate = NodePath("../FinalGate")
+script = ExtResource("7_oo21j")
 
 [node name="DarknessLayer" type="CanvasLayer" parent="."]
 layer = 100
+visible = false
 
 [node name="MaskViewport" type="SubViewport" parent="DarknessLayer"]
 disable_3d = true
@@ -275,7 +293,7 @@ transparent_bg = true
 size = Vector2i(624, 624)
 
 [node name="LaserMaskDrawer" type="Node2D" parent="DarknessLayer/MaskViewport" groups=["LaserMask"]]
-script = ExtResource("8_adch5")
+script = ExtResource("8_ppvw7")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer"]
 visible = false
@@ -285,3 +303,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Mirror UI" parent="." instance=ExtResource("10_6nuxs")]

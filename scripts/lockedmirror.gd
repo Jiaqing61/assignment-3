@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var rotation_speed: float = 85.0
+@export var rotation_degree: float = 15.0  
+@export var rotation_speed: float = 85.0  
 @export var is_locked: bool = true
 @export var unlocked_modulate := Color(1,1,1)
 @export var locked_modulate := Color(0.5,0.5,0.5)

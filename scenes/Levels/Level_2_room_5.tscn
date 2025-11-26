@@ -1,5 +1,6 @@
 [gd_scene load_steps=26 format=4 uid="uid://dmxoj3rb3ufns"]
 
+<<<<<<< HEAD:scenes/Levels/Level_2_Tony_1.tscn
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_r1rsi"]
 [ext_resource type="PackedScene" uid="uid://cmvyg7iue008r" path="res://scenes/big_laser.tscn" id="2_fuyvl"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_w3bi5"]
@@ -15,9 +16,26 @@
 [ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="11_grohv"]
 [ext_resource type="PackedScene" uid="uid://dh0eashre7oa2" path="res://scenes/Doublemirror.tscn" id="14_k4hqo"]
 [ext_resource type="Script" uid="uid://4x1tv6rt0uh8" path="res://scenes/Levels/darknesscontroller.gd" id="15_1jthk"]
+=======
+[ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_obuvu"]
+[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="2_snuer"]
+[ext_resource type="PackedScene" uid="uid://cmvyg7iue008r" path="res://scenes/big_laser.tscn" id="3_58vb0"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="4_v4jlo"]
+[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="5_fpiaj"]
+[ext_resource type="PackedScene" uid="uid://dwjsyuyshemhn" path="res://scenes/tests/lockedmirror.tscn" id="6_y11ba"]
+[ext_resource type="PackedScene" uid="uid://dh0eashre7oa2" path="res://scenes/Doublemirror.tscn" id="7_alh02"]
+[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="8_lo4eq"]
+[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="9_471ga"]
+[ext_resource type="PackedScene" uid="uid://danmppe0snaxd" path="res://scenes/tests/keychest.tscn" id="10_4wlv8"]
+[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="11_31o63"]
+[ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="12_8vo6c"]
+[ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="13_5ycmn"]
+[ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="14_jadaw"]
+[ext_resource type="Script" uid="uid://4x1tv6rt0uh8" path="res://scripts/darknesscontroller.gd" id="15_vx1a6"]
+>>>>>>> 83baf5f25d5222fdd372bc0c5f32218e1a5d49ad:scenes/Levels/Level_2_room_5.tscn
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
-texture = ExtResource("1_r1rsi")
+texture = ExtResource("1_obuvu")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -162,7 +180,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_c13y7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r1rsi"]
-texture = ExtResource("1_r1rsi")
+texture = ExtResource("1_obuvu")
 texture_region_size = Vector2i(17, 17)
 0:0/0 = 0
 1:0/0 = 0
@@ -321,11 +339,11 @@ viewport_path = NodePath("DarknessLayer/MaskViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cpt8e"]
 resource_local_to_scene = true
-shader = ExtResource("10_0pgwb")
+shader = ExtResource("14_jadaw")
 shader_parameter/mask_tex = SubResource("ViewportTexture_qwxfg")
 shader_parameter/darkness_amount = 1.0
 
-[node name="Level_2_tony" type="Node2D"]
+[node name="FinalRoom" type="Node2D"]
 
 [node name="TileMaps" type="Node2D" parent="."]
 
@@ -334,7 +352,7 @@ z_index = -1
 tile_map_data = PackedByteArray("AAAAAAAAAAAEAAQAABABAAEAAAAAAAQAAAABAAIAAAAAAAQAAAACAAIAAAAAAAQAAAACAAMAAAAAAAQAAAADAAMAAAAAAAQAAAAEAAQAAAAAAAQAAAAFAAQAAAAAAAQAAAAGAAQAAAAAAAQAAAAGAAUAAAAAAAQAAAAAAAEAAAACAAQAAEAAAAIAAAACAAQAAEAAAAMAAAACAAQAAEAAAAQAAAACAAQAAEAAAAUAAAADAAQAAGABAAUAAAAAAAQAAAACAAUAAAAAAAQAAAADAAUAAAAAAAQAAAAEAAUAAAAAAAQAAAAFAAUAAAAAAAQAAAADAAQAAAABAAQAAFACAAQAAAAAAAQAAAABAAQAAAAAAAQAAAABAAMAAAABAAQAAAABAAAAAAACAAQAAAACAAAAAAACAAQAAAADAAAAAAACAAQAAAAEAAAAAAACAAQAAAAFAAAAAAADAAQAAAAGAAAAAAACAAQAAAAHAAAAAAACAAQAAAAIAAAAAAADAAQAAAAJAAAAAAACAAQAAAAKAAAAAAACAAQAAAALAAAAAAACAAQAAAAMAAAAAAACAAQAAAAMAAwAAAACAAQAADAMAAsAAAAAAAQAAAAMAAoAAAAAAAQAAAAMAAkAAAAAAAQAAAAMAAgAAAAAAAQAAAAMAAcAAAAAAAQAAAAMAAYAAAAEAAMAAAAMAAUAAAAAAAQAAAAMAAQAAAAAAAQAAAALAAMAAAABAAQAAAALAAIAAAAAAAQAAAAMAAIAAAAAAAQAAAAMAAEAAAAAAAQAAAAMAAMAAAAAAAQAAAAAAAYAAAACAAQAAEAAAAcAAAACAAQAAEAAAAgAAAACAAQAAEAAAAkAAAACAAQAAEAAAAoAAAACAAQAAEAAAAsAAAADAAQAAGAAAAwAAAAEAAQAADABAAwAAAACAAQAACACAAwAAAACAAQAACADAAwAAAACAAQAACAEAAwAAAACAAQAACAEAAsAAAAAAAQAAAAFAAsAAAABAAQAAAAGAAsAAAAAAAQAAAAHAAsAAAAAAAQAAAAIAAsAAAAAAAQAAAAJAAsAAAAAAAQAAAAKAAsAAAAAAAQAAAAKAAwAAAACAAQAACALAAwAAAACAAQAACAJAAwAAAADAAQAADAIAAwAAAACAAQAACAHAAwAAAACAAQAACAFAAwAAAACAAQAACADAAsAAAAGAAMAAAACAAsAAAAAAAQAAAABAAsAAAAAAAQAAAABAAoAAAAAAAQAAAALAAsAAAAAAAQAAAALAAoAAAAAAAQAAAAKAAoAAAAAAAQAAAAJAAoAAAAGAAMAAAAIAAoAAAAAAAQAAAAHAAoAAAABAAQAAFAGAAoAAAAAAAQAAAAFAAoAAAAAAAQAAAAEAAoAAAAAAAQAAAADAAoAAAAAAAQAAAACAAoAAAAAAAQAAAACAAkAAAABAAQAAAABAAkAAAAAAAQAAAABAAgAAAAAAAQAAAACAAgAAAAAAAQAAAADAAgAAAAAAAQAAAAEAAgAAAAAAAQAAAAFAAkAAAAAAAQAAAAGAAkAAAAAAAQAAAAHAAkAAAAAAAQAAAAIAAkAAAAAAAQAAAAJAAkAAAABAAQAAAAKAAkAAAAAAAQAAAALAAkAAAAAAAQAAAALAAgAAAABAAQAAAAKAAgAAAAAAAQAAAAJAAcAAAAAAAQAAAAIAAcAAAABAAQAAAAHAAcAAAAAAAQAAAAGAAcAAAAAAAQAAAAGAAgAAAAAAAQAAAAFAAgAAAAGAAMAAAAEAAkAAAAAAAQAAAAHAAgAAAAAAAQAAAADAAkAAAAAAAQAAAAGAAwAAAACAAQAACAJAAgAAAAAAAQAAAABAAYAAAAAAAQAAAACAAYAAAAGAAMAAAACAAcAAAAAAAQAAAADAAcAAAAAAAQAAAAEAAcAAAAAAAQAAAAFAAYAAAABAAQAAAAGAAYAAAAAAAQAAAAEAAYAAAAAAAQAAAADAAYAAAAAAAQAAAABAAcAAAAAAAQAAAAFAAcAAAAAAAQAAAAHAAYAAAAAAAQAAAAIAAYAAAAAAAQAAAAJAAYAAAAAAAQAAAAKAAcAAAAAAAQAAAALAAcAAAAAAAQAAAALAAYAAAAEAAMAAAALAAUAAAAAAAQAAAALAAQAAAAAAAQAAAAKAAQAAAAAAAQAAAAJAAQAAAAAAAQAAAAIAAQAAAAAAAQAAAAHAAQAAAAAAAQAAAAIAAUAAAABAAQAAAAJAAUAAAAAAAQAAAAKAAUAAAAAAAQAAAAKAAMAAAAAAAQAAAAJAAMAAAAAAAQAAAAHAAUAAAAAAAQAAAAIAAMAAAAAAAQAAAAHAAMAAAAGAAMAAAAGAAMAAAAAAAQAAAAFAAMAAAAAAAQAAAAEAAMAAAAAAAQAAAADAAIAAAAAAAQAAAAEAAIAAAABAAQAAAACAAEAAAAGAAMAAAADAAEAAAAAAAQAAAAEAAEAAAAAAAQAAAAFAAEAAAAAAAQAAAAGAAEAAAAAAAQAAAAHAAEAAAAAAAQAAAAIAAEAAAAAAAQAAAAJAAEAAAAAAAQAAAAKAAEAAAAGAAMAAAALAAEAAAAAAAQAAAAKAAIAAAAAAAQAAAAJAAIAAAABAAQAAFAIAAIAAAAAAAQAAAAHAAIAAAAAAAQAAAAGAAIAAAAAAAQAAAAFAAIAAAAAAAQAAAANAAAAAAACAAQAAAANAAEAAAABAAQAAAANAAIAAAAAAAQAAAANAAMAAAAAAAQAAAANAAQAAAABAAQAAAANAAUAAAAAAAQAAAANAAcAAAAAAAQAAAANAAgAAAABAAQAAAANAAkAAAAAAAQAAAANAAsAAAAAAAQAAAANAAwAAAACAAQAADANAAoAAAAAAAQAAAAOAAwAAAACAAQAADAPAAwAAAACAAQAADAQAAwAAAACAAQAADARAAwAAAACAAQAADASAAwAAAAEAAQAAFAIAAgAAAAAAAQAAAAOAAAAAAACAAQAAAAPAAAAAAACAAQAAAAQAAAAAAACAAQAAAARAAAAAAACAAQAAAASAAAAAAAEAAQAAAASAAEAAAACAAQAAFASAAIAAAACAAQAAFASAAMAAAACAAQAAFASAAQAAAACAAQAAFASAAUAAAACAAQAAFASAAYAAAACAAQAAFASAAcAAAACAAQAAFASAAgAAAACAAQAAFASAAkAAAACAAQAAFASAAoAAAACAAQAAFASAAsAAAACAAQAAFAOAAEAAAAAAAQAAAAOAAIAAAAAAAQAAAAOAAMAAAAAAAQAAAAOAAQAAAAAAAQAAAAPAAQAAAAAAAQAAAAPAAMAAAAAAAQAAAAPAAIAAAAAAAQAAAAPAAEAAAAAAAQAAAAQAAEAAAAAAAQAAAAQAAIAAAABAAQAAAARAAIAAAAAAAQAAAARAAEAAAAAAAQAAAARAAMAAAABAAQAAAARAAQAAAAAAAQAAAARAAUAAAABAAQAAAARAAYAAAAAAAQAAAARAAcAAAAAAAQAAAARAAgAAAABAAQAAAARAAkAAAAAAAQAAAAQAAkAAAAAAAQAAAAQAAoAAAABAAQAAAAQAAsAAAAAAAQAAAAPAAsAAAAAAAQAAAAOAAsAAAAAAAQAAAARAAsAAAAAAAQAAAARAAoAAAAAAAQAAAAQAAQAAAAAAAQAAAAQAAMAAAABAAQAAAAQAAUAAAAAAAQAAAAQAAYAAAAAAAQAAAAQAAcAAAAAAAQAAAAQAAgAAAAAAAQAAAAPAAkAAAAAAAQAAAAPAAgAAAAAAAQAAAAPAAcAAAABAAQAAAAPAAYAAAAAAAQAAAAPAAUAAAAAAAQAAAAOAAcAAAAAAAQAAAAOAAgAAAAAAAQAAAAPAAoAAAAAAAQAAAAOAAkAAAAAAAQAAAAOAAUAAAAAAAQAAAAOAAoAAAAAAAQAAAAOAAYAAAAEAAMAAAANAAYAAAAEAAMAAAAKAAYAAAAEAAMAAAA=")
 tile_set = SubResource("TileSet_8ho6b")
 
-[node name="LaserRail" parent="TileMaps" instance=ExtResource("11_grohv")]
+[node name="LaserRail" parent="TileMaps" instance=ExtResource("2_snuer")]
 position = Vector2(0, -1)
 tile_map_data = PackedByteArray("AAAAAAEAAAAJAAYAAAAAAAIAAAAJAAYAAAAAAAAAAAAHAAUAAAAAAAMAAAAIAAUAAAAAAAwAAAAHAAYAAAAEAAwAAAAIAAYAAAABAAwAAAAKAAUAAAACAAwAAAAKAAUAAAADAAwAAAAKAAUAAAAJAAAAAAAKAAUAAAAKAAAAAAAKAAUAAAALAAAAAAAKAAUAAAAIAAAAAAAHAAYAAAAMAAAAAAAIAAYAAAA=")
 
@@ -350,7 +368,7 @@ tile_set = SubResource("TileSet_fuyvl")
 position = Vector2(-10, 104)
 shape = SubResource("RectangleShape2D_c13y7")
 
-[node name="Big Laser" parent="Walls/Left Wall" instance=ExtResource("2_fuyvl")]
+[node name="Big Laser" parent="Walls/Left Wall" instance=ExtResource("3_58vb0")]
 position = Vector2(265, 78)
 rotation = 1.59444
 colors = Array[Color]([Color(1, 0, 0, 1), Color(0, 0, 1, 1)])
@@ -373,7 +391,7 @@ shape = SubResource("RectangleShape2D_ph3nu")
 position = Vector2(152, 218)
 shape = SubResource("RectangleShape2D_4kmhl")
 
-[node name="Player" parent="." instance=ExtResource("3_w3bi5")]
+[node name="Player" parent="." instance=ExtResource("4_v4jlo")]
 z_index = 1
 position = Vector2(103, 172)
 
@@ -382,49 +400,49 @@ zoom = Vector2(3, 3)
 
 [node name="Mirrors" type="Node2D" parent="."]
 
-[node name="Mirror2" parent="Mirrors" instance=ExtResource("4_k4hqo")]
+[node name="Mirror2" parent="Mirrors" instance=ExtResource("5_fpiaj")]
 position = Vector2(220, 44)
 rotation = 1.5708
 
-[node name="Mirror3" parent="Mirrors" instance=ExtResource("4_k4hqo")]
+[node name="Mirror3" parent="Mirrors" instance=ExtResource("5_fpiaj")]
 position = Vector2(119, 60)
 rotation = -0.785398
 
-[node name="Mirror" parent="Mirrors" instance=ExtResource("4_k4hqo")]
+[node name="Mirror" parent="Mirrors" instance=ExtResource("5_fpiaj")]
 position = Vector2(266, 32)
 
-[node name="lockedmirror" parent="Mirrors" instance=ExtResource("6_fuyvl")]
+[node name="lockedmirror" parent="Mirrors" instance=ExtResource("6_y11ba")]
 position = Vector2(251, 149)
 scale = Vector2(1.01564, 1)
 
-[node name="DoubleMirror" parent="Mirrors" instance=ExtResource("14_k4hqo")]
+[node name="DoubleMirror" parent="Mirrors" instance=ExtResource("7_alh02")]
 position = Vector2(75, 107)
 
 [node name="LaserEmitters" type="Node2D" parent="."]
 position = Vector2(104, 198)
 
-[node name="LaserEmitter1" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("5_1jthk")]
+[node name="LaserEmitter1" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("8_lo4eq")]
 position = Vector2(-40, 2)
 rotation = 0.523877
 color = Color(1, 0, 0, 1)
 turned_on = true
 rail_tilemap = NodePath("../../TileMaps/LaserRail")
 
-[node name="LaserEmitter2" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("5_1jthk")]
+[node name="LaserEmitter2" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("8_lo4eq")]
 position = Vector2(-96, -181)
 rotation = 2.45488
 color = Color(1, 1, 0, 1)
 turned_on = true
 rail_tilemap = NodePath("../../TileMaps/LaserRail")
 
-[node name="LaserEmitter3" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("5_1jthk")]
+[node name="LaserEmitter3" parent="LaserEmitters" node_paths=PackedStringArray("rail_tilemap") groups=["LaserEmitters"] instance=ExtResource("8_lo4eq")]
 position = Vector2(35, -189)
 rotation = 2.59441
 color = Color(0, 1, 0, 1)
 turned_on = true
 rail_tilemap = NodePath("../../TileMaps/LaserRail")
 
-[node name="Laser Emitter" parent="LaserEmitters" instance=ExtResource("5_1jthk")]
+[node name="Laser Emitter" parent="LaserEmitters" instance=ExtResource("8_lo4eq")]
 position = Vector2(195, -163)
 rotation = 4.73356
 color = Color(0, 0, 1, 1)
@@ -433,10 +451,11 @@ turned_on = true
 [node name="Chests" type="Node2D" parent="." groups=["GateChest"]]
 position = Vector2(197, 47)
 
-[node name="Chest1" parent="Chests" groups=["GateChest"] instance=ExtResource("6_1d3w3")]
+[node name="Chest1" parent="Chests" groups=["GateChest"] instance=ExtResource("9_471ga")]
 position = Vector2(-191, 27)
 color = Color(1, 0, 1, 1)
 
+<<<<<<< HEAD:scenes/Levels/Level_2_Tony_1.tscn
 [node name="ColorRect" type="ColorRect" parent="Chests/Chest1"]
 offset_left = -2.0
 offset_top = 2.0
@@ -445,10 +464,14 @@ offset_bottom = 6.0
 color = Color(1, 0, 1, 1)
 
 [node name="Chest2" parent="Chests" groups=["GateChest"] instance=ExtResource("6_1d3w3")]
+=======
+[node name="Chest2" parent="Chests" groups=["GateChest"] instance=ExtResource("9_471ga")]
+>>>>>>> 83baf5f25d5222fdd372bc0c5f32218e1a5d49ad:scenes/Levels/Level_2_room_5.tscn
 position = Vector2(-127, -42)
 color = Color(1, 1, 0, 1)
 ends_darkness = true
 
+<<<<<<< HEAD:scenes/Levels/Level_2_Tony_1.tscn
 [node name="ColorRect" type="ColorRect" parent="Chests/Chest2"]
 offset_left = -2.0
 offset_top = 2.0
@@ -468,11 +491,18 @@ offset_bottom = 6.0
 color = Color(0, 1, 0, 1)
 
 [node name="FinalGate" parent="." groups=["LaserEmitters"] instance=ExtResource("7_cyegj")]
+=======
+[node name="KeyChest" parent="Chests" groups=["GateChest"] instance=ExtResource("10_4wlv8")]
+position = Vector2(-39, 153)
+color = Color(0, 1, 0, 1)
+
+[node name="FinalGate" parent="." groups=["LaserEmitters"] instance=ExtResource("11_31o63")]
+>>>>>>> 83baf5f25d5222fdd372bc0c5f32218e1a5d49ad:scenes/Levels/Level_2_room_5.tscn
 position = Vector2(296, 200)
 required_lit_chests = 3
 
 [node name="level_controller" type="Node" parent="."]
-script = ExtResource("8_k7w4p")
+script = ExtResource("12_8vo6c")
 
 [node name="DarknessLayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -483,14 +513,13 @@ transparent_bg = true
 size = Vector2i(624, 624)
 
 [node name="LaserMaskDrawer" type="Node2D" parent="DarknessLayer/MaskViewport" groups=["LaserMask"]]
-script = ExtResource("9_mqcjd")
+script = ExtResource("13_5ycmn")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer"]
-visible = false
 material = SubResource("ShaderMaterial_cpt8e")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("15_1jthk")
+script = ExtResource("15_vx1a6")
