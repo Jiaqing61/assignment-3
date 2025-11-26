@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwjsyuyshemhn"]
+[gd_scene load_steps=7 format=3 uid="uid://bv5inuvppb2bf"]
 
 [ext_resource type="Script" uid="uid://cpneteytowols" path="res://scripts/lockedmirror.gd" id="1_hstgh"]
 [ext_resource type="Texture2D" uid="uid://c1qdmrtuanuv1" path="res://assets/New Piskel-11.png" id="2_x1u5r"]

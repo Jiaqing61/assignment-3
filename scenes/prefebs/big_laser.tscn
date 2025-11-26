@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://5t82qqqrp2qt"]
+[gd_scene load_steps=5 format=3 uid="uid://cmvyg7iue008r"]
 
 [ext_resource type="Texture2D" uid="uid://mvu3dxh2cak0" path="res://assets/Tiles/tile_0064.png" id="1_6es2t"]
 [ext_resource type="Script" uid="uid://l1ot6hc5awhs" path="res://scripts/big_laser.gd" id="1_lolgy"]
-[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="3_nshog"]
+[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="3_nshog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lolgy"]
 size = Vector2(14, 14)

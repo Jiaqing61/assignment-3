@@ -1,16 +1,16 @@
-[gd_scene load_steps=17 format=4 uid="uid://c0yvgwesf0oi1"]
+[gd_scene load_steps=17 format=4 uid="uid://di6axahjo68yv"]
 
-[ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_c13y7"]
-[ext_resource type="Script" uid="uid://c2hw11eq1wudd" path="res://scripts/tutorial.gd" id="1_ckvwl"]
-[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="2_4kmhl"]
-[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="3_4kmhl"]
-[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_ph3nu"]
-[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/Chest.tscn" id="5_cq4me"]
-[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_6yjpi"]
-[ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/mirror_ui.tscn" id="8_ckvwl"]
+[ext_resource type="Script" uid="uid://c2hw11eq1wudd" path="res://scripts/tutorial.gd" id="1_0infd"]
+[ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="2_wn2ir"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_0ilkv"]
+[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="4_14jly"]
+[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="5_rcvbg"]
+[ext_resource type="PackedScene" uid="uid://cjj37xsenxt8l" path="res://scenes/prefebs/chest.tscn" id="6_uskyb"]
+[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/prefebs/final_gate.tscn" id="7_mwifq"]
+[ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/UI/mirror_ui.tscn" id="8_u8eqd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
-texture = ExtResource("1_c13y7")
+texture = ExtResource("2_wn2ir")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -155,7 +155,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_c13y7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ho6b"]
-texture = ExtResource("1_c13y7")
+texture = ExtResource("2_wn2ir")
 separation = Vector2i(1, 1)
 0:0/0 = 0
 1:0/0 = 0
@@ -306,8 +306,8 @@ size = Vector2(248, 20)
 size = Vector2(248, 20)
 
 [node name="Tutorial" type="Node2D"]
-script = ExtResource("1_ckvwl")
-chests = Array[NodePath]([NodePath("Chests/Chest 1"), NodePath("Chests/Chest 2"), NodePath("Chests/Chest 3")])
+script = ExtResource("1_0infd")
+chests = Array[NodePath]([NodePath(""), NodePath(""), NodePath("")])
 final_gate = NodePath("FinalGate")
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -351,50 +351,47 @@ shape = SubResource("RectangleShape2D_4kmhl")
 position = Vector2(104, 104)
 zoom = Vector2(3, 3)
 
-[node name="Player" parent="." instance=ExtResource("3_ph3nu")]
+[node name="Player" parent="." instance=ExtResource("3_0ilkv")]
 position = Vector2(40, 133)
 
 [node name="Mirrors" type="Node2D" parent="."]
 
-[node name="Mirror 1" parent="Mirrors" instance=ExtResource("3_4kmhl")]
+[node name="Mirror 1" parent="Mirrors" instance=ExtResource("4_14jly")]
 position = Vector2(53, 110)
 
-[node name="Mirror 2" parent="Mirrors" instance=ExtResource("3_4kmhl")]
+[node name="Mirror 2" parent="Mirrors" instance=ExtResource("4_14jly")]
 position = Vector2(153, 83)
 rotation = 1.5708
 
-[node name="Mirror 3" parent="Mirrors" instance=ExtResource("3_4kmhl")]
+[node name="Mirror 3" parent="Mirrors" instance=ExtResource("4_14jly")]
 position = Vector2(104, 46)
 rotation = -0.785398
 
 [node name="Laser Emitters" type="Node2D" parent="."]
 
-[node name="Laser Emitter 1" parent="Laser Emitters" instance=ExtResource("2_4kmhl")]
+[node name="Laser Emitter 1" parent="Laser Emitters" instance=ExtResource("5_rcvbg")]
 position = Vector2(104, 198)
 turned_on = true
 
-[node name="Laser Emitter 2" parent="Laser Emitters" instance=ExtResource("2_4kmhl")]
+[node name="Laser Emitter 2" parent="Laser Emitters" instance=ExtResource("5_rcvbg")]
 position = Vector2(11, 110)
 rotation = 1.5708
 turned_on = true
 
-[node name="Laser Emitter 3" parent="Laser Emitters" instance=ExtResource("2_4kmhl")]
+[node name="Laser Emitter 3" parent="Laser Emitters" instance=ExtResource("5_rcvbg")]
 position = Vector2(11, 84)
 rotation = 1.5708
 turned_on = true
 
 [node name="Chests" type="Node2D" parent="."]
 
-[node name="Chest 1" parent="Chests" instance=ExtResource("5_cq4me")]
-position = Vector2(197, 47)
+[node name="Chest" parent="Chests" instance=ExtResource("6_uskyb")]
 
-[node name="Chest 2" parent="Chests" instance=ExtResource("5_cq4me")]
-position = Vector2(150, 10)
+[node name="Chest2" parent="Chests" instance=ExtResource("6_uskyb")]
 
-[node name="Chest 3" parent="Chests" instance=ExtResource("5_cq4me")]
-position = Vector2(51, 197)
+[node name="Chest3" parent="Chests" instance=ExtResource("6_uskyb")]
 
-[node name="FinalGate" parent="." instance=ExtResource("6_6yjpi")]
+[node name="FinalGate" parent="." instance=ExtResource("7_mwifq")]
 position = Vector2(135, 136)
 
-[node name="Mirror UI" parent="." instance=ExtResource("8_ckvwl")]
+[node name="Mirror UI" parent="." instance=ExtResource("8_u8eqd")]

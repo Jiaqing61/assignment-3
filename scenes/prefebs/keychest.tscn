@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8aoukgrynoa7"]
+[gd_scene load_steps=6 format=3 uid="uid://danmppe0snaxd"]
 
-[ext_resource type="Script" uid="uid://dfcqp6ildo5wy" path="res://scripts/chest.gd" id="1_s2tek"]
-[ext_resource type="Texture2D" uid="uid://be33looibkkax" path="res://assets/Tiles/tile_0089.png" id="2_rkgax"]
-[ext_resource type="Texture2D" uid="uid://bahopyxshht85" path="res://assets/Tiles/tile_0092.png" id="3_rkgax"]
+[ext_resource type="Script" uid="uid://b0rj3obr43trt" path="res://scripts/keychest.gd" id="1_lav3v"]
+[ext_resource type="Texture2D" uid="uid://be33looibkkax" path="res://assets/Tiles/tile_0089.png" id="2_8y6x1"]
+[ext_resource type="Texture2D" uid="uid://diyawfeuv755a" path="res://assets/Tiles/tile_0091.png" id="2_ssn85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psq76"]
 size = Vector2(16, 14)
@@ -10,13 +10,13 @@ size = Vector2(16, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqd3d"]
 size = Vector2(14, 12)
 
-[node name="Chest" type="Area2D" groups=["Revealables"]]
-script = ExtResource("1_s2tek")
-closed_texture = ExtResource("2_rkgax")
-lit_texture = ExtResource("3_rkgax")
+[node name="KeyChest" type="Area2D" groups=["KeyChest", "Revealables"]]
+script = ExtResource("1_lav3v")
+lit_texture = ExtResource("2_ssn85")
+closed_texture = ExtResource("2_8y6x1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_rkgax")
+texture = ExtResource("2_8y6x1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

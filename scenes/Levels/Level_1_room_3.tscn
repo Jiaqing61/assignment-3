@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_nrqmj"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_qy6w3"]
-[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/Chest.tscn" id="3_d6lwf"]
-[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="4_apxf8"]
-[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="5_jh6kd"]
-[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="6_q47ol"]
-[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="7_acw61"]
+[ext_resource type="PackedScene" uid="uid://c8aoukgrynoa7" path="res://scenes/Chest.tscn" id="3_d6lwf"]
+[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/prefebs/laser_rail.tscn" id="4_apxf8"]
+[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="5_jh6kd"]
+[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="6_q47ol"]
+[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/prefebs/final_gate.tscn" id="7_acw61"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="8_mtr10"]
-[ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/mirror_ui.tscn" id="9_f7tix"]
+[ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/UI/mirror_ui.tscn" id="9_f7tix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4utc"]
 texture = ExtResource("1_nrqmj")

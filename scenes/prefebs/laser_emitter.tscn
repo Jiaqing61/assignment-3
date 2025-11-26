@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dso1y7xessxew"]
+[gd_scene load_steps=5 format=3 uid="uid://dvprtuxgi6q46"]
 
 [ext_resource type="Script" uid="uid://d1u1w33v8wm41" path="res://scripts/laser_emitter.gd" id="1_pjse3"]
 [ext_resource type="Texture2D" uid="uid://c804w1q4orfa3" path="res://assets/Tiles/tile_0127.png" id="2_ngkl2"]
