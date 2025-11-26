@@ -333,19 +333,7 @@ top_level = true
 visibility_layer = 2
 position = Vector2(320, 192)
 rotation = 1.5708
-tile_map_data = PackedByteArray("AAAHAAQAAAAHAAUAAAAHAAUAAAALAAYAAAAHAAYAAAALAAYAAAAHAAcAAAALAAYAAAAHAAgAAAAIAAUAAAA=")
-
-[node name="LaserRail Top" parent="TileMaps/Laser Rails" instance=ExtResource("10_wdw3q")]
-position = Vector2(111, 16)
-rotation = -1.5708
-
-[node name="LaserRail Right" parent="TileMaps/Laser Rails" instance=ExtResource("10_wdw3q")]
-position = Vector2(287, -80)
-tile_map_data = PackedByteArray("AAABAAkAAAAHAAUAAAABAAoAAAALAAYAAAABAAsAAAALAAYAAAABAAwAAAALAAYAAAABAA0AAAAIAAUAAAA=")
-
-[node name="LaserRail Right2" parent="TileMaps/Laser Rails" instance=ExtResource("10_wdw3q")]
-position = Vector2(287, -80)
-tile_map_data = PackedByteArray("AADu/xIAAAAHAAUAAADu/xMAAAALAAYAAADu/xQAAAALAAYAAADu/xUAAAALAAYAAADu/xYAAAAIAAUAAAA=")
+tile_map_data = PackedByteArray("AAAHAAQAAAAHAAUAAAAHAAUAAAALAAYAAAAHAAYAAAALAAYAAAAHAAcAAAALAAYAAAAHAAgAAAAIAAUAAAD0/wIAAAAHAAUAAAD0/wMAAAALAAYAAAD0/wQAAAALAAYAAAD0/wUAAAALAAYAAAD0/wYAAAAIAAUAAAD4/wAAAAAHAAYAAAD5/wAAAAAKAAUAAAD6/wAAAAAKAAUAAAD7/wAAAAAKAAUAAAD8/wAAAAAIAAYAAAABABMAAAAHAAYAAAACABMAAAAKAAUAAAADABMAAAAKAAUAAAAEABMAAAAKAAUAAAAFABMAAAAIAAYAAAA=")
 
 [node name="Walls" type="Node2D" parent="."]
 
