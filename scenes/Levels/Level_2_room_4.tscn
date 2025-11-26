@@ -398,7 +398,7 @@ scale = Vector2(1.5, 1.5)
 [node name="Laser Emitters" type="Node2D" parent="."]
 
 [node name="Laser Emitter 4" parent="Laser Emitters" instance=ExtResource("6_xanmd")]
-position = Vector2(307, 100)
+position = Vector2(312, 100)
 rotation = -2.1293
 color = Color(0.980392, 0, 0.196078, 1)
 turned_on = true
