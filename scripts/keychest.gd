@@ -1,13 +1,14 @@
 extends Area2D
 
 signal lit_changed(lit: bool)
-signal key_obtained
+signal key_obtained(group_id: int)  
 
 @export var is_key_chest: bool = true           
 @export var lit_texture: Texture2D
 @export var closed_texture: Texture2D
 @export var decay_seconds: float = 0.12        
-@export var color: Color = Color.WHITE          
+@export var color: Color = Color.WHITE  
+@export var unlock_group: int = 0        
 
 var _lit := false
 
@@ -15,7 +16,6 @@ var _lit := false
 @onready var _decay_timer: Timer = Timer.new()
 
 func _ready() -> void:
-	
 	_decay_timer.wait_time = decay_seconds
 	_decay_timer.one_shot = true
 	add_child(_decay_timer)
@@ -24,9 +24,7 @@ func _ready() -> void:
 	_apply_visual()
 
 
-
 func laser_hit(laser_color: Color, hit_point: Vector2, power: float = 1.0) -> void:
-	
 	if laser_color == Color.WHITE or laser_color == color:
 		_set_lit(true)
 		_decay_timer.start()
@@ -43,10 +41,9 @@ func _set_lit(v: bool) -> void:
 	emit_signal("lit_changed", _lit)
 	_apply_visual()
 
-	
 	if _lit and is_key_chest:
 		_give_key_to_player()
-		emit_signal("key_obtained")
+		emit_signal("key_obtained", unlock_group) 
 
 
 func _apply_visual() -> void:
