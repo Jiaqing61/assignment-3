@@ -41,7 +41,6 @@ func _ready() -> void:
 	print("[MirrorCluster] pairs counted: ", _child_initial_rot.size())
 
 func _process(delta: float) -> void:
-	# 3) 把三对双面镜的局部角度“钉死”为初始值（防止单体误转）
 	var i := 0
 	for c in get_children():
 		if c is Node2D and c.is_in_group(child_group_name):
@@ -49,11 +48,9 @@ func _process(delta: float) -> void:
 				c.rotation = _child_initial_rot[i]
 				i += 1
 
-	# 4) 是否允许旋转（需在交互范围内）
 	if require_player_in_area and not _player_in:
 		return
 
-	# 5) 旋转“父节点”本身，实现整体旋转
 	var ang := 0.0
 	if Input.is_action_pressed(rotate_left_action):
 		ang -= deg_to_rad(rotate_speed_deg) * delta
@@ -62,15 +59,6 @@ func _process(delta: float) -> void:
 	if ang != 0.0:
 		rotation += ang
 
-	# 6) （可选）整体平移
-	if allow_move and Input.is_action_pressed(move_action):
-		var dir := Vector2.ZERO
-		dir.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
-		dir.y = int(Input.is_action_pressed("ui_down"))  - int(Input.is_action_pressed("ui_up"))
-		if dir != Vector2.ZERO:
-			position += dir.normalized() * move_speed * delta
-
-## --- Area2D 信号回调（注意方法名保持一致） ---
 func _on_area_body_entered(body: Node) -> void:
 	if body.is_in_group("Player") or body.name == "Player":
 		_player_in = true
