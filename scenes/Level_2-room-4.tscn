@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="2_mroje"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_xtst0"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="4_gdpwc"]
-[ext_resource type="PackedScene" path="res://scenes/six_mirrors.tscn" id="4_xtst0"]
+[ext_resource type="PackedScene" uid="uid://dseltwe85kk66" path="res://scenes/six_mirrors.tscn" id="4_xtst0"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="5_u22f7"]
 [ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="6_5vrl7"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="7_577x7"]
