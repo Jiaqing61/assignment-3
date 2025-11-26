@@ -1,11 +1,11 @@
-[gd_scene load_steps=22 format=4 uid="uid://cxhse0asxp38y"]
+[gd_scene load_steps=22 format=4 uid="uid://dqd64lg4qxo83"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_jc7ld"]
 [ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="2_tdwp0"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_07e2a"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="4_bydog"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="5_mf1oa"]
-[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="6_15oh8"]
+[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/Chest.tscn" id="6_15oh8"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="7_sndws"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="8_jt5ey"]
 [ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="9_qfsu5"]
@@ -474,6 +474,7 @@ size = Vector2i(624, 624)
 script = ExtResource("9_qfsu5")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer"]
+visible = false
 material = SubResource("ShaderMaterial_cpt8e")
 anchors_preset = 15
 anchor_right = 1.0

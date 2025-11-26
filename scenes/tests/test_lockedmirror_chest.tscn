@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="3_r0u3p"]
 [ext_resource type="PackedScene" uid="uid://dwjsyuyshemhn" path="res://scenes/tests/lockedmirror.tscn" id="3_y6cpa"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="4_m3oou"]
-[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="5_kkrra"]
+[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/Chest.tscn" id="5_kkrra"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_vqfn0"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_syreb"]
 [ext_resource type="PackedScene" uid="uid://danmppe0snaxd" path="res://scenes/tests/keychest.tscn" id="9_mr5hc"]

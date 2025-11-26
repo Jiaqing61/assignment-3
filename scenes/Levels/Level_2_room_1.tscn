@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="4_a0ksw"]
 [ext_resource type="PackedScene" uid="uid://dwjsyuyshemhn" path="res://scenes/tests/lockedmirror.tscn" id="5_ed1h1"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="6_gxcgn"]
-[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="7_xx5ay"]
+[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/Chest.tscn" id="7_xx5ay"]
 [ext_resource type="PackedScene" uid="uid://danmppe0snaxd" path="res://scenes/tests/keychest.tscn" id="8_6i5bk"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="9_hu8g3"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="10_ndwyl"]
