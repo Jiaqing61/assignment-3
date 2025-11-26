@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dwjsyuyshemhn" path="res://scenes/tests/lockedmirror.tscn" id="6_fuyvl"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="7_cyegj"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="8_k7w4p"]
-[ext_resource type="Script" path="res://scripts/laser_mask_drawer.gd" id="9_mqcjd"]
+[ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="9_mqcjd"]
 [ext_resource type="PackedScene" uid="uid://danmppe0snaxd" path="res://scenes/tests/keychest.tscn" id="9_w3bi5"]
 [ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="10_0pgwb"]
 [ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="11_grohv"]
@@ -437,13 +437,34 @@ position = Vector2(197, 47)
 position = Vector2(-191, 27)
 color = Color(1, 0, 1, 1)
 
+[node name="ColorRect" type="ColorRect" parent="Chests/Chest1"]
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 6.0
+color = Color(1, 0, 1, 1)
+
 [node name="Chest2" parent="Chests" groups=["GateChest"] instance=ExtResource("6_1d3w3")]
 position = Vector2(-127, -42)
 color = Color(1, 1, 0, 1)
 ends_darkness = true
 
+[node name="ColorRect" type="ColorRect" parent="Chests/Chest2"]
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 6.0
+color = Color(1, 1, 0, 1)
+
 [node name="KeyChest" parent="Chests" groups=["GateChest"] instance=ExtResource("9_w3bi5")]
 position = Vector2(-39, 153)
+color = Color(0, 1, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Chests/KeyChest"]
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 6.0
 color = Color(0, 1, 0, 1)
 
 [node name="FinalGate" parent="." groups=["LaserEmitters"] instance=ExtResource("7_cyegj")]
