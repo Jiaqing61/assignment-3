@@ -2,10 +2,13 @@ extends Node2D
 
 @export var rotation_degree: float = 15.0  
 @export var rotation_speed: float = 85.0  
+@export var cluster_controlled: bool = false 
 var player_touching: bool = false        
 
 
 func _process(delta):
+	if cluster_controlled:
+		return
 	if player_touching:
 		if Input.is_action_pressed("rotate_left"):
 			rotation_degrees -= rotation_speed * delta
