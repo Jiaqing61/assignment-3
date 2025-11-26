@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://c8hwg7orkshhs"]
+[gd_scene load_steps=21 format=4 uid="uid://c8hwg7orkshhs"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_k8iy5"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_u22rj"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="5_kkrra"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_vqfn0"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_syreb"]
-[ext_resource type="Texture2D" uid="uid://bahopyxshht85" path="res://assets/Tiles/tile_0092.png" id="8_423ws"]
 [ext_resource type="PackedScene" uid="uid://danmppe0snaxd" path="res://scenes/tests/keychest.tscn" id="9_mr5hc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
@@ -359,7 +358,7 @@ shape = SubResource("RectangleShape2D_4kmhl")
 position = Vector2(104, 104)
 zoom = Vector2(3, 3)
 
-[node name="player" parent="." instance=ExtResource("2_u22rj")]
+[node name="Player" parent="." instance=ExtResource("2_u22rj")]
 position = Vector2(40, 133)
 
 [node name="mirrors" type="Node2D" parent="."]
@@ -372,28 +371,27 @@ rotation = 1.5708
 position = Vector2(51, 105)
 
 [node name="lockedmirror" parent="mirrors" instance=ExtResource("3_y6cpa")]
-position = Vector2(107, 45)
+position = Vector2(106, 45)
 
 [node name="LaserEmitter" parent="." instance=ExtResource("4_m3oou")]
 position = Vector2(104, 198)
+turned_on = true
 
 [node name="LaserEmitter2" parent="." instance=ExtResource("4_m3oou")]
 position = Vector2(11, 110)
 rotation = 1.5708
+turned_on = true
 
 [node name="LaserEmitter3" parent="." instance=ExtResource("4_m3oou")]
 position = Vector2(11, 84)
 rotation = 1.5708
+turned_on = true
 
 [node name="Chest1" parent="." instance=ExtResource("5_kkrra")]
 position = Vector2(197, 47)
 
-[node name="KeyChest" parent="." instance=ExtResource("9_mr5hc")]
-position = Vector2(51, 199)
-lit_texture = ExtResource("8_423ws")
-
 [node name="Chest3" parent="." instance=ExtResource("5_kkrra")]
-position = Vector2(152, 9)
+position = Vector2(151, 7)
 
 [node name="FinalGate" parent="." instance=ExtResource("6_vqfn0")]
 position = Vector2(135, 136)
@@ -417,3 +415,6 @@ shape = SubResource("RectangleShape2D_ckvwl")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="WallCollison"]
 position = Vector2(152, 136)
 shape = SubResource("RectangleShape2D_nlqja")
+
+[node name="KeyChest" parent="." instance=ExtResource("9_mr5hc")]
+position = Vector2(51, 199)

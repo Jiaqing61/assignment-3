@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="5_fn4ql"]
 [ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_e1qoi"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_pklsh"]
-[ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="8_ccked"]
+[ext_resource type="Script" path="res://scripts/laser_mask_drawer.gd" id="8_ccked"]
 [ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="9_0g6pg"]
 [ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="10_0g6pg"]
 
@@ -175,6 +175,7 @@ viewport_path = NodePath("DarknessLayer/MaskViewport")
 resource_local_to_scene = true
 shader = ExtResource("9_0g6pg")
 shader_parameter/mask_tex = SubResource("ViewportTexture_6rlyg")
+shader_parameter/darkness_amount = 1.0
 
 [node name="Level_2" type="Node2D"]
 

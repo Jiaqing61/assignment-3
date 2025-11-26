@@ -18,6 +18,24 @@ func _ready() -> void:
 	if _area:
 		_area.body_entered.connect(_on_area_body_entered)
 		_area.body_exited.connect(_on_area_body_exited)
+		
+	_connect_to_key_chest()
+	
+func _connect_to_key_chest() -> void:
+	var root = get_tree().current_scene
+	if not root:
+		return
+
+	# 找所有 key chest
+	var key_chests = root.get_tree().get_nodes_in_group("KeyChest")
+	for chest in key_chests:
+		if chest.has_signal("key_obtained"):
+			chest.key_obtained.connect(_unlock)
+
+func _unlock() -> void:
+	if is_locked:
+		is_locked = false
+		_sprite.modulate = unlocked_modulate
 
 
 func _on_area_body_entered(body: Node) -> void:

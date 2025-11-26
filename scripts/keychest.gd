@@ -1,6 +1,7 @@
 extends Area2D
 
 signal lit_changed(lit: bool)
+signal key_obtained
 
 @export var is_key_chest: bool = true           
 @export var lit_texture: Texture2D
@@ -45,6 +46,7 @@ func _set_lit(v: bool) -> void:
 	
 	if _lit and is_key_chest:
 		_give_key_to_player()
+		emit_signal("key_obtained")
 
 
 func _apply_visual() -> void:

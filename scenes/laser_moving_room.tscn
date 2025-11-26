@@ -422,7 +422,6 @@ rail_tilemap = NodePath("../../Laser Rails/LaserRail Blue")
 [node name="Laser Emitter Red" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("5_lua7t")]
 position = Vector2(215, 9)
 rotation = -2.23402
-scale = Vector2(1, 1)
 color = Color(1, 0.223529, 0.345098, 1)
 turned_on = true
 rail_tilemap = NodePath("../../Laser Rails/LaserRail Red")
