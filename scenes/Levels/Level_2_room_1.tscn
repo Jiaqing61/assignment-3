@@ -321,11 +321,117 @@ rotation = 1.5708
 tile_map_data = PackedByteArray("AAAHAPz/AAAJAAQAAFAHAP3/AAALAAQAAFAIAP3/AAALAAQAAFAJAP3/AAALAAQAAFAIAPz/AAAJAAQAAFACAPj/AAAJAAQAAAACAPb/AAAJAAQAAAACAPf/AAAJAAQAAAADAPb/AAALAAQAAAADAPf/AAALAAQAAAACAPX/AAAJAAQAAAADAPX/AAALAAQAAAADAPj/AAALAAQAAAAJAPz/AAAJAAQAAFACAO//AAAJAAQAAAACAPD/AAAJAAQAAAACAPH/AAAJAAQAAAADAO//AAALAAQAAAADAPD/AAALAAQAAAADAPH/AAALAAQAAAAAAP7/AAAJAAQAAAABAP7/AAAEAAIAAAAAAPz/AAAJAAQAAAAAAP3/AAAJAAQAAAABAPz/AAAEAAIAAAA=")
 tile_set = SubResource("TileSet_xwxbw")
 
+[node name="Laser Rails" type="Node2D" parent="TileMaps"]
+position = Vector2(1, 0)
+
+[node name="LaserRail Blue" parent="TileMaps/Laser Rails" instance=ExtResource("2_scnhx")]
+top_level = true
+visibility_layer = 2
+position = Vector2(349, 192)
+rotation = 1.5708
+tile_map_data = PackedByteArray("AAAAAAwAAAAHAAUAAAAAAA0AAAAHAAUAAAAAAA4AAAAHAAUAAAAAAA8AAAAHAAUAAAAAABAAAAAHAAUAAAA=")
+
+[node name="LaserRail Red" parent="TileMaps/Laser Rails" instance=ExtResource("2_scnhx")]
+position = Vector2(111, 16)
+rotation = -1.5708
+
+[node name="LaserRail Green" parent="TileMaps/Laser Rails" instance=ExtResource("2_scnhx")]
+position = Vector2(287, -80)
+tile_map_data = PackedByteArray("AADu/woAAAAHAAUAAADu/wsAAAAHAAUAAADu/wwAAAAHAAUAAADu/w0AAAAHAAUAAADu/w4AAAAHAAUAAAA=")
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Left Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2(-11, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left Wall"]
+position = Vector2(0, 94)
+shape = SubResource("RectangleShape2D_lua7t")
+
+[node name="Right Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2(361, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right Wall"]
+position = Vector2(-48, 94)
+shape = SubResource("RectangleShape2D_0435t")
+
+[node name="Bottom Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2(-11, 218)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom Wall"]
+position = Vector2(162, 0)
+shape = SubResource("RectangleShape2D_j87di")
+
+[node name="Top Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2(-11, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top Wall"]
+position = Vector2(162, 0)
+shape = SubResource("RectangleShape2D_scmv8")
+
 [node name="Player" parent="." instance=ExtResource("3_1ut5t")]
 position = Vector2(170, 99)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)
+
+[node name="Mirrors" type="Node2D" parent="."]
+
+[node name="Mirror 1" parent="Mirrors" instance=ExtResource("4_a0ksw")]
+position = Vector2(126, 77)
+rotation = 0.453786
+scale = Vector2(0.99863, 1.00336)
+rotation_degree = 5.0
+rotation_speed = 70.0
+
+[node name="Mirror 2" parent="Mirrors" instance=ExtResource("4_a0ksw")]
+position = Vector2(81, 139)
+rotation = 0.453786
+rotation_degree = 5.0
+rotation_speed = 70.0
+
+[node name="lockedmirror" parent="Mirrors" instance=ExtResource("5_ed1h1")]
+position = Vector2(76, 52)
+rotation = 2.35619
+unlock_group = 1
+
+[node name="lockedmirror2" parent="Mirrors" instance=ExtResource("5_ed1h1")]
+position = Vector2(193, 153)
+rotation = 2.35619
+unlock_group = 1
+
+[node name="lockedmirror3" parent="Mirrors" instance=ExtResource("5_ed1h1")]
+position = Vector2(249, 116)
+rotation = 1.5708
+unlock_group = 2
+
+[node name="lockedmirror4" parent="Mirrors" instance=ExtResource("5_ed1h1")]
+position = Vector2(189, 43)
+rotation = 1.5708
+unlock_group = 2
+
+[node name="Laser Emitters" type="Node2D" parent="."]
+
+[node name="Laser Emitter Blue" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_gxcgn")]
+position = Vector2(134, 200)
+rotation = 0.872665
+color = Color(0.388235, 0.556863, 1, 1)
+turned_on = true
+rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Blue")
+
+[node name="Laser Emitter Red" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_gxcgn")]
+position = Vector2(215, 9)
+rotation = -2.23402
+color = Color(1, 0.223529, 0.345098, 1)
+turned_on = true
+rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Red")
+
+[node name="Laser Emitter Green" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_gxcgn")]
+position = Vector2(6, 140)
+rotation = 1.309
+color = Color(0.282353, 1, 0.443137, 1)
+turned_on = true
+rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Green")
 
 [node name="Chests" type="Node2D" parent="."]
 
@@ -370,111 +476,6 @@ offset_top = 70.0
 offset_right = 299.0
 offset_bottom = 74.0
 color = Color(0.282353, 1, 0.443137, 1)
-
-[node name="Walls" type="Node2D" parent="."]
-
-[node name="Left Wall" type="StaticBody2D" parent="Walls"]
-position = Vector2(-11, 10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left Wall"]
-position = Vector2(0, 94)
-shape = SubResource("RectangleShape2D_lua7t")
-
-[node name="Right Wall" type="StaticBody2D" parent="Walls"]
-position = Vector2(361, 10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right Wall"]
-position = Vector2(-48, 94)
-shape = SubResource("RectangleShape2D_0435t")
-
-[node name="Bottom Wall" type="StaticBody2D" parent="Walls"]
-position = Vector2(-11, 218)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom Wall"]
-position = Vector2(162, 0)
-shape = SubResource("RectangleShape2D_j87di")
-
-[node name="Top Wall" type="StaticBody2D" parent="Walls"]
-position = Vector2(-11, -10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top Wall"]
-position = Vector2(162, 0)
-shape = SubResource("RectangleShape2D_scmv8")
-
-[node name="Laser Rails" type="Node2D" parent="."]
-
-[node name="LaserRail Blue" parent="Laser Rails" instance=ExtResource("2_scnhx")]
-top_level = true
-visibility_layer = 2
-position = Vector2(349, 192)
-rotation = 1.5708
-tile_map_data = PackedByteArray("AAAAAAwAAAAHAAUAAAAAAA0AAAAHAAUAAAAAAA4AAAAHAAUAAAAAAA8AAAAHAAUAAAAAABAAAAAHAAUAAAA=")
-
-[node name="LaserRail Red" parent="Laser Rails" instance=ExtResource("2_scnhx")]
-position = Vector2(111, 16)
-rotation = -1.5708
-
-[node name="LaserRail Green" parent="Laser Rails" instance=ExtResource("2_scnhx")]
-position = Vector2(287, -80)
-tile_map_data = PackedByteArray("AADu/woAAAAHAAUAAADu/wsAAAAHAAUAAADu/wwAAAAHAAUAAADu/w0AAAAHAAUAAADu/w4AAAAHAAUAAAA=")
-
-[node name="Laser Emitters" type="Node2D" parent="."]
-
-[node name="Laser Emitter Blue" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_gxcgn")]
-position = Vector2(134, 200)
-rotation = 0.872665
-color = Color(0.388235, 0.556863, 1, 1)
-turned_on = true
-rail_tilemap = NodePath("../../Laser Rails/LaserRail Blue")
-
-[node name="Laser Emitter Red" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_gxcgn")]
-position = Vector2(215, 9)
-rotation = -2.23402
-color = Color(1, 0.223529, 0.345098, 1)
-turned_on = true
-rail_tilemap = NodePath("../../Laser Rails/LaserRail Red")
-
-[node name="Laser Emitter Green" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_gxcgn")]
-position = Vector2(6, 140)
-rotation = 1.309
-color = Color(0.282353, 1, 0.443137, 1)
-turned_on = true
-rail_tilemap = NodePath("../../Laser Rails/LaserRail Green")
-
-[node name="Mirrors" type="Node2D" parent="."]
-
-[node name="Mirror 1" parent="Mirrors" instance=ExtResource("4_a0ksw")]
-position = Vector2(126, 77)
-rotation = 0.453786
-scale = Vector2(0.99863, 1.00336)
-rotation_degree = 5.0
-rotation_speed = 70.0
-
-[node name="Mirror 2" parent="Mirrors" instance=ExtResource("4_a0ksw")]
-position = Vector2(81, 139)
-rotation = 0.453786
-rotation_degree = 5.0
-rotation_speed = 70.0
-
-[node name="lockedmirror" parent="Mirrors" instance=ExtResource("5_ed1h1")]
-position = Vector2(76, 52)
-rotation = 2.35619
-unlock_group = 1
-
-[node name="lockedmirror2" parent="Mirrors" instance=ExtResource("5_ed1h1")]
-position = Vector2(193, 153)
-rotation = 2.35619
-unlock_group = 1
-
-[node name="lockedmirror3" parent="Mirrors" instance=ExtResource("5_ed1h1")]
-position = Vector2(249, 116)
-rotation = 1.5708
-unlock_group = 2
-
-[node name="lockedmirror4" parent="Mirrors" instance=ExtResource("5_ed1h1")]
-position = Vector2(189, 43)
-rotation = 1.5708
-unlock_group = 2
 
 [node name="FinalGate" parent="." instance=ExtResource("9_hu8g3")]
 position = Vector2(37, 24)

@@ -347,12 +347,12 @@ shape = SubResource("RectangleShape2D_ph3nu")
 position = Vector2(104, 218)
 shape = SubResource("RectangleShape2D_4kmhl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(104, 104)
-zoom = Vector2(3, 3)
-
 [node name="Player" parent="." instance=ExtResource("3_uxgmu")]
 position = Vector2(40, 133)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(64, -29)
+zoom = Vector2(3, 3)
 
 [node name="Mirrors" type="Node2D" parent="."]
 
