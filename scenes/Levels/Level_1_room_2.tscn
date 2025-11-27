@@ -309,6 +309,42 @@ visible = false
 tile_map_data = PackedByteArray("AAADAAwAAAAHAAoAAAAMAAUAAAAHAAoAAGAFAAAAAAAHAAoAADA=")
 tile_set = SubResource("TileSet_mf057")
 
+[node name="walls" type="Node2D" parent="."]
+
+[node name="left wall" type="StaticBody2D" parent="walls"]
+position = Vector2(-9, 63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/left wall"]
+position = Vector2(3.5, 50.5)
+shape = SubResource("RectangleShape2D_640sy")
+
+[node name="right wall" type="StaticBody2D" parent="walls"]
+position = Vector2(-9, 63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/right wall"]
+position = Vector2(334, 48.5)
+shape = SubResource("RectangleShape2D_640sy")
+
+[node name="top wall" type="StaticBody2D" parent="walls"]
+position = Vector2(130, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/top wall"]
+position = Vector2(30, 1.5)
+shape = SubResource("RectangleShape2D_vh6hb")
+
+[node name="bottom wall" type="StaticBody2D" parent="walls"]
+position = Vector2(130, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/bottom wall"]
+position = Vector2(29, 237)
+shape = SubResource("RectangleShape2D_vh6hb")
+
+[node name="Player" parent="." instance=ExtResource("5_u0300")]
+position = Vector2(10, 137)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.5, 2.5)
+
 [node name="mirrors" type="Node2D" parent="."]
 position = Vector2(73, 121)
 
@@ -396,39 +432,3 @@ offset_top = 2.0
 offset_right = -6.0
 offset_bottom = 6.0
 color = Color(0.282353, 1, 0.443137, 1)
-
-[node name="Player" parent="." instance=ExtResource("5_u0300")]
-position = Vector2(10, 137)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2.5, 2.5)
-
-[node name="walls" type="Node2D" parent="."]
-
-[node name="left wall" type="StaticBody2D" parent="walls"]
-position = Vector2(-9, 63)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/left wall"]
-position = Vector2(3.5, 50.5)
-shape = SubResource("RectangleShape2D_640sy")
-
-[node name="right wall" type="StaticBody2D" parent="walls"]
-position = Vector2(-9, 63)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/right wall"]
-position = Vector2(334, 48.5)
-shape = SubResource("RectangleShape2D_640sy")
-
-[node name="top wall" type="StaticBody2D" parent="walls"]
-position = Vector2(130, -7)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/top wall"]
-position = Vector2(30, 1.5)
-shape = SubResource("RectangleShape2D_vh6hb")
-
-[node name="bottom wall" type="StaticBody2D" parent="walls"]
-position = Vector2(130, -7)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/bottom wall"]
-position = Vector2(29, 237)
-shape = SubResource("RectangleShape2D_vh6hb")

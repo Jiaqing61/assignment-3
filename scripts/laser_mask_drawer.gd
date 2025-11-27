@@ -26,12 +26,13 @@ func _process(_dt: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
+	# draw laser lights
 	for pts in _paths:
 		if pts.size() < 2:
 			continue
 		for i in range(pts.size() - 1):
 			_draw_soft_segment(pts[i], pts[i + 1])
-	
+	# draw circles
 	for c in _circles:
 		_draw_soft_circle(c[0], c[1], c[2])		
 		
