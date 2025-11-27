@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_x3evm"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="2_ngpbi"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="3_spk8r"]
-[ext_resource type="PackedScene" path="res://scenes/chest.tscn" id="4_r7gfw"]
-[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="5_u0300"]
+[ext_resource type="PackedScene" uid="uid://cjj37xsenxt8l" path="res://scenes/prefebs/chest.tscn" id="4_r7gfw"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="5_u0300"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7341"]
 texture = ExtResource("1_x3evm")

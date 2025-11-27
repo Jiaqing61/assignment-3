@@ -1,13 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://bi0b0i57utocc"]
 
-[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="1_gaqym"]
+[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="1_m5qcb"]
 
 [node name="doubleside-mirror" type="Node2D"]
 
-[node name="Mirror" parent="." instance=ExtResource("1_gaqym")]
+[node name="Mirror" parent="." instance=ExtResource("1_m5qcb")]
 position = Vector2(-1, 0)
 rotation = 4.71239
+cluster_controlled = true
 
-[node name="Mirror2" parent="." instance=ExtResource("1_gaqym")]
+[node name="Mirror2" parent="." instance=ExtResource("1_m5qcb")]
 position = Vector2(1, 0.7)
 rotation = 1.5708
+cluster_controlled = true

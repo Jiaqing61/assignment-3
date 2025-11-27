@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_jc7ld"]
 [ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/prefebs/laser_rail.tscn" id="2_tdwp0"]
-[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_07e2a"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="3_07e2a"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="4_bydog"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="5_mf1oa"]
 [ext_resource type="PackedScene" uid="uid://cjj37xsenxt8l" path="res://scenes/prefebs/chest.tscn" id="6_15oh8"]
@@ -420,7 +420,7 @@ position = Vector2(1, 0)
 
 [node name="Chest" parent="Chests/ChestBlue" instance=ExtResource("6_15oh8")]
 position = Vector2(239, 280)
-color = Color(0.388235, 0.556863, 1, 1)
+color = Color(0, 0, 1, 1)
 
 [node name="Color" type="ColorRect" parent="Chests/ChestBlue"]
 offset_left = 237.0
@@ -433,7 +433,7 @@ color = Color(0, 0, 1, 1)
 
 [node name="Chest" parent="Chests/ChestRed" instance=ExtResource("6_15oh8")]
 position = Vector2(278, 5)
-color = Color(1, 0.223529, 0.345098, 1)
+color = Color(1, 0, 0, 1)
 
 [node name="Color" type="ColorRect" parent="Chests/ChestRed"]
 offset_left = 276.0
@@ -446,7 +446,7 @@ color = Color(1, 0, 0, 1)
 
 [node name="Chest" parent="Chests/ChestGreen" instance=ExtResource("6_15oh8")]
 position = Vector2(93, 6)
-color = Color(0.282353, 1, 0.443137, 1)
+color = Color(0, 1, 0, 1)
 
 [node name="Color" type="ColorRect" parent="Chests/ChestGreen"]
 offset_left = 91.0

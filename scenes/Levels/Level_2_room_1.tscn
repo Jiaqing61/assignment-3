@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_eo26b"]
 [ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/prefebs/laser_rail.tscn" id="2_scnhx"]
-[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_1ut5t"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="3_1ut5t"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="4_a0ksw"]
 [ext_resource type="PackedScene" uid="uid://dwjsyuyshemhn" path="res://scenes/prefebs/lockedmirror.tscn" id="5_ed1h1"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="6_gxcgn"]

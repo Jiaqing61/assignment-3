@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=4 uid="uid://6x5ov44yihs"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_nrqmj"]
-[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_qy6w3"]
-[ext_resource type="PackedScene" uid="uid://c8aoukgrynoa7" path="res://scenes/Chest.tscn" id="3_d6lwf"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="2_qy6w3"]
+[ext_resource type="PackedScene" uid="uid://cjj37xsenxt8l" path="res://scenes/prefebs/chest.tscn" id="3_d6lwf"]
 [ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/prefebs/laser_rail.tscn" id="4_apxf8"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="5_jh6kd"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="6_q47ol"]

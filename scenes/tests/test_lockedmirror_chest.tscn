@@ -1,14 +1,14 @@
 [gd_scene load_steps=21 format=4 uid="uid://c8hwg7orkshhs"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_k8iy5"]
-[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="2_u22rj"]
-[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="3_r0u3p"]
-[ext_resource type="PackedScene" uid="uid://dwjsyuyshemhn" path="res://scenes/tests/lockedmirror.tscn" id="3_y6cpa"]
-[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="4_m3oou"]
-[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/Chest.tscn" id="5_kkrra"]
-[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="6_vqfn0"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="2_u22rj"]
+[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="3_r0u3p"]
+[ext_resource type="PackedScene" uid="uid://dwjsyuyshemhn" path="res://scenes/prefebs/lockedmirror.tscn" id="3_y6cpa"]
+[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="4_m3oou"]
+[ext_resource type="PackedScene" path="res://scenes/Chest.tscn" id="5_kkrra"]
+[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/prefebs/final_gate.tscn" id="6_vqfn0"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="7_syreb"]
-[ext_resource type="PackedScene" uid="uid://danmppe0snaxd" path="res://scenes/tests/keychest.tscn" id="9_mr5hc"]
+[ext_resource type="PackedScene" uid="uid://danmppe0snaxd" path="res://scenes/prefebs/keychest.tscn" id="9_mr5hc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
 texture = ExtResource("1_k8iy5")

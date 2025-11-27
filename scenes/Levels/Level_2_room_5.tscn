@@ -1,38 +1,20 @@
 [gd_scene load_steps=26 format=4 uid="uid://dmxoj3rb3ufns"]
 
-<<<<<<< HEAD:scenes/Levels/Level_2_Tony_1.tscn
-[ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_r1rsi"]
-[ext_resource type="PackedScene" uid="uid://cmvyg7iue008r" path="res://scenes/big_laser.tscn" id="2_fuyvl"]
-[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="3_w3bi5"]
-[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="4_k4hqo"]
-[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="5_1jthk"]
-[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="6_1d3w3"]
-[ext_resource type="PackedScene" uid="uid://dwjsyuyshemhn" path="res://scenes/tests/lockedmirror.tscn" id="6_fuyvl"]
-[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="7_cyegj"]
-[ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="8_k7w4p"]
-[ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="9_mqcjd"]
-[ext_resource type="PackedScene" uid="uid://danmppe0snaxd" path="res://scenes/tests/keychest.tscn" id="9_w3bi5"]
-[ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="10_0pgwb"]
-[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="11_grohv"]
-[ext_resource type="PackedScene" uid="uid://dh0eashre7oa2" path="res://scenes/Doublemirror.tscn" id="14_k4hqo"]
-[ext_resource type="Script" uid="uid://4x1tv6rt0uh8" path="res://scenes/Levels/darknesscontroller.gd" id="15_1jthk"]
-=======
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_obuvu"]
-[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/laser_rail.tscn" id="2_snuer"]
-[ext_resource type="PackedScene" uid="uid://cmvyg7iue008r" path="res://scenes/big_laser.tscn" id="3_58vb0"]
-[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/player.tscn" id="4_v4jlo"]
-[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/mirror.tscn" id="5_fpiaj"]
-[ext_resource type="PackedScene" uid="uid://dwjsyuyshemhn" path="res://scenes/tests/lockedmirror.tscn" id="6_y11ba"]
-[ext_resource type="PackedScene" uid="uid://dh0eashre7oa2" path="res://scenes/Doublemirror.tscn" id="7_alh02"]
-[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/laser_emitter.tscn" id="8_lo4eq"]
-[ext_resource type="PackedScene" uid="uid://cqmcajhhm1qrs" path="res://scenes/chest.tscn" id="9_471ga"]
-[ext_resource type="PackedScene" uid="uid://danmppe0snaxd" path="res://scenes/tests/keychest.tscn" id="10_4wlv8"]
-[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/final_gate.tscn" id="11_31o63"]
+[ext_resource type="PackedScene" uid="uid://bbu5dow6mwmvw" path="res://scenes/prefebs/laser_rail.tscn" id="2_snuer"]
+[ext_resource type="PackedScene" uid="uid://cmvyg7iue008r" path="res://scenes/prefebs/big_laser.tscn" id="3_58vb0"]
+[ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="4_v4jlo"]
+[ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="5_fpiaj"]
+[ext_resource type="PackedScene" uid="uid://dwjsyuyshemhn" path="res://scenes/prefebs/lockedmirror.tscn" id="6_y11ba"]
+[ext_resource type="PackedScene" uid="uid://dh0eashre7oa2" path="res://scenes/prefebs/Doublemirror.tscn" id="7_alh02"]
+[ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="8_lo4eq"]
+[ext_resource type="PackedScene" uid="uid://cjj37xsenxt8l" path="res://scenes/prefebs/chest.tscn" id="9_471ga"]
+[ext_resource type="PackedScene" uid="uid://danmppe0snaxd" path="res://scenes/prefebs/keychest.tscn" id="10_4wlv8"]
+[ext_resource type="PackedScene" uid="uid://kraiyt1xntfp" path="res://scenes/prefebs/final_gate.tscn" id="11_31o63"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="12_8vo6c"]
 [ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="13_5ycmn"]
 [ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="14_jadaw"]
 [ext_resource type="Script" uid="uid://4x1tv6rt0uh8" path="res://scripts/darknesscontroller.gd" id="15_vx1a6"]
->>>>>>> 83baf5f25d5222fdd372bc0c5f32218e1a5d49ad:scenes/Levels/Level_2_room_5.tscn
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
 texture = ExtResource("1_obuvu")
@@ -455,49 +437,16 @@ position = Vector2(197, 47)
 position = Vector2(-191, 27)
 color = Color(1, 0, 1, 1)
 
-<<<<<<< HEAD:scenes/Levels/Level_2_Tony_1.tscn
-[node name="ColorRect" type="ColorRect" parent="Chests/Chest1"]
-offset_left = -2.0
-offset_top = 2.0
-offset_right = 2.0
-offset_bottom = 6.0
-color = Color(1, 0, 1, 1)
-
-[node name="Chest2" parent="Chests" groups=["GateChest"] instance=ExtResource("6_1d3w3")]
-=======
 [node name="Chest2" parent="Chests" groups=["GateChest"] instance=ExtResource("9_471ga")]
->>>>>>> 83baf5f25d5222fdd372bc0c5f32218e1a5d49ad:scenes/Levels/Level_2_room_5.tscn
 position = Vector2(-127, -42)
 color = Color(1, 1, 0, 1)
 ends_darkness = true
 
-<<<<<<< HEAD:scenes/Levels/Level_2_Tony_1.tscn
-[node name="ColorRect" type="ColorRect" parent="Chests/Chest2"]
-offset_left = -2.0
-offset_top = 2.0
-offset_right = 2.0
-offset_bottom = 6.0
-color = Color(1, 1, 0, 1)
-
-[node name="KeyChest" parent="Chests" groups=["GateChest"] instance=ExtResource("9_w3bi5")]
-position = Vector2(-39, 153)
-color = Color(0, 1, 0, 1)
-
-[node name="ColorRect" type="ColorRect" parent="Chests/KeyChest"]
-offset_left = -2.0
-offset_top = 2.0
-offset_right = 2.0
-offset_bottom = 6.0
-color = Color(0, 1, 0, 1)
-
-[node name="FinalGate" parent="." groups=["LaserEmitters"] instance=ExtResource("7_cyegj")]
-=======
 [node name="KeyChest" parent="Chests" groups=["GateChest"] instance=ExtResource("10_4wlv8")]
 position = Vector2(-39, 153)
 color = Color(0, 1, 0, 1)
 
 [node name="FinalGate" parent="." groups=["LaserEmitters"] instance=ExtResource("11_31o63")]
->>>>>>> 83baf5f25d5222fdd372bc0c5f32218e1a5d49ad:scenes/Levels/Level_2_room_5.tscn
 position = Vector2(296, 200)
 required_lit_chests = 3
 
