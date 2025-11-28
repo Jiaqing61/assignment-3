@@ -1,0 +1,117 @@
+[gd_scene load_steps=5 format=3 uid="uid://ocpo7r76xx28"]
+
+[ext_resource type="Script" uid="uid://ce3g70x46g4yt" path="res://scripts/pausemenu.gd" id="1_4r2wj"]
+[ext_resource type="PackedScene" uid="uid://b1p3edbdc15ar" path="res://scenes/UI/menu_background.tscn" id="1_fsae6"]
+[ext_resource type="FontFile" uid="uid://be2lgtg308t1m" path="res://assets/Fonts/KiriFont.otf" id="2_6q0ex"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4r2wj"]
+bg_color = Color(0.356863, 0.486275, 0.470588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.172549, 0.227451, 0.243137, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_4r2wj")
+
+[node name="MenuBackground" parent="." instance=ExtResource("1_fsae6")]
+scale = Vector2(5, 5)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0)
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -150.0
+offset_right = 867.0
+offset_bottom = -50.339
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.290196, 0.403922, 0.384314, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.101961, 0.101961, 0.164706, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 5
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 30
+theme_override_fonts/font = ExtResource("2_6q0ex")
+theme_override_font_sizes/font_size = 70
+text = "Light ⚡️ Labyrinth"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 730.0
+offset_right = 923.0
+offset_bottom = 790.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_6q0ex")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_4r2wj")
+text = "Exit"
+
+[node name="Restart" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 488.0
+offset_right = 920.0
+offset_bottom = 548.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_6q0ex")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_4r2wj")
+text = "Restart level"
+
+[node name="Back" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 610.0
+offset_right = 927.0
+offset_bottom = 670.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_6q0ex")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_4r2wj")
+text = "Back to Menu"
+
+[node name="Exit" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 375.0
+offset_right = 924.0
+offset_bottom = 435.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_6q0ex")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_4r2wj")
+text = "Resume"
+
+[connection signal="pressed" from="Control/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Control/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]

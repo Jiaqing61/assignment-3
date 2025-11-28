@@ -134,3 +134,4 @@ text = "Light ⚡️ Labyrinth"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
