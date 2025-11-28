@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://6x5ov44yihs"]
+[gd_scene load_steps=19 format=4 uid="uid://6x5ov44yihs"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_nrqmj"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="2_qy6w3"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="6_q47ol"]
 [ext_resource type="PackedScene" uid="uid://bbjkgnow335ut" path="res://scenes/prefebs/final_gate.tscn" id="7_acw61"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="8_mtr10"]
+[ext_resource type="PackedScene" uid="uid://b2ey5fesd7i02" path="res://scenes/Levels/Level_2_room_1.tscn" id="8_qy6w3"]
 [ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/UI/mirror_ui.tscn" id="9_f7tix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4utc"]
@@ -465,6 +466,7 @@ color = Color(0.282353, 1, 0.443137, 1)
 
 [node name="FinalGate" parent="." instance=ExtResource("7_acw61")]
 position = Vector2(263, 184)
+next_scene = ExtResource("8_qy6w3")
 
 [node name="Level Controller" type="Node" parent="."]
 script = ExtResource("8_mtr10")
