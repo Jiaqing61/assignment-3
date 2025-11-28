@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://0kk5huy08rhe"]
+
+[ext_resource type="Script" uid="uid://cmrp2ur3g700j" path="res://scripts/audio_manager.gd" id="1_4qayb"]
+[ext_resource type="AudioStream" uid="uid://dprvyh1rombl4" path="res://assets/Sounds/click.mp3" id="2_i3nb5"]
+[ext_resource type="AudioStream" uid="uid://dfid5bay3v7iy" path="res://assets/Sounds/walk.mp3" id="3_g2qkn"]
+[ext_resource type="AudioStream" uid="uid://c6cqjnsmnk6nq" path="res://assets/Sounds/move.wav" id="4_ni0o5"]
+[ext_resource type="AudioStream" uid="uid://qu217l361pi8" path="res://assets/Sounds/chestOpen.mp3" id="5_5sv3h"]
+[ext_resource type="AudioStream" uid="uid://dqgaofkgyhvu3" path="res://assets/Sounds/doorOpen.wav" id="6_bspy7"]
+[ext_resource type="AudioStream" uid="uid://bxn0oo84dhe17" path="res://assets/Sounds/bgm.mp3" id="7_busbu"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_4qayb")
+
+[node name="clickSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_i3nb5")
+
+[node name="walkSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_g2qkn")
+
+[node name="moveSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ni0o5")
+volume_db = 5.621
+
+[node name="chestOpenfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5sv3h")
+
+[node name="doorOpenSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bspy7")
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_busbu")
+volume_db = -9.0
+autoplay = true
