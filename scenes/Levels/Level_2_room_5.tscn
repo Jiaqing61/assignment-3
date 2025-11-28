@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dmxoj3rb3ufns"]
+[gd_scene load_steps=24 format=4 uid="uid://coe42e36kwgy2"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_obuvu"]
 [ext_resource type="PackedScene" uid="uid://b2135l5apw28" path="res://scenes/prefebs/laser_rail.tscn" id="2_snuer"]
