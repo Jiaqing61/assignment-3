@@ -180,9 +180,6 @@ viewport_path = NodePath("DarknessLayer/MaskViewport")
 resource_local_to_scene = true
 shader = ExtResource("14_jadaw")
 shader_parameter/mask_tex = SubResource("ViewportTexture_qwxfg")
-shader_parameter/darkness_strength = 0.7
-shader_parameter/ambient_light = 0.18
-shader_parameter/brightness_curve = 1.4
 shader_parameter/darkness_amount = 1.0
 
 [node name="FinalRoom" type="Node2D"]
