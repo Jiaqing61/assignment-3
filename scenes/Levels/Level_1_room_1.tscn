@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://t5775no4nu68"]
+[gd_scene load_steps=18 format=4 uid="uid://t5775no4nu68"]
 
 [ext_resource type="Script" uid="uid://c2hw11eq1wudd" path="res://scripts/tutorial.gd" id="1_c4ifx"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="2_ebruy"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cjj37xsenxt8l" path="res://scenes/prefebs/chest.tscn" id="6_ktqce"]
 [ext_resource type="PackedScene" uid="uid://bbjkgnow335ut" path="res://scenes/prefebs/final_gate.tscn" id="7_a52cr"]
 [ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/UI/mirror_ui.tscn" id="8_0rosk"]
+[ext_resource type="PackedScene" uid="uid://cvhqfdlcy1w11" path="res://scenes/Levels/Level_1_room_2.tscn" id="8_fweee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
 texture = ExtResource("2_ebruy")
@@ -396,5 +397,6 @@ position = Vector2(51, 197)
 
 [node name="FinalGate" parent="." instance=ExtResource("7_a52cr")]
 position = Vector2(135, 136)
+next_scene = ExtResource("8_fweee")
 
 [node name="Mirror UI" parent="." instance=ExtResource("8_0rosk")]
