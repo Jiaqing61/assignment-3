@@ -399,12 +399,12 @@ rotation = 2.35619
 unlock_group = 1
 
 [node name="lockedmirror3" parent="Mirrors" instance=ExtResource("5_ed1h1")]
-position = Vector2(249, 111)
-rotation = 4.71239
+position = Vector2(248, 108)
+rotation = 4.88692
 unlock_group = 2
 
 [node name="lockedmirror4" parent="Mirrors" instance=ExtResource("5_ed1h1")]
-position = Vector2(189, 47)
+position = Vector2(183, 59)
 rotation = 1.5708
 unlock_group = 2
 
@@ -425,7 +425,7 @@ turned_on = true
 rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Red")
 
 [node name="Laser Emitter Green" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_gxcgn")]
-position = Vector2(6, 140)
+position = Vector2(7, 140)
 rotation = 1.309
 color = Color(0.282353, 1, 0.443137, 1)
 turned_on = true
