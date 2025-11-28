@@ -325,11 +325,9 @@ tile_set = SubResource("TileSet_xwxbw")
 position = Vector2(1, 0)
 
 [node name="LaserRail Blue" parent="TileMaps/Laser Rails" instance=ExtResource("2_scnhx")]
-top_level = true
-visibility_layer = 2
 position = Vector2(349, 192)
 rotation = 1.5708
-tile_map_data = PackedByteArray("AAAAAAwAAAAHAAUAAAAAAA0AAAAHAAUAAAAAAA4AAAAHAAUAAAAAAA8AAAAHAAUAAAAAABAAAAAHAAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAAwAAAAHAAUAAAAAAA0AAAAKAAUAAGAAAA4AAAAKAAUAAGAAAA8AAAAKAAUAAGAAABAAAAAHAAYAAGA=")
 
 [node name="LaserRail Red" parent="TileMaps/Laser Rails" instance=ExtResource("2_scnhx")]
 position = Vector2(111, 16)
@@ -337,7 +335,7 @@ rotation = -1.5708
 
 [node name="LaserRail Green" parent="TileMaps/Laser Rails" instance=ExtResource("2_scnhx")]
 position = Vector2(287, -80)
-tile_map_data = PackedByteArray("AADu/woAAAAHAAUAAADu/wsAAAAHAAUAAADu/wwAAAAHAAUAAADu/w0AAAAHAAUAAADu/w4AAAAHAAUAAAA=")
+tile_map_data = PackedByteArray("AADu/woAAAAHAAUAAADu/wsAAAAJAAYAAADu/wwAAAAJAAYAAADu/w0AAAAJAAYAAADu/w4AAAAIAAUAAAA=")
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -401,19 +399,19 @@ rotation = 2.35619
 unlock_group = 1
 
 [node name="lockedmirror3" parent="Mirrors" instance=ExtResource("5_ed1h1")]
-position = Vector2(249, 116)
-rotation = 1.5708
+position = Vector2(249, 111)
+rotation = 4.71239
 unlock_group = 2
 
 [node name="lockedmirror4" parent="Mirrors" instance=ExtResource("5_ed1h1")]
-position = Vector2(189, 43)
+position = Vector2(189, 47)
 rotation = 1.5708
 unlock_group = 2
 
 [node name="Laser Emitters" type="Node2D" parent="."]
 
 [node name="Laser Emitter Blue" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_gxcgn")]
-position = Vector2(134, 200)
+position = Vector2(106, 200)
 rotation = 0.872665
 color = Color(0.388235, 0.556863, 1, 1)
 turned_on = true

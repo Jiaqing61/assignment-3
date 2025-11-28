@@ -322,8 +322,6 @@ tile_set = SubResource("TileSet_j87di")
 position = Vector2(1, 0)
 
 [node name="LaserRail Blue" parent="TileMaps/Laser Rails" instance=ExtResource("4_apxf8")]
-top_level = true
-visibility_layer = 2
 position = Vector2(320, 192)
 rotation = 1.5708
 
