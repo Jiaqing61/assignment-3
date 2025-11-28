@@ -35,6 +35,7 @@ LaserMask=""
 Mirror=""
 LaserEmitter=""
 AlwaysReveal=""
+GateChest=""
 
 [input]
 
