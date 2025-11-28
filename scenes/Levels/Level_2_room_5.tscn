@@ -313,6 +313,7 @@ required_lit_chests = 3
 
 [node name="level_controller" type="Node" parent="."]
 script = ExtResource("12_8vo6c")
+final_gate = NodePath("../FinalGate")
 
 [node name="DarknessLayer" type="CanvasLayer" parent="."]
 layer = 100

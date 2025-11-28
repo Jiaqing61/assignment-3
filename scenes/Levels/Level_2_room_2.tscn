@@ -320,6 +320,20 @@ tile_set = SubResource("TileSet_xqqo8")
 tile_map_data = PackedByteArray("AAAFAAsAAAAJAAQAAAAFAAwAAAAJAAQAAAAGAAsAAAALAAQAAAAGAAwAAAALAAQAAAA=")
 tile_set = SubResource("TileSet_8t8p7")
 
+[node name="Laser Rails" type="Node2D" parent="TileMaps"]
+
+[node name="LaserRail Blue" parent="TileMaps/Laser Rails" instance=ExtResource("3_qte6d")]
+position = Vector2(208, 0)
+rotation = 1.5708
+
+[node name="LaserRail Red" parent="TileMaps/Laser Rails" instance=ExtResource("3_qte6d")]
+position = Vector2(336, 0)
+rotation = 1.5708
+
+[node name="LaserRail Green" parent="TileMaps/Laser Rails" instance=ExtResource("3_qte6d")]
+position = Vector2(336, 256)
+rotation = 1.5708
+
 [node name="Player" parent="." instance=ExtResource("2_an50k")]
 position = Vector2(133, 109)
 
@@ -358,20 +372,6 @@ rotation = -2.25522
 decay_seconds = 0.1
 colors = Array[Color]([Color(1, 0, 0, 1), Color(0, 0, 1, 1)])
 
-[node name="Laser Rails" type="Node2D" parent="."]
-
-[node name="LaserRail Blue" parent="Laser Rails" instance=ExtResource("3_qte6d")]
-position = Vector2(208, 0)
-rotation = 1.5708
-
-[node name="LaserRail Red" parent="Laser Rails" instance=ExtResource("3_qte6d")]
-position = Vector2(336, 0)
-rotation = 1.5708
-
-[node name="LaserRail Green" parent="Laser Rails" instance=ExtResource("3_qte6d")]
-position = Vector2(336, 256)
-rotation = 1.5708
-
 [node name="Laser Emitters" type="Node2D" parent="."]
 
 [node name="Laser Emitter Blue" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("4_v65nk")]
@@ -379,20 +379,20 @@ position = Vector2(101, 8)
 rotation = 2.47253
 color = Color(0, 0, 1, 1)
 turned_on = true
-rail_tilemap = NodePath("../../Laser Rails/LaserRail Blue")
+rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Blue")
 
 [node name="Laser Emitter Red" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("4_v65nk")]
 position = Vector2(171, 8.00002)
 rotation = -2.15593
 color = Color(1, 0, 0, 1)
 turned_on = true
-rail_tilemap = NodePath("../../Laser Rails/LaserRail Red")
+rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Red")
 
 [node name="Laser Emitter Green" parent="Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("4_v65nk")]
 position = Vector2(172, 263)
 color = Color(0, 1, 0, 1)
 turned_on = true
-rail_tilemap = NodePath("../../Laser Rails/LaserRail Green")
+rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Green")
 
 [node name="Mirrors" type="Node2D" parent="."]
 

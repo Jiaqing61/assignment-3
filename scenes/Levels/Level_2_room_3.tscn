@@ -458,16 +458,16 @@ offset_right = 96.0
 offset_bottom = 11.0
 color = Color(0, 1, 0, 1)
 
-[node name="FinalGate" parent="." groups=["LaserEmitters"] instance=ExtResource("7_sndws")]
-position = Vector2(291, 270)
+[node name="FinalGate" parent="." instance=ExtResource("7_sndws")]
+position = Vector2(151, 168)
 required_lit_chests = 3
 
 [node name="level_controller" type="Node" parent="."]
 script = ExtResource("8_jt5ey")
+final_gate = NodePath("../FinalGate")
 
 [node name="DarknessLayer" type="CanvasLayer" parent="."]
 layer = 100
-visible = false
 
 [node name="MaskViewport" type="SubViewport" parent="DarknessLayer"]
 disable_3d = true
