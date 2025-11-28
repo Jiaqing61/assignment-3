@@ -322,6 +322,8 @@ shader = ExtResource("10_vgb85")
 shader_parameter/mask_tex = SubResource("ViewportTexture_qwxfg")
 shader_parameter/darkness_strength = 0.7
 shader_parameter/ambient_light = 0.18
+shader_parameter/brightness_curve = 1.4
+shader_parameter/darkness_amount = 1.0
 
 [node name="DarkRoom" type="Node2D"]
 
@@ -376,7 +378,7 @@ zoom = Vector2(3, 3)
 [node name="Mirrors" type="Node2D" parent="."]
 
 [node name="Mirror1" parent="Mirrors" instance=ExtResource("4_bydog")]
-position = Vector2(239, 64)
+position = Vector2(237, 64)
 
 [node name="Mirror2" parent="Mirrors" instance=ExtResource("4_bydog")]
 position = Vector2(35, 238)
@@ -384,11 +386,11 @@ rotation = 1.5708
 
 [node name="Mirror3" parent="Mirrors" instance=ExtResource("4_bydog")]
 position = Vector2(272, 241)
-rotation = -2.62672
+rotation = -2.61799
 
 [node name="Mirror4" parent="Mirrors" instance=ExtResource("4_bydog")]
-position = Vector2(100, 194)
-rotation = -0.785398
+position = Vector2(101, 203)
+rotation = -0.698132
 
 [node name="LaserEmitters" type="Node2D" parent="."]
 position = Vector2(104, 198)
@@ -420,44 +422,44 @@ rail_tilemap = NodePath("../../TileMaps/LaserRail")
 position = Vector2(1, 0)
 
 [node name="Chest" parent="Chests/ChestBlue" instance=ExtResource("6_15oh8")]
-position = Vector2(239, 280)
+position = Vector2(237, 280)
 color = Color(0, 0, 1, 1)
 
 [node name="Color" type="ColorRect" parent="Chests/ChestBlue"]
-offset_left = 237.0
+offset_left = 235.0
 offset_top = 281.0
-offset_right = 241.0
+offset_right = 239.0
 offset_bottom = 285.0
 color = Color(0, 0, 1, 1)
 
 [node name="ChestRed" type="Node2D" parent="Chests"]
 
 [node name="Chest" parent="Chests/ChestRed" instance=ExtResource("6_15oh8")]
-position = Vector2(278, 5)
+position = Vector2(276, 5)
 color = Color(1, 0, 0, 1)
 
 [node name="Color" type="ColorRect" parent="Chests/ChestRed"]
-offset_left = 276.0
+offset_left = 274.0
 offset_top = 7.0
-offset_right = 280.0
+offset_right = 278.0
 offset_bottom = 11.0
 color = Color(1, 0, 0, 1)
 
 [node name="ChestGreen" type="Node2D" parent="Chests"]
 
 [node name="Chest" parent="Chests/ChestGreen" instance=ExtResource("6_15oh8")]
-position = Vector2(93, 6)
+position = Vector2(94, 6)
 color = Color(0, 1, 0, 1)
 
 [node name="Color" type="ColorRect" parent="Chests/ChestGreen"]
-offset_left = 91.0
+offset_left = 92.0
 offset_top = 7.0
-offset_right = 95.0
+offset_right = 96.0
 offset_bottom = 11.0
 color = Color(0, 1, 0, 1)
 
 [node name="FinalGate" parent="." groups=["LaserEmitters"] instance=ExtResource("7_sndws")]
-position = Vector2(284, 280)
+position = Vector2(291, 270)
 required_lit_chests = 3
 
 [node name="level_controller" type="Node" parent="."]
@@ -465,6 +467,7 @@ script = ExtResource("8_jt5ey")
 
 [node name="DarknessLayer" type="CanvasLayer" parent="."]
 layer = 100
+visible = false
 
 [node name="MaskViewport" type="SubViewport" parent="DarknessLayer"]
 disable_3d = true

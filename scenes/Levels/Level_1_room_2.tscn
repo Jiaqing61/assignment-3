@@ -366,7 +366,7 @@ rotation = 1.20428
 
 [node name="Mirror5" parent="mirrors" instance=ExtResource("2_ngpbi")]
 position = Vector2(192, -20)
-rotation = 0.575959
+rotation = 0.523599
 
 [node name="laser emitter" type="Node2D" parent="."]
 position = Vector2(73, 121)
