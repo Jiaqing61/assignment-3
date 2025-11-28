@@ -47,14 +47,17 @@ func _on_decay_timeout() -> void:
 func _set_lit(v: bool) -> void:
 	if _lit == v:
 		return
-
+		
 	_lit = v
 	_apply_visual()
 	emit_signal("lit_changed", _lit)
-
 	
+	if _lit:
+		AudioManager.chest_open_sfx.play()
+		
 	if _lit and ends_darkness:
 		_disable_darkness()
+		AudioManager.play_move()
 
 
 func _apply_visual() -> void:
@@ -70,12 +73,10 @@ func _apply_visual() -> void:
 
 
 func _disable_darkness() -> void:
-	
 	var dark = get_tree().get_first_node_in_group("DarknessController")
 	if dark == null:
 		return
-
-
+		
 	if dark.has_method("fade_out_darkness"):
 		dark.fade_out_darkness(0.8)
 	

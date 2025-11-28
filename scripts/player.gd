@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export_category("Player Properties")
 @export var move_speed : float = 60
 @export var animator : AnimatedSprite2D
 
@@ -33,5 +34,20 @@ func _physics_process(delta: float) -> void:
 		var idle_anim := "idle_%s" % last_facing
 		if animator and (animator.animation != idle_anim or !animator.is_playing()):
 			animator.play(idle_anim)
-
+	
+	_update_walk_sfx(input_vec)
 	move_and_slide()
+	
+func _update_walk_sfx(input_vec: Vector2) -> void:
+	var s := AudioManager.walk_sfx as AudioStreamPlayer
+	if s == null:
+		return
+
+	if input_vec != Vector2.ZERO:
+		if not s.playing:
+			s.play()
+	else:
+		if s.playing:
+			s.stop()
+			
+		

@@ -63,6 +63,7 @@ func open_gate() -> void:
 
 	if _anim and _anim.sprite_frames.has_animation("open"):
 		_anim.play("open")
+		AudioManager.door_open_sfx.play()
 		await _anim.animation_finished
 
 	if _collider:
