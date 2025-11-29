@@ -1,5 +1,6 @@
-[gd_scene load_steps=85 format=4 uid="uid://bj0mdxwh0yjrs"]
+[gd_scene load_steps=79 format=4 uid="uid://bj0mdxwh0yjrs"]
 
+[ext_resource type="Script" uid="uid://cw3k1rshdx3x2" path="res://scripts/door_open.gd" id="1_0cp3y"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_fn4ql"]
 [ext_resource type="PackedScene" uid="uid://b2135l5apw28" path="res://scenes/prefebs/laser_rail.tscn" id="2_e1qoi"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="3_pklsh"]
@@ -12,17 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://bbjkgnow335ut" path="res://scenes/prefebs/final_gate.tscn" id="9_8f203"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="10_oxay8"]
 [ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/UI/mirror_ui.tscn" id="11_0cp3y"]
-[ext_resource type="Script" uid="uid://c2hw11eq1wudd" path="res://scripts/tutorial.gd" id="12_oxay8"]
 [ext_resource type="PackedScene" uid="uid://cmvyg7iue008r" path="res://scenes/prefebs/big_laser.tscn" id="13_0cp3y"]
 [ext_resource type="PackedScene" uid="uid://bv5inuvppb2bf" path="res://scenes/tests/lockedmirror.tscn" id="14_pcon5"]
 [ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="15_toi8m"]
 [ext_resource type="Script" uid="uid://4x1tv6rt0uh8" path="res://scripts/darknesscontroller.gd" id="17_nx5ue"]
 [ext_resource type="PackedScene" uid="uid://dseltwe85kk66" path="res://scenes/prefebs/MirrorCluster.tscn" id="18_pvawu"]
 [ext_resource type="PackedScene" uid="uid://dh0eashre7oa2" path="res://scenes/prefebs/Doublemirror.tscn" id="19_s58fl"]
-[ext_resource type="Script" uid="uid://fp0urhymugmu" path="res://scripts/room_door.gd" id="20_toi8m"]
-[ext_resource type="Texture2D" uid="uid://c7vrvg8rlxdwp" path="res://assets/Tiles/tile_0045.png" id="21_nx5ue"]
-[ext_resource type="Texture2D" uid="uid://be0e55v3gudaf" path="res://assets/Tiles/tile_0033.png" id="22_pvawu"]
-[ext_resource type="Texture2D" uid="uid://c14xenscihye3" path="res://assets/Tiles/tile_0021.png" id="23_s58fl"]
+[ext_resource type="PackedScene" uid="uid://db5c1gwkvymf4" path="res://scenes/prefebs/room_door.tscn" id="21_pcon5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4utc"]
 texture = ExtResource("1_fn4ql")
@@ -310,7 +307,7 @@ sources/0 = SubResource("TileSetAtlasSource_hx83v")
 size = Vector2(20, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0435t"]
-size = Vector2(20, 192)
+size = Vector2(20, 179)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j87di"]
 size = Vector2(344, 20)
@@ -1247,34 +1244,6 @@ shader = ExtResource("4_xmsgp")
 shader_parameter/mask_tex = SubResource("ViewportTexture_ccked")
 shader_parameter/darkness_amount = 1.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e8hvv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("21_nx5ue")
-}],
-"loop": true,
-"name": &"close",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("22_pvawu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_s58fl")
-}],
-"loop": false,
-"name": &"open",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw88a"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oaj3"]
-size = Vector2(7, 11)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13jjs"]
 texture = ExtResource("1_fn4ql")
 separation = Vector2i(1, 1)
@@ -1427,7 +1396,7 @@ size = Vector2(169.563, 12.0625)
 size = Vector2(171.125, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fn4ql"]
-size = Vector2(20, 31)
+size = Vector2(20, 9.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmsgp"]
 size = Vector2(19, 56)
@@ -1469,6 +1438,9 @@ size = Vector2(20, 52.75)
 
 [node name="LockedMirror" type="Node2D" parent="."]
 position = Vector2(1, 0)
+script = ExtResource("1_0cp3y")
+chests = Array[NodePath]([NodePath("Chests/Blue Chest/KeyChest2"), NodePath("Chests/Red Chest/Chest"), NodePath("Chests/Green Chest/KeyChest")])
+door = NodePath("../Room Doors/1 to 2")
 
 [node name="TileMaps" type="Node2D" parent="LockedMirror"]
 position = Vector2(-1, 0)
@@ -1512,7 +1484,7 @@ shape = SubResource("RectangleShape2D_lua7t")
 position = Vector2(361, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LockedMirror/Walls/Right Wall"]
-position = Vector2(-48, 67)
+position = Vector2(-48, 60.5)
 shape = SubResource("RectangleShape2D_0435t")
 
 [node name="Bottom Wall" type="StaticBody2D" parent="LockedMirror/Walls"]
@@ -1613,32 +1585,32 @@ color = Color(0.388235, 0.556863, 1, 1)
 [node name="Red Chest" type="Node2D" parent="LockedMirror/Chests"]
 
 [node name="Chest" parent="LockedMirror/Chests/Red Chest" instance=ExtResource("8_ila8s")]
-position = Vector2(5, 184)
+position = Vector2(8, 183)
 color = Color(1, 0.223529, 0.345098, 1)
 
 [node name="Color" type="ColorRect" parent="LockedMirror/Chests/Red Chest"]
-offset_left = 3.0
-offset_top = 187.0
-offset_right = 7.0
-offset_bottom = 191.0
+offset_left = 6.0
+offset_top = 185.0
+offset_right = 10.0
+offset_bottom = 189.0
 color = Color(1, 0.223529, 0.345098, 1)
 
 [node name="Green Chest" type="Node2D" parent="LockedMirror/Chests"]
 
 [node name="KeyChest" parent="LockedMirror/Chests/Green Chest" instance=ExtResource("7_ub6r0")]
-position = Vector2(297, 67)
+position = Vector2(293, 67)
 color = Color(0.282353, 1, 0.443137, 1)
 unlock_group = 1
 
 [node name="Color" type="ColorRect" parent="LockedMirror/Chests/Green Chest"]
-offset_left = 295.0
-offset_top = 70.0
-offset_right = 299.0
-offset_bottom = 74.0
+offset_left = 291.0
+offset_top = 69.0
+offset_right = 295.0
+offset_bottom = 73.0
 color = Color(0.282353, 1, 0.443137, 1)
 
 [node name="FinalGate" parent="LockedMirror" instance=ExtResource("9_8f203")]
-position = Vector2(37, 24)
+position = Vector2(39, 24)
 
 [node name="Level Controller" type="Node" parent="LockedMirror"]
 script = ExtResource("10_oxay8")
@@ -1649,9 +1621,9 @@ final_gate = NodePath("../FinalGate")
 
 [node name="Laser Intersect" type="Node2D" parent="."]
 position = Vector2(494, 0)
-script = ExtResource("12_oxay8")
+script = ExtResource("1_0cp3y")
 chests = Array[NodePath]([NodePath("Chests/Green Chest/KeyChest"), NodePath("Chests/Purple Chest/Chest")])
-final_gate = NodePath("FinalGate")
+door = NodePath("../Room Doors/2 to 3")
 
 [node name="TileMaps" type="Node2D" parent="Laser Intersect"]
 
@@ -1802,6 +1774,9 @@ position = Vector2(248, 136)
 
 [node name="DarkRoom" type="Node2D" parent="."]
 position = Vector2(990, 0)
+script = ExtResource("1_0cp3y")
+chests = Array[NodePath]([NodePath("Chests/ChestBlue/Chest"), NodePath("Chests/ChestRed/Chest"), NodePath("Chests/ChestGreen/Chest")])
+door = NodePath("../Room Doors/3 to 4")
 
 [node name="TileMaps" type="Node2D" parent="DarkRoom"]
 
@@ -1972,9 +1947,9 @@ script = ExtResource("17_nx5ue")
 
 [node name="Masterpiece" type="Node2D" parent="."]
 position = Vector2(650, 500)
-script = ExtResource("12_oxay8")
-chests = Array[NodePath]([NodePath("Chests/Chest 1"), NodePath("Chests/Chest 2"), NodePath("Chests/Chest 3")])
-final_gate = NodePath("FinalGate")
+script = ExtResource("1_0cp3y")
+chests = Array[NodePath]([NodePath("Chests/Chest 1"), NodePath("Chests/Chest 2"), NodePath("Chests/Chest 3"), NodePath("Chests/Chest 4")])
+door = NodePath("../Room Doors/4 to 5")
 
 [node name="TileMaps" type="Node2D" parent="Masterpiece"]
 
@@ -2246,90 +2221,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("17_nx5ue")
 
-[node name="Roomdoor" type="StaticBody2D" parent="."]
-
-[node name="Door1" type="StaticBody2D" parent="Roomdoor" groups=["AlwaysReveal"]]
-position = Vector2(312, 184)
-scale = Vector2(1.28, 1.28)
-script = ExtResource("20_toi8m")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Roomdoor/Door1"]
-sprite_frames = SubResource("SpriteFrames_e8hvv")
-animation = &"open"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Roomdoor/Door1"]
-shape = SubResource("RectangleShape2D_jw88a")
-
-[node name="Area2D" type="Area2D" parent="Roomdoor/Door1"]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Roomdoor/Door1/Area2D"]
-position = Vector2(-0.5, 2.5)
-shape = SubResource("RectangleShape2D_1oaj3")
-
-[node name="Door2" type="StaticBody2D" parent="Roomdoor" groups=["AlwaysReveal"]]
-position = Vector2(760, 250)
-scale = Vector2(1.28, 1.28)
-script = ExtResource("20_toi8m")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Roomdoor/Door2"]
-sprite_frames = SubResource("SpriteFrames_e8hvv")
-animation = &"open"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Roomdoor/Door2"]
-shape = SubResource("RectangleShape2D_jw88a")
-
-[node name="Area2D" type="Area2D" parent="Roomdoor/Door2"]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Roomdoor/Door2/Area2D"]
-position = Vector2(-0.5, 2.5)
-shape = SubResource("RectangleShape2D_1oaj3")
-
-[node name="Door3" type="StaticBody2D" parent="Roomdoor" groups=["AlwaysReveal"]]
-position = Vector2(1160, 298)
-rotation = 3.14159
-scale = Vector2(1.28, 1.28)
-script = ExtResource("20_toi8m")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Roomdoor/Door3"]
-sprite_frames = SubResource("SpriteFrames_e8hvv")
-animation = &"open"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Roomdoor/Door3"]
-shape = SubResource("RectangleShape2D_jw88a")
-
-[node name="Area2D" type="Area2D" parent="Roomdoor/Door3"]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Roomdoor/Door3/Area2D"]
-position = Vector2(-0.5, 2.5)
-shape = SubResource("RectangleShape2D_1oaj3")
-
-[node name="Door4" type="StaticBody2D" parent="Roomdoor" groups=["AlwaysReveal"]]
-position = Vector2(644, 632)
-scale = Vector2(1.28, 1.28)
-script = ExtResource("20_toi8m")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Roomdoor/Door4"]
-sprite_frames = SubResource("SpriteFrames_e8hvv")
-animation = &"open"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Roomdoor/Door4"]
-shape = SubResource("RectangleShape2D_jw88a")
-
-[node name="Area2D" type="Area2D" parent="Roomdoor/Door4"]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Roomdoor/Door4/Area2D"]
-position = Vector2(-0.5, 2.5)
-shape = SubResource("RectangleShape2D_1oaj3")
-
 [node name="Corridor" type="Node2D" parent="."]
 
 [node name="TileMapLayer - Background" type="TileMapLayer" parent="Corridor"]
 z_index = -1
-position = Vector2(-2, 0)
 tile_map_data = PackedByteArray("AAATAAoAAAAEAAMAAAATAAsAAAAAAAQAAAATAAwAAAAEAAMAAAAUAAoAAAAAAAQAAAAUAAsAAAAAAAQAAAAUAAwAAAAAAAQAAAAVAAoAAAAAAAQAAAAVAAsAAAABAAQAAFAVAAwAAAAAAAQAAAAWAAoAAAAAAAQAAAAWAAsAAAAAAAQAAAAWAAwAAAAAAAQAAAAXAAoAAAAAAAQAAAAXAAsAAAAAAAQAAAAXAAwAAAAAAAQAAAAYAAoAAAAAAAQAAAAYAAsAAAAAAAQAAAAYAAwAAAAAAAQAAAAZAAoAAAABAAQAAAAZAAsAAAAAAAQAAAAZAAwAAAAAAAQAAAAaAAoAAAAAAAQAAAAaAAsAAAAAAAQAAAAaAAwAAAAAAAQAAAAbAAoAAAAAAAQAAAAbAAsAAAABAAQAAFAbAAwAAAAAAAQAAAAcAAoAAAAAAAQAAAAcAAsAAAAAAAQAAAAcAAwAAAAAAAQAAAAdAAoAAAAAAAQAAAAdAAsAAAAAAAQAAAAdAAwAAAAAAAQAAAAeAAoAAAAAAAQAAAAeAAsAAAAAAAQAAAAeAAwAAAAAAAQAAAAvAA4AAAAEAAMAAAAvAA8AAAAAAAQAAAAvABAAAAAEAAMAAAAwAA4AAAAAAAQAAAAwAA8AAAAAAAQAAAAwABAAAAAAAAQAAAAxAA4AAAAAAAQAAAAxAA8AAAABAAQAAFAxABAAAAAAAAQAAAAyAA4AAAAAAAQAAAAyAA8AAAAAAAQAAAAyABAAAAAAAAQAAAAzAA4AAAAAAAQAAAAzAA8AAAAAAAQAAAAzABAAAAAAAAQAAAA0AA4AAAAAAAQAAAA0AA8AAAAAAAQAAAA0ABAAAAAAAAQAAAA1AA4AAAABAAQAAAA1AA8AAAAAAAQAAAA1ABAAAAAAAAQAAAA2AA4AAAAAAAQAAAA2AA8AAAAAAAQAAAA2ABAAAAAAAAQAAAA3AA4AAAAAAAQAAAA3AA8AAAABAAQAAFA3ABAAAAAAAAQAAAA4AA4AAAAAAAQAAAA4AA8AAAAAAAQAAAA4ABAAAAAAAAQAAAA5AA4AAAAAAAQAAAA5AA8AAAAAAAQAAAA5ABAAAAAAAAQAAAA6AA4AAAAAAAQAAAA6AA8AAAAAAAQAAAA6ABAAAAAAAAQAAAA7AA4AAAAAAAQAAAA7AA8AAAAAAAQAAAA7ABAAAAAAAAQAAAA8AA4AAAAAAAQAAAA8AA8AAAAAAAQAAAA8ABAAAAAAAAQAAAA9AA4AAAAAAAQAAAA9AA8AAAAAAAQAAAA9ABAAAAAAAAQAAABHABIAAAAEAAMAAABHABMAAAAAAAQAAABHABQAAAAAAAQAAABIABIAAAAAAAQAAABIABMAAAAAAAQAAABIABQAAAAAAAQAAABJABIAAAAEAAMAAABJABMAAAABAAQAAFBJABQAAAAAAAQAAABHABUAAAABAAQAAABHABYAAAAAAAQAAABHABcAAAAAAAQAAABIABUAAAAAAAQAAABIABYAAAAAAAQAAABIABcAAAAAAAQAAABJABUAAAAAAAQAAABJABYAAAABAAQAAFBJABcAAAAAAAQAAABHABgAAAABAAQAAABHABkAAAAAAAQAAABHABoAAAAAAAQAAABIABgAAAAAAAQAAABIABkAAAAAAAQAAABIABoAAAAAAAQAAABJABgAAAAAAAQAAABJABkAAAABAAQAAFBJABoAAAAAAAQAAABHABsAAAABAAQAAABHABwAAAAAAAQAAABHAB0AAAAAAAQAAABIABsAAAAAAAQAAABIABwAAAAAAAQAAABIAB0AAAAAAAQAAABJABsAAAAAAAQAAABJABwAAAABAAQAAFBJAB0AAAAAAAQAAABHAB4AAAABAAQAAABHAB8AAAAAAAQAAABHACAAAAABAAQAAABIAB4AAAAAAAQAAABIAB8AAAAAAAQAAABIACAAAAAAAAQAAABJAB4AAAAAAAQAAABJAB8AAAABAAQAAFBJACAAAAAAAAQAAAA9ACAAAAABAAQAAAA9ACEAAAAAAAQAAAA9ACIAAAAAAAQAAAA+ACAAAAAAAAQAAAA+ACEAAAAAAAQAAAA+ACIAAAAAAAQAAAA/ACAAAAAAAAQAAAA/ACEAAAABAAQAAFA/ACIAAAAAAAQAAABAACAAAAABAAQAAABAACEAAAAAAAQAAABAACIAAAAAAAQAAABBACAAAAAAAAQAAABBACEAAAAAAAQAAABBACIAAAAAAAQAAABCACAAAAAAAAQAAABCACEAAAABAAQAAFBCACIAAAAAAAQAAABDACAAAAABAAQAAABDACEAAAAAAAQAAABDACIAAAAAAAQAAABEACAAAAAAAAQAAABEACEAAAAAAAQAAABEACIAAAAAAAQAAABFACAAAAAAAAQAAABFACEAAAABAAQAAFBFACIAAAAAAAQAAABGACAAAAABAAQAAABGACEAAAAAAAQAAABGACIAAAAAAAQAAABHACEAAAAAAAQAAABHACIAAAAAAAQAAABIACEAAAAAAAQAAABIACIAAAAAAAQAAABJACEAAAABAAQAAFBJACIAAAAAAAQAAAAmACYAAAABAAQAAAAmACcAAAAAAAQAAAAmACgAAAAAAAQAAAAnACYAAAAAAAQAAAAnACcAAAAAAAQAAAAnACgAAAAAAAQAAAAoACYAAAAEAAMAAAAoACcAAAABAAQAAFAoACgAAAAEAAMAAAAjACYAAAABAAQAAAAjACcAAAAAAAQAAAAjACgAAAAAAAQAAAAkACYAAAAAAAQAAAAkACcAAAAAAAQAAAAkACgAAAAAAAQAAAAlACYAAAAAAAQAAAAlACcAAAABAAQAAFAlACgAAAAAAAQAAAAgACYAAAABAAQAAAAgACcAAAAAAAQAAAAgACgAAAAAAAQAAAAhACYAAAAAAAQAAAAhACcAAAAAAAQAAAAhACgAAAAAAAQAAAAiACYAAAAAAAQAAAAiACcAAAABAAQAAFAiACgAAAAAAAQAAAAdACYAAAABAAQAAAAdACcAAAAAAAQAAAAdACgAAAAAAAQAAAAeACYAAAAAAAQAAAAeACcAAAAAAAQAAAAeACgAAAAAAAQAAAAfACYAAAAAAAQAAAAfACcAAAABAAQAAFAfACgAAAAAAAQAAAAaACYAAAABAAQAAAAaACcAAAAAAAQAAAAaACgAAAAAAAQAAAAbACYAAAAAAAQAAAAbACcAAAAAAAQAAAAbACgAAAAAAAQAAAAcACYAAAAAAAQAAAAcACcAAAABAAQAAFAcACgAAAAAAAQAAAA8ACAAAAAAAAQAAAA8ACEAAAAAAAQAAAA8ACIAAAAAAAQAAAAZACYAAAAAAAQAAAAZACcAAAAAAAQAAAAZACgAAAAAAAQAAAA=")
 tile_set = SubResource("TileSet_ml1qv")
 
@@ -2346,11 +2241,11 @@ position = Vector2(409, 213)
 shape = SubResource("RectangleShape2D_0g6pg")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Corridor/1to2 bottom"]
-position = Vector2(314, 211.5)
+position = Vector2(314, 213)
 shape = SubResource("RectangleShape2D_fn4ql")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Corridor/1to2 bottom"]
-position = Vector2(314, 211)
+position = Vector2(314, 221.75)
 shape = SubResource("RectangleShape2D_fn4ql")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Corridor/1to2 bottom"]
@@ -2409,7 +2304,16 @@ shape = SubResource("RectangleShape2D_2ahn3")
 position = Vector2(414, 682.375)
 shape = SubResource("RectangleShape2D_11qfd")
 
-[connection signal="body_entered" from="Roomdoor/Door1/Area2D" to="Roomdoor/Door1" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Roomdoor/Door2/Area2D" to="Roomdoor/Door2" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Roomdoor/Door3/Area2D" to="Roomdoor/Door3" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Roomdoor/Door4/Area2D" to="Roomdoor/Door4" method="_on_area_2d_body_entered"]
+[node name="Room Doors" type="Node2D" parent="."]
+
+[node name="1 to 2" parent="Room Doors" instance=ExtResource("21_pcon5")]
+position = Vector2(312, 184)
+
+[node name="2 to 3" parent="Room Doors" instance=ExtResource("21_pcon5")]
+position = Vector2(760, 249)
+
+[node name="3 to 4" parent="Room Doors" instance=ExtResource("21_pcon5")]
+position = Vector2(1160, 296)
+
+[node name="4 to 5" parent="Room Doors" instance=ExtResource("21_pcon5")]
+position = Vector2(648, 632)

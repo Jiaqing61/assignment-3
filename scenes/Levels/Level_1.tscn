@@ -1,20 +1,17 @@
-[gd_scene load_steps=49 format=4 uid="uid://cvbbm1vtho2xb"]
+[gd_scene load_steps=43 format=4 uid="uid://cvbbm1vtho2xb"]
 
-[ext_resource type="Script" uid="uid://c2hw11eq1wudd" path="res://scripts/tutorial.gd" id="1_06j12"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="2_e5mxv"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="3_6wnyt"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="4_y2vpr"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="5_cxgh7"]
-[ext_resource type="Script" uid="uid://fp0urhymugmu" path="res://scripts/room_door.gd" id="5_fpjjv"]
 [ext_resource type="PackedScene" uid="uid://cjj37xsenxt8l" path="res://scenes/prefebs/chest.tscn" id="6_l2fsl"]
 [ext_resource type="PackedScene" uid="uid://bbjkgnow335ut" path="res://scenes/prefebs/final_gate.tscn" id="7_6q3ph"]
 [ext_resource type="PackedScene" uid="uid://b2135l5apw28" path="res://scenes/prefebs/laser_rail.tscn" id="8_6q3ph"]
 [ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/UI/mirror_ui.tscn" id="9_euy30"]
 [ext_resource type="PackedScene" uid="uid://bj0mdxwh0yjrs" path="res://scenes/Levels/Level_2.tscn" id="10_6q3ph"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="11_euy30"]
-[ext_resource type="Texture2D" uid="uid://c7vrvg8rlxdwp" path="res://assets/Tiles/tile_0045.png" id="13_euax4"]
-[ext_resource type="Texture2D" uid="uid://be0e55v3gudaf" path="res://assets/Tiles/tile_0033.png" id="14_bgxaf"]
-[ext_resource type="Texture2D" uid="uid://c14xenscihye3" path="res://assets/Tiles/tile_0021.png" id="15_m5pb2"]
+[ext_resource type="Script" uid="uid://cw3k1rshdx3x2" path="res://scripts/door_open.gd" id="12_bk6va"]
+[ext_resource type="PackedScene" uid="uid://db5c1gwkvymf4" path="res://scenes/prefebs/room_door.tscn" id="12_euy30"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mtagb"]
 texture = ExtResource("2_e5mxv")
@@ -304,13 +301,13 @@ sources/0 = SubResource("TileSetAtlasSource_veu5a")
 size = Vector2(20, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ho6b"]
-size = Vector2(20, 144)
+size = Vector2(20, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ph3nu"]
 size = Vector2(248, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kmhl"]
-size = Vector2(248, 20)
+size = Vector2(244, 20)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7341"]
 texture = ExtResource("2_e5mxv")
@@ -597,13 +594,13 @@ separation = Vector2i(1, 1)
 sources/0 = SubResource("TileSetAtlasSource_lhyet")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q3ph"]
-size = Vector2(12, 170.5)
+size = Vector2(16, 160)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_640sy"]
-size = Vector2(11, 105.242)
+size = Vector2(10.5, 88.8407)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vh6hb"]
-size = Vector2(342, 11)
+size = Vector2(342, 12.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4utc"]
 texture = ExtResource("2_e5mxv")
@@ -1048,10 +1045,10 @@ sources/0 = SubResource("TileSetAtlasSource_fpjjv")
 size = Vector2(161.125, 12.0625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpjjv"]
-size = Vector2(172.125, 10.5)
+size = Vector2(176, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06j12"]
-size = Vector2(20, 66)
+size = Vector2(16, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkaxv"]
 size = Vector2(158, 13)
@@ -1059,39 +1056,12 @@ size = Vector2(158, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftmnb"]
 size = Vector2(158.375, 16.75)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e8hvv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_euax4")
-}],
-"loop": true,
-"name": &"close",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_bgxaf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_m5pb2")
-}],
-"loop": false,
-"name": &"open",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw88a"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oaj3"]
-size = Vector2(7, 11)
-
 [node name="Level_1" type="Node2D"]
 
 [node name="Tutorial" type="Node2D" parent="."]
-script = ExtResource("1_06j12")
+script = ExtResource("12_bk6va")
 chests = Array[NodePath]([NodePath("Chests/Chest 1"), NodePath("Chests/Chest 2"), NodePath("Chests/Chest 3")])
+door = NodePath("../Room Doors/1 to 2")
 
 [node name="TileMaps" type="Node2D" parent="Tutorial"]
 
@@ -1115,7 +1085,7 @@ shape = SubResource("RectangleShape2D_c13y7")
 [node name="Right Wall" type="StaticBody2D" parent="Tutorial/Walls"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Walls/Right Wall"]
-position = Vector2(218, 53)
+position = Vector2(218, 56)
 shape = SubResource("RectangleShape2D_8ho6b")
 
 [node name="Top Wall" type="StaticBody2D" parent="Tutorial/Walls"]
@@ -1127,14 +1097,14 @@ shape = SubResource("RectangleShape2D_ph3nu")
 [node name="Bottom Wall" type="StaticBody2D" parent="Tutorial/Walls"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Walls/Bottom Wall"]
-position = Vector2(104, 218)
+position = Vector2(102, 218)
 shape = SubResource("RectangleShape2D_4kmhl")
 
 [node name="Player" parent="Tutorial" instance=ExtResource("3_6wnyt")]
+z_index = 1
 position = Vector2(40, 133)
 
 [node name="Camera2D" type="Camera2D" parent="Tutorial/Player"]
-position = Vector2(64, -29)
 zoom = Vector2(3, 3)
 
 [node name="Mirrors" type="Node2D" parent="Tutorial"]
@@ -1181,6 +1151,9 @@ position = Vector2(51, 197)
 
 [node name="multi laser" type="Node2D" parent="."]
 position = Vector2(400, 111.5)
+script = ExtResource("12_bk6va")
+chests = Array[NodePath]([NodePath("chest/blue chest/Chest"), NodePath("chest/red chest/Chest2"), NodePath("chest/green chest/Chest3")])
+door = NodePath("../Room Doors/2 to 3")
 
 [node name="TileMaps" type="Node2D" parent="multi laser"]
 
@@ -1198,18 +1171,18 @@ tile_set = SubResource("TileSet_mf057")
 position = Vector2(-9, 63)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="multi laser/walls/left wall"]
-position = Vector2(4, 75.25)
+position = Vector2(1, 81.5)
 shape = SubResource("RectangleShape2D_6q3ph")
 
 [node name="right wall" type="StaticBody2D" parent="multi laser/walls"]
 position = Vector2(-9, 63)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="multi laser/walls/right wall"]
-position = Vector2(334, -8.98438)
+position = Vector2(334.5, -12.2802)
 shape = SubResource("RectangleShape2D_640sy")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="multi laser/walls/right wall"]
-position = Vector2(334, 119.121)
+position = Vector2(334.25, 125.92)
 shape = SubResource("RectangleShape2D_640sy")
 
 [node name="top wall" type="StaticBody2D" parent="multi laser/walls"]
@@ -1223,14 +1196,8 @@ shape = SubResource("RectangleShape2D_vh6hb")
 position = Vector2(130, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="multi laser/walls/bottom wall"]
-position = Vector2(29, 237)
+position = Vector2(30, 237.75)
 shape = SubResource("RectangleShape2D_vh6hb")
-
-[node name="Player" parent="multi laser" instance=ExtResource("3_6wnyt")]
-position = Vector2(10, 137)
-
-[node name="Camera2D" type="Camera2D" parent="multi laser/Player"]
-zoom = Vector2(2.5, 2.5)
 
 [node name="mirrors" type="Node2D" parent="multi laser"]
 position = Vector2(73, 121)
@@ -1282,14 +1249,13 @@ position = Vector2(74, 21)
 position = Vector2(-67, 67)
 
 [node name="Chest" parent="multi laser/chest/blue chest" instance=ExtResource("6_l2fsl")]
-position = Vector2(0, 8)
+position = Vector2(2, 9)
 color = Color(0.388235, 0.556863, 1, 1)
 
 [node name="ColorRect" type="ColorRect" parent="multi laser/chest/blue chest"]
-offset_left = -2.0
-offset_top = 10.0
-offset_right = 2.0
-offset_bottom = 14.0
+offset_top = 10.5
+offset_right = 4.0
+offset_bottom = 14.5
 color = Color(0.388235, 0.556863, 1, 1)
 
 [node name="red chest" type="Node2D" parent="multi laser/chest"]
@@ -1378,12 +1344,6 @@ position = Vector2(-11, -10)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LaserMoving/Walls/Top Wall"]
 position = Vector2(162, 0)
 shape = SubResource("RectangleShape2D_scmv8")
-
-[node name="Player" parent="LaserMoving" instance=ExtResource("3_6wnyt")]
-position = Vector2(170, 99)
-
-[node name="Camera2D" type="Camera2D" parent="LaserMoving/Player"]
-zoom = Vector2(2.5, 2.5)
 
 [node name="Mirrors" type="Node2D" parent="LaserMoving"]
 
@@ -1507,11 +1467,11 @@ shape = SubResource("RectangleShape2D_t5oje")
 [node name="1to2 bottom" type="StaticBody2D" parent="Corridor"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/1to2 bottom"]
-position = Vector2(313.938, 165)
+position = Vector2(312, 168)
 shape = SubResource("RectangleShape2D_fpjjv")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Corridor/1to2 bottom"]
-position = Vector2(218, 175)
+position = Vector2(216, 184)
 shape = SubResource("RectangleShape2D_06j12")
 
 [node name="2to3 top" type="StaticBody2D" parent="Corridor"]
@@ -1526,46 +1486,13 @@ shape = SubResource("RectangleShape2D_nkaxv")
 position = Vector2(810, 265)
 shape = SubResource("RectangleShape2D_ftmnb")
 
-[node name="RoomDoor" type="StaticBody2D" parent="."]
-script = ExtResource("5_fpjjv")
+[node name="Room Doors" type="Node2D" parent="."]
 
-[node name="1to2" type="StaticBody2D" parent="RoomDoor" groups=["AlwaysReveal"]]
-position = Vector2(218, 136)
-scale = Vector2(1.28, 1.28)
-script = ExtResource("5_fpjjv")
+[node name="1 to 2" parent="Room Doors" instance=ExtResource("12_euy30")]
+position = Vector2(216, 136)
+required_lit_chests = 3
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RoomDoor/1to2"]
-sprite_frames = SubResource("SpriteFrames_e8hvv")
-animation = &"open"
+[node name="2 to 3" parent="Room Doors" instance=ExtResource("12_euy30")]
+position = Vector2(728, 232)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomDoor/1to2"]
-shape = SubResource("RectangleShape2D_jw88a")
-
-[node name="Area2D" type="Area2D" parent="RoomDoor/1to2"]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomDoor/1to2/Area2D"]
-position = Vector2(-0.5, 2.5)
-shape = SubResource("RectangleShape2D_1oaj3")
-
-[node name="2to3" type="StaticBody2D" parent="RoomDoor" groups=["AlwaysReveal"]]
-position = Vector2(730, 231)
-scale = Vector2(1.28, 1.28)
-script = ExtResource("5_fpjjv")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RoomDoor/2to3"]
-sprite_frames = SubResource("SpriteFrames_e8hvv")
-animation = &"open"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomDoor/2to3"]
-shape = SubResource("RectangleShape2D_jw88a")
-
-[node name="Area2D" type="Area2D" parent="RoomDoor/2to3"]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomDoor/2to3/Area2D"]
-position = Vector2(-0.5, 2.5)
-shape = SubResource("RectangleShape2D_1oaj3")
-
-[connection signal="body_entered" from="RoomDoor/1to2/Area2D" to="RoomDoor/1to2" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="RoomDoor/2to3/Area2D" to="RoomDoor/2to3" method="_on_area_2d_body_entered"]
+[editable path="Room Doors/1 to 2"]
