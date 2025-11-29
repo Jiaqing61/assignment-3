@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://cvbbm1vtho2xb"]
+[gd_scene load_steps=49 format=4 uid="uid://cvbbm1vtho2xb"]
 
 [ext_resource type="Script" uid="uid://c2hw11eq1wudd" path="res://scripts/tutorial.gd" id="1_06j12"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="2_e5mxv"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bbjkgnow335ut" path="res://scenes/prefebs/final_gate.tscn" id="7_6q3ph"]
 [ext_resource type="PackedScene" uid="uid://b2135l5apw28" path="res://scenes/prefebs/laser_rail.tscn" id="8_6q3ph"]
 [ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/UI/mirror_ui.tscn" id="9_euy30"]
-[ext_resource type="PackedScene" uid="uid://b2ey5fesd7i02" path="res://scenes/Levels/Level_2_room_1.tscn" id="10_bk6va"]
+[ext_resource type="PackedScene" uid="uid://bj0mdxwh0yjrs" path="res://scenes/Levels/Level_2.tscn" id="10_6q3ph"]
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="11_euy30"]
 [ext_resource type="Texture2D" uid="uid://c7vrvg8rlxdwp" path="res://assets/Tiles/tile_0045.png" id="13_euax4"]
 [ext_resource type="Texture2D" uid="uid://be0e55v3gudaf" path="res://assets/Tiles/tile_0033.png" id="14_bgxaf"]
@@ -596,8 +596,11 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_mf057"]
 sources/0 = SubResource("TileSetAtlasSource_lhyet")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q3ph"]
+size = Vector2(12, 170.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_640sy"]
-size = Vector2(11, 108.969)
+size = Vector2(11, 105.242)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vh6hb"]
 size = Vector2(342, 11)
@@ -1045,7 +1048,7 @@ sources/0 = SubResource("TileSetAtlasSource_fpjjv")
 size = Vector2(161.125, 12.0625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fpjjv"]
-size = Vector2(160.25, 10.5)
+size = Vector2(172.125, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06j12"]
 size = Vector2(20, 66)
@@ -1195,8 +1198,8 @@ tile_set = SubResource("TileSet_mf057")
 position = Vector2(-9, 63)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="multi laser/walls/left wall"]
-position = Vector2(3, 101.5)
-shape = SubResource("RectangleShape2D_640sy")
+position = Vector2(4, 75.25)
+shape = SubResource("RectangleShape2D_6q3ph")
 
 [node name="right wall" type="StaticBody2D" parent="multi laser/walls"]
 position = Vector2(-9, 63)
@@ -1206,7 +1209,7 @@ position = Vector2(334, -8.98438)
 shape = SubResource("RectangleShape2D_640sy")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="multi laser/walls/right wall"]
-position = Vector2(334, 123.5)
+position = Vector2(334, 119.121)
 shape = SubResource("RectangleShape2D_640sy")
 
 [node name="top wall" type="StaticBody2D" parent="multi laser/walls"]
@@ -1479,7 +1482,7 @@ color = Color(0.282353, 1, 0.443137, 1)
 
 [node name="FinalGate" parent="LaserMoving" instance=ExtResource("7_6q3ph")]
 position = Vector2(263, 184)
-next_scene = ExtResource("10_bk6va")
+next_scene = ExtResource("10_6q3ph")
 
 [node name="Level Controller" type="Node" parent="LaserMoving"]
 script = ExtResource("11_euy30")
@@ -1504,7 +1507,7 @@ shape = SubResource("RectangleShape2D_t5oje")
 [node name="1to2 bottom" type="StaticBody2D" parent="Corridor"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corridor/1to2 bottom"]
-position = Vector2(308, 165)
+position = Vector2(313.938, 165)
 shape = SubResource("RectangleShape2D_fpjjv")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Corridor/1to2 bottom"]
