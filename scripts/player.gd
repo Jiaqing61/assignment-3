@@ -51,3 +51,14 @@ func _update_walk_sfx(input_vec: Vector2) -> void:
 			s.stop()
 			
 		
+
+
+func _on_dark_room_ui_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		Global.dark_room_ui = true
+
+
+
+func _on_dark_room_ui_area_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		Global.dark_room_ui = false

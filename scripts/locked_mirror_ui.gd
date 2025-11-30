@@ -6,9 +6,9 @@ func _ready() -> void:
 	ui.hide()
 
 func _process(delta: float) -> void:
-	if Global.mirror_ui:
-		if not Global.mirror_ui_is_shown:	
+	if Global.locked_mirror_ui:
+		if not Global.locked_mirror_ui_is_shown:	
 			ui.show()
-			Global.mirror_ui_is_shown = true
+			Global.locked_mirror_ui_is_shown = true
 	else:
 		ui.hide()

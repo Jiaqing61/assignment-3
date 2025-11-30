@@ -63,3 +63,13 @@ func _on_decay1_timeout() -> void:
 func _on_decay2_timeout() -> void:
 	color2_lit = false
 	color2 = Color()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		Global.big_laser_ui = true
+		
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		Global.big_laser_ui = false
