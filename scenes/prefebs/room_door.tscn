@@ -34,6 +34,7 @@ size = Vector2(16, 16)
 size = Vector2(7, 11)
 
 [node name="Room Door" type="StaticBody2D" groups=["AlwaysReveal"]]
+z_index = 2
 script = ExtResource("1_bm1d7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

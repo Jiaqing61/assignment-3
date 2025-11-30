@@ -47,6 +47,8 @@ size = Vector2(17, 2)
 
 [node name="Mirror" type="StaticBody2D" groups=["Mirror"]]
 script = SubResource("GDScript_5o7h0")
+rotation_degree = 5.0
+rotation_speed = 70.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.765625, 0.437172)
