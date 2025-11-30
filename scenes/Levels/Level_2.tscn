@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://bj0mdxwh0yjrs"]
+[gd_scene load_steps=43 format=4 uid="uid://bj0mdxwh0yjrs"]
 
 [ext_resource type="Script" uid="uid://cw3k1rshdx3x2" path="res://scripts/door_open.gd" id="1_0cp3y"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_fn4ql"]
@@ -1172,15 +1172,6 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ru5o0")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ccked"]
-viewport_path = NodePath("FinalRoom/DarknessLayer/MaskViewport")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0g6pg"]
-resource_local_to_scene = true
-shader = ExtResource("4_xmsgp")
-shader_parameter/mask_tex = SubResource("ViewportTexture_ccked")
-shader_parameter/darkness_amount = 1.0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13jjs"]
 texture = ExtResource("1_fn4ql")
 separation = Vector2i(1, 1)
@@ -1471,7 +1462,7 @@ sources/0 = SubResource("TileSetAtlasSource_oxay8")
 
 [node name="Player" parent="." instance=ExtResource("3_pklsh")]
 z_index = 1
-position = Vector2(230, 648)
+position = Vector2(40, 43)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)
@@ -1731,9 +1722,6 @@ color = Color(1, 0, 1, 1)
 
 [node name="DarkRoom" type="Node2D" parent="."]
 position = Vector2(992, 0)
-script = ExtResource("1_0cp3y")
-chests = Array[NodePath]([NodePath("Chests/ChestBlue/Chest"), NodePath("Chests/ChestRed/Chest"), NodePath("Chests/ChestGreen/Chest")])
-door = NodePath("../Room Doors/3 to 4")
 
 [node name="TileMaps" type="Node2D" parent="DarkRoom"]
 
@@ -1835,9 +1823,10 @@ color = Color(0, 1, 0, 1)
 
 [node name="level_controller" type="Node" parent="DarkRoom"]
 script = ExtResource("10_oxay8")
+chests = Array[NodePath]([NodePath("../Chests/ChestBlue/Chest"), NodePath("../Chests/ChestRed/Chest"), NodePath("../Chests/ChestGreen/Chest")])
+final_gate = NodePath("../../Room Doors/3 to 4")
 
-[node name="DarknessLayer" type="CanvasLayer" parent="DarkRoom"]
-layer = 100
+[node name="DarknessLayer" type="Node" parent="DarkRoom"]
 
 [node name="MaskViewport" type="SubViewport" parent="DarkRoom/DarknessLayer"]
 disable_3d = true
@@ -1852,10 +1841,9 @@ material = SubResource("ShaderMaterial_ml1qv")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 972.0
-offset_top = -16.0
-offset_right = 727.0
-offset_bottom = -296.0
+offset_left = 992.0
+offset_right = 672.0
+offset_bottom = -336.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("17_nx5ue")
@@ -2066,17 +2054,44 @@ turned_on = true
 [node name="Chests" type="Node2D" parent="FinalRoom" groups=["GateChest"]]
 position = Vector2(197, 47)
 
-[node name="Chest1" parent="FinalRoom/Chests" groups=["GateChest"] instance=ExtResource("8_ila8s")]
-position = Vector2(-191, 27)
+[node name="Purple Chest" type="Node2D" parent="FinalRoom/Chests"]
+
+[node name="Chest1" parent="FinalRoom/Chests/Purple Chest" groups=["GateChest"] instance=ExtResource("8_ila8s")]
+position = Vector2(-188, 27)
 color = Color(1, 0, 1, 1)
 
-[node name="Chest2" parent="FinalRoom/Chests" groups=["GateChest"] instance=ExtResource("8_ila8s")]
-position = Vector2(-127, -42)
+[node name="Color" type="ColorRect" parent="FinalRoom/Chests/Purple Chest"]
+offset_left = -190.0
+offset_top = 29.0
+offset_right = -186.0
+offset_bottom = 33.0
+color = Color(1, 0, 1, 1)
+
+[node name="Yellow Chest" type="Node2D" parent="FinalRoom/Chests"]
+
+[node name="Chest2" parent="FinalRoom/Chests/Yellow Chest" groups=["GateChest"] instance=ExtResource("8_ila8s")]
+position = Vector2(-127, -40)
 color = Color(1, 1, 0, 1)
 ends_darkness = true
 
-[node name="KeyChest" parent="FinalRoom/Chests" groups=["GateChest"] instance=ExtResource("7_ub6r0")]
+[node name="ColorRect" type="ColorRect" parent="FinalRoom/Chests/Yellow Chest"]
+offset_left = -129.0
+offset_top = -38.0
+offset_right = -125.0
+offset_bottom = -34.0
+color = Color(1, 1, 0, 1)
+
+[node name="Green Chest" type="Node2D" parent="FinalRoom/Chests"]
+
+[node name="KeyChest" parent="FinalRoom/Chests/Green Chest" groups=["GateChest"] instance=ExtResource("7_ub6r0")]
 position = Vector2(-39, 153)
+color = Color(0, 1, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="FinalRoom/Chests/Green Chest"]
+offset_left = -41.0
+offset_top = 155.0
+offset_right = -37.0
+offset_bottom = 159.0
 color = Color(0, 1, 0, 1)
 
 [node name="FinalGate" parent="FinalRoom" groups=["LaserEmitters"] instance=ExtResource("9_8f203")]
@@ -2085,9 +2100,10 @@ required_lit_chests = 3
 
 [node name="level_controller" type="Node" parent="FinalRoom"]
 script = ExtResource("10_oxay8")
+chests = Array[NodePath]([NodePath("../Chests/Purple Chest/Chest1"), NodePath("../Chests/Yellow Chest/Chest2"), NodePath("../Chests/Green Chest/KeyChest")])
+final_gate = NodePath("../FinalGate")
 
-[node name="DarknessLayer" type="CanvasLayer" parent="FinalRoom"]
-layer = 100
+[node name="DarknessLayer" type="Node" parent="FinalRoom"]
 
 [node name="MaskViewport" type="SubViewport" parent="FinalRoom/DarknessLayer"]
 disable_3d = true
@@ -2098,14 +2114,14 @@ size = Vector2i(624, 624)
 script = ExtResource("15_toi8m")
 
 [node name="Darkness" type="ColorRect" parent="FinalRoom/DarknessLayer"]
-material = SubResource("ShaderMaterial_0g6pg")
+material = SubResource("ShaderMaterial_ml1qv")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 11.0
-offset_top = 479.0
-offset_right = -200.0
-offset_bottom = 191.0
+offset_left = 96.0
+offset_top = 496.0
+offset_right = -224.0
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("17_nx5ue")

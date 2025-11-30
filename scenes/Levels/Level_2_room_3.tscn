@@ -463,8 +463,7 @@ required_lit_chests = 3
 script = ExtResource("8_jt5ey")
 final_gate = NodePath("../FinalGate")
 
-[node name="DarknessLayer" type="CanvasLayer" parent="."]
-layer = 100
+[node name="DarknessLayer" type="Node" parent="."]
 
 [node name="MaskViewport" type="SubViewport" parent="DarknessLayer"]
 disable_3d = true
