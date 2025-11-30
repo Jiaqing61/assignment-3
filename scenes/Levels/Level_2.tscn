@@ -1877,18 +1877,24 @@ rotation = 1.5708
 tile_map_data = PackedByteArray("AAAHAAQAAAAHAAUAAAAHAAUAAAALAAYAAAAHAAYAAAALAAYAAAAHAAcAAAALAAYAAAAHAAgAAAAIAAUAAAD4/wAAAAAHAAYAAAD5/wAAAAAKAAUAAAD6/wAAAAAKAAUAAAD7/wAAAAAKAAUAAAD8/wAAAAAIAAYAAAABABMAAAAHAAYAAAACABMAAAAKAAUAAAADABMAAAAKAAUAAAAEABMAAAAKAAUAAAAFABMAAAAIAAYAAAD0/wQAAAAHAAUAAAD0/wUAAAALAAYAAAD0/wYAAAALAAYAAAD0/wcAAAALAAYAAAD0/wgAAAAIAAUAAAA=")
 
 [node name="LaserRail Purple" parent="Masterpiece/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(352, 0)
+position = Vector2(320, 192)
 rotation = 1.5708
+tile_map_data = PackedByteArray("AAD0/wQAAAAHAAUAAAD0/wUAAAALAAYAAAD0/wYAAAALAAYAAAD0/wcAAAALAAYAAAD0/wgAAAAIAAUAAAA=")
 
 [node name="LaserRail Red" parent="Masterpiece/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(304, -16)
+position = Vector2(320, 192)
+rotation = 1.5708
+tile_map_data = PackedByteArray("AAD4/wAAAAAHAAYAAAD9/wAAAAAIAAYAAAD5/wAAAAAKAAUAAAD6/wAAAAAKAAUAAAD7/wAAAAAKAAUAAAD8/wAAAAAKAAUAAAA=")
 
 [node name="LaserRail Blue" parent="Masterpiece/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(336, 304)
+position = Vector2(320, 192)
 rotation = 1.5708
+tile_map_data = PackedByteArray("AAAHAAUAAAALAAYAAAAHAAYAAAALAAYAAAAHAAcAAAALAAYAAAAHAAgAAAAIAAUAAAAHAAQAAAAHAAUAAAA=")
 
 [node name="LaserRail Green" parent="Masterpiece/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(0, 80)
+position = Vector2(320, 192)
+rotation = 1.5708
+tile_map_data = PackedByteArray("AAD//xMAAAAHAAYAAAAFABMAAAAIAAYAAAAAABMAAAAKAAUAAAABABMAAAAKAAUAAAACABMAAAAKAAUAAAADABMAAAAKAAUAAAAEABMAAAAKAAUAAAA=")
 
 [node name="Mirrors" type="Node2D" parent="Masterpiece"]
 
