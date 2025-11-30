@@ -1902,28 +1902,28 @@ scale = Vector2(1.5, 1.5)
 [node name="Laser Emitters" type="Node2D" parent="Masterpiece"]
 
 [node name="Laser Emitter 4" parent="Masterpiece/Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_xxpiu")]
-position = Vector2(312, 91)
+position = Vector2(312, 100)
 rotation = -1.91986
 color = Color(0.980392, 0, 0.196078, 1)
 turned_on = true
 rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Red")
 
 [node name="Laser Emitter 1" parent="Masterpiece/Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_xxpiu")]
-position = Vector2(228, 312)
+position = Vector2(202, 311)
 rotation = -0.244346
 color = Color(0, 0.470588, 0.784314, 1)
 turned_on = true
 rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Blue")
 
 [node name="Laser Emitter 2" parent="Masterpiece/Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_xxpiu")]
-position = Vector2(10, 244)
+position = Vector2(11, 235)
 rotation = 1.13446
 color = Color(0, 0.784314, 0.490196, 1)
 turned_on = true
 rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Green")
 
 [node name="Laser Emitter 3" parent="Masterpiece/Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_xxpiu")]
-position = Vector2(245, 10)
+position = Vector2(245, 11)
 rotation = -2.79253
 color = Color(0.784314, 0.196078, 1, 1)
 turned_on = true
