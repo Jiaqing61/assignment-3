@@ -2,7 +2,6 @@ extends StaticBody2D
 
 @export var next_scene: PackedScene
 
-
 @export var required_lit_chests: int = 0    
 
 var is_open: bool = false
@@ -57,7 +56,10 @@ func open_gate() -> void:
 		return
 	is_open = true
 
+	print(is_open)
+
 	if _anim and _anim.sprite_frames.has_animation("open"):
+		print("playing open animation")
 		_anim.play("open")
 		await _anim.animation_finished
 
