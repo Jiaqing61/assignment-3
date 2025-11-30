@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2155g7p3n3eu"]
+
+[ext_resource type="Texture2D" uid="uid://c1qdmrtuanuv1" path="res://assets/New Piskel-11.png" id="2_652kc"]
+
+[sub_resource type="GDScript" id="GDScript_5o7h0"]
+script/source = "extends Node2D
+
+@export var rotation_degree: float = 15.0  
+@export var rotation_speed: float = 85.0  
+var player_touching: bool = false        
+
+
+func _process(delta):
+	if player_touching:
+		if Input.is_action_pressed(\"rotate_left\"):
+			rotation_degrees -= rotation_speed * delta
+		elif Input.is_action_pressed(\"rotate_right\"):
+			rotation_degrees += rotation_speed * delta
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == \"Player\":
+		player_touching = true
+		Global.mirror_ui = true
+
+
+func _on_Area2D_body_exited(body):
+	if body.name == \"Player\":
+		player_touching = false
+		Global.mirror_ui = false
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o7h0"]
+size = Vector2(17, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_652kc"]
+size = Vector2(46, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nha6m"]
+size = Vector2(3.5, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5823m"]
+size = Vector2(17, 2)
+
+[node name="Mirror" type="StaticBody2D" groups=["Mirror"]]
+script = SubResource("GDScript_5o7h0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.765625, 0.437172)
+texture = ExtResource("2_652kc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_5o7h0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_652kc")
+
+[node name="StaticBodies" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodies/StaticBody2D"]
+position = Vector2(-10.5, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodies/StaticBody2D2"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_5823m")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodies/StaticBody2D3"]
+position = Vector2(9.75, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

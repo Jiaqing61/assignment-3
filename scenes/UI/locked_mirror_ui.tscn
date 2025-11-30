@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://btqjvht4rxdul"]
+[gd_scene load_steps=5 format=3 uid="uid://bonkhc6hq05tb"]
 
-[ext_resource type="Script" uid="uid://btx8q0urnm31s" path="res://scripts/mirror_ui.gd" id="1_mtm2i"]
-[ext_resource type="Texture2D" uid="uid://biycmxg0q3sqq" path="res://assets/pngegg.png" id="2_i2l0b"]
+[ext_resource type="Texture2D" uid="uid://biycmxg0q3sqq" path="res://assets/pngegg.png" id="1_m3igm"]
+[ext_resource type="Script" uid="uid://bkq4j77iyh1vu" path="res://scripts/locked_mirror_ui.gd" id="1_xnd2a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2l0b"]
 bg_color = Color(0.582831, 0.772556, 0.877355, 1)
@@ -13,19 +13,19 @@ corner_radius_bottom_left = 12
 [sub_resource type="LabelSettings" id="LabelSettings_anli3"]
 font_color = Color(0, 0, 0, 1)
 
-[node name="Mirror UI" type="CanvasLayer"]
-script = ExtResource("1_mtm2i")
+[node name="Locked mirror UI" type="CanvasLayer"]
+script = ExtResource("1_xnd2a")
 
 [node name="ColorRect" type="Panel" parent="."]
 anchors_preset = -1
-anchor_left = 0.28
-anchor_top = 0.635
-anchor_right = 0.28
-anchor_bottom = 0.635
-offset_left = 0.279999
-offset_top = -0.240021
-offset_right = 187.28
-offset_bottom = 49.76
+anchor_left = 0.189
+anchor_top = 0.553
+anchor_right = 0.189
+anchor_bottom = 0.553
+offset_left = 0.0639954
+offset_top = -0.0720215
+offset_right = 273.064
+offset_bottom = 87.928
 theme_override_styles/panel = SubResource("StyleBoxFlat_i2l0b")
 
 [node name="Text" type="Label" parent="ColorRect"]
@@ -34,10 +34,12 @@ anchors_preset = -1
 anchor_top = 0.592
 anchor_bottom = 0.592
 offset_left = 21.0
-offset_top = -28.6
-offset_right = 140.0
-offset_bottom = -5.59999
-text = "Rotate mirror :"
+offset_top = -49.096
+offset_right = 271.0
+offset_bottom = -0.0959816
+text = "Hmm.. looks like I can't move 
+
+ "
 label_settings = SubResource("LabelSettings_anli3")
 
 [node name="Text2" type="Label" parent="ColorRect"]
@@ -45,14 +47,15 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.592
 anchor_bottom = 0.592
-offset_left = 6.0
-offset_top = -6.59999
-offset_right = 172.0
-offset_bottom = 16.4
-text = "Left/Right arrow keys"
+offset_left = 5.00001
+offset_top = -23.096
+offset_right = 201.0
+offset_bottom = 51.904
+text = "these mirrors. Maybe opening a 
+specific chest will unlock them"
 label_settings = SubResource("LabelSettings_anli3")
 
 [node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
 position = Vector2(10, 14)
 scale = Vector2(0.028541, 0.028541)
-texture = ExtResource("2_i2l0b")
+texture = ExtResource("1_m3igm")
