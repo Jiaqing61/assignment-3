@@ -27,7 +27,7 @@ PauseMenu="*res://scenes/UI/PauseMenu.tscn"
 
 window/size/viewport_width=624
 window/size/viewport_height=624
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 
 [global_group]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dseltwe85kk66"]
 
 [ext_resource type="PackedScene" uid="uid://bi0b0i57utocc" path="res://scenes/prefebs/doubleside_mirror.tscn" id="1_dh8op"]
-[ext_resource type="Script" uid="uid://hl403p0t0kpa" path="res://scripts/mirror_cluster.gd" id="1_gn1ya"]
+[ext_resource type="Script" uid="uid://doio5k3j6xoto" path="res://scripts/mirror_cluster.gd" id="1_gn1ya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipoil"]
 size = Vector2(37, 66)

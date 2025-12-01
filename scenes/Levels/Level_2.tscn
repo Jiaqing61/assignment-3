@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bj0mdxwh0yjrs"]
+[gd_scene load_steps=47 format=4 uid="uid://bj0mdxwh0yjrs"]
 
 [ext_resource type="Script" uid="uid://cw3k1rshdx3x2" path="res://scripts/door_open.gd" id="1_0cp3y"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_fn4ql"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://db5c1gwkvymf4" path="res://scenes/prefebs/room_door.tscn" id="21_pcon5"]
 [ext_resource type="PackedScene" uid="uid://byyyab87st2op" path="res://scenes/UI/big_laser_ui.tscn" id="21_toi8m"]
 [ext_resource type="PackedScene" uid="uid://ievyc1ngjgh0" path="res://scenes/UI/dark_room_ui.tscn" id="22_nx5ue"]
+[ext_resource type="PackedScene" uid="uid://ocpo7r76xx28" path="res://scenes/UI/PauseMenu.tscn" id="23_toi8m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4utc"]
 texture = ExtResource("1_fn4ql")
@@ -1467,9 +1468,10 @@ size = Vector2(33, 48)
 
 [node name="Player" parent="." instance=ExtResource("3_pklsh")]
 z_index = 1
-position = Vector2(40, 43)
+position = Vector2(40, 65)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 0)
 zoom = Vector2(2.5, 2.5)
 
 [node name="LockedMirror" type="Node2D" parent="."]
@@ -1530,12 +1532,12 @@ unlock_group = 1
 
 [node name="lockedmirror3" parent="LockedMirror/Mirrors" instance=ExtResource("5_j2fhe")]
 position = Vector2(248, 108)
-rotation = 4.88692
+rotation = 1.16937
 unlock_group = 2
 
 [node name="lockedmirror4" parent="LockedMirror/Mirrors" instance=ExtResource("5_j2fhe")]
 position = Vector2(183, 59)
-rotation = 1.5708
+rotation = 0.785398
 unlock_group = 2
 
 [node name="Laser Emitters" type="Node2D" parent="LockedMirror"]
@@ -2170,6 +2172,8 @@ position = Vector2(-3.5, -1)
 shape = SubResource("RectangleShape2D_pvawu")
 
 [node name="Dark room UI" parent="." instance=ExtResource("22_nx5ue")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("23_toi8m")]
 
 [connection signal="body_entered" from="Dark room UI area" to="Player" method="_on_dark_room_ui_area_body_entered"]
 [connection signal="body_exited" from="Dark room UI area" to="Player" method="_on_dark_room_ui_area_body_exited"]

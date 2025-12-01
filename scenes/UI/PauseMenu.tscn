@@ -22,7 +22,7 @@ shadow_offset = Vector2(0, 3.5)
 script = ExtResource("1_4r2wj")
 
 [node name="MenuBackground" parent="." instance=ExtResource("1_fsae6")]
-scale = Vector2(5, 5)
+scale = Vector2(2.5, 2.5)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -45,10 +45,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = -150.0
-offset_right = 867.0
-offset_bottom = -50.339
+offset_left = -314.0
+offset_top = -239.0
+offset_right = 419.0
+offset_bottom = -153.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.290196, 0.403922, 0.384314, 1)
@@ -59,57 +59,61 @@ theme_override_constants/paragraph_spacing = 5
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 30
 theme_override_fonts/font = ExtResource("2_6q0ex")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 40
 text = "Light ⚡️ Labyrinth"
 horizontal_alignment = 1
 
 [node name="Resume" type="Button" parent="Control"]
+process_mode = 3
 layout_mode = 0
-offset_left = 463.0
-offset_top = 730.0
-offset_right = 923.0
-offset_bottom = 790.0
+offset_left = 206.0
+offset_top = 221.0
+offset_right = 482.0
+offset_bottom = 266.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_6q0ex")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_4r2wj")
-text = "Exit"
+text = "RESUME"
 
 [node name="Restart" type="Button" parent="Control"]
+process_mode = 3
 layout_mode = 0
-offset_left = 460.0
-offset_top = 488.0
-offset_right = 920.0
-offset_bottom = 548.0
+offset_left = 206.0
+offset_top = 306.0
+offset_right = 488.0
+offset_bottom = 354.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_6q0ex")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_4r2wj")
 text = "Restart level"
 
 [node name="Back" type="Button" parent="Control"]
+process_mode = 3
 layout_mode = 0
-offset_left = 467.0
-offset_top = 610.0
-offset_right = 927.0
-offset_bottom = 670.0
+offset_left = 206.0
+offset_top = 394.0
+offset_right = 488.0
+offset_bottom = 439.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_6q0ex")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_4r2wj")
 text = "Back to Menu"
 
 [node name="Exit" type="Button" parent="Control"]
+process_mode = 3
 layout_mode = 0
-offset_left = 464.0
-offset_top = 375.0
-offset_right = 924.0
-offset_bottom = 435.0
+offset_left = 206.0
+offset_top = 472.0
+offset_right = 485.0
+offset_bottom = 519.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_6q0ex")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_4r2wj")
-text = "Resume"
+text = "Exit"
 
 [connection signal="pressed" from="Control/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Control/Restart" to="." method="_on_restart_pressed"]

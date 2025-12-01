@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cvbbm1vtho2xb"]
+[gd_scene load_steps=31 format=4 uid="uid://cvbbm1vtho2xb"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="2_e5mxv"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="3_6wnyt"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cw3k1rshdx3x2" path="res://scripts/door_open.gd" id="12_bk6va"]
 [ext_resource type="PackedScene" uid="uid://db5c1gwkvymf4" path="res://scenes/prefebs/room_door.tscn" id="12_euy30"]
 [ext_resource type="PackedScene" uid="uid://7hieh7rjtic3" path="res://scenes/UI/laser_rail_ui.tscn" id="13_cxgh7"]
+[ext_resource type="PackedScene" uid="uid://ocpo7r76xx28" path="res://scenes/UI/PauseMenu.tscn" id="14_l2fsl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2vpr"]
 texture = ExtResource("2_e5mxv")
@@ -1161,7 +1162,7 @@ z_index = 1
 position = Vector2(104, 103)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2.8, 2.8)
+zoom = Vector2(2.5, 2.5)
 
 [node name="Tutorial" type="Node2D" parent="."]
 script = ExtResource("12_bk6va")
@@ -1465,5 +1466,7 @@ required_lit_chests = 3
 position = Vector2(728, 232)
 
 [node name="Laser rail UI" parent="." instance=ExtResource("13_cxgh7")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("14_l2fsl")]
 
 [editable path="Room Doors/1 to 2"]
