@@ -24,7 +24,7 @@ anchor_right = 0.189
 anchor_bottom = 0.553
 offset_left = 0.0639954
 offset_top = -0.0720215
-offset_right = 167.064
+offset_right = 232.064
 offset_bottom = 84.928
 theme_override_styles/panel = SubResource("StyleBoxFlat_i2l0b")
 
@@ -49,8 +49,8 @@ offset_left = 5.0
 offset_top = -23.728
 offset_right = 171.0
 offset_bottom = 25.272
-text = "Press 'V' to pick up 
-and place the laser"
+text = "Press 'V' to pick up and place 
+the laser along the rail"
 label_settings = SubResource("LabelSettings_anli3")
 
 [node name="Sprite2D" type="Sprite2D" parent="ColorRect"]

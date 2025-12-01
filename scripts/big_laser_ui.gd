@@ -7,8 +7,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Global.big_laser_ui:
-		if not Global.big_laser_ui_is_shown:	
-			ui.show()
-			Global.big_laser_ui_is_shown = true
+		ui.show()
 	else:
 		ui.hide()
