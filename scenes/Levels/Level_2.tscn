@@ -1949,6 +1949,7 @@ position = Vector2(97, 151)
 
 [node name="MirrorCluster" type="Node2D" parent="Masterpiece/Mirrors"]
 position = Vector2(162, 152)
+rotation = 1.5708
 scale = Vector2(1.5, 1.5)
 script = ExtResource("17_pvawu")
 
