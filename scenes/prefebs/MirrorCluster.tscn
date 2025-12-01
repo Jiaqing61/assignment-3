@@ -1,7 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://dseltwe85kk66"]
+[gd_scene load_steps=8 format=3 uid="uid://dseltwe85kk66"]
 
-[ext_resource type="PackedScene" uid="uid://bi0b0i57utocc" path="res://scenes/prefebs/doubleside_mirror.tscn" id="1_dh8op"]
-[ext_resource type="Script" uid="uid://doio5k3j6xoto" path="res://scripts/mirror_cluster.gd" id="1_gn1ya"]
+[ext_resource type="Script" uid="uid://hl403p0t0kpa" path="res://scripts/mirror_cluster.gd" id="1_gn1ya"]
+[ext_resource type="Texture2D" uid="uid://c1qdmrtuanuv1" path="res://assets/New Piskel-11.png" id="2_o3yd4"]
+
+[sub_resource type="GDScript" id="GDScript_5o7h0"]
+script/source = "extends Node2D
+
+@export var rotation_degree: float = 15.0  
+@export var rotation_speed: float = 85.0  
+@export var cluster_controlled: bool = false 
+var player_touching: bool = false        
+
+
+func _process(delta):
+	if cluster_controlled:
+		return
+	if player_touching:
+		if Input.is_action_pressed(\"rotate_left\"):
+			rotation_degrees -= rotation_speed * delta
+		elif Input.is_action_pressed(\"rotate_right\"):
+			rotation_degrees += rotation_speed * delta
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == \"Player\":
+		player_touching = true
+		Global.mirror_ui = true
+
+
+func _on_Area2D_body_exited(body):
+	if body.name == \"Player\":
+		player_touching = false
+		Global.mirror_ui = false
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o7h0"]
+size = Vector2(17, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nha6m"]
+size = Vector2(3.5, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5823m"]
+size = Vector2(17, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipoil"]
 size = Vector2(37, 66)
@@ -9,16 +49,232 @@ size = Vector2(37, 66)
 [node name="MirrorCluster" type="Node2D"]
 script = ExtResource("1_gn1ya")
 
-[node name="doubleside-mirror" parent="." instance=ExtResource("1_dh8op")]
+[node name="doubleside-mirror" type="Node2D" parent="."]
 position = Vector2(-7, -9)
 rotation = -0.436332
 
-[node name="doubleside-mirror2" parent="." instance=ExtResource("1_dh8op")]
+[node name="Mirror" type="StaticBody2D" parent="doubleside-mirror" groups=["Mirror"]]
+position = Vector2(-1, 0)
+rotation = 4.71239
+script = SubResource("GDScript_5o7h0")
+rotation_degree = 5.0
+rotation_speed = 70.0
+cluster_controlled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="doubleside-mirror/Mirror"]
+scale = Vector2(0.765625, 0.437172)
+texture = ExtResource("2_o3yd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror/Mirror"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_5o7h0")
+
+[node name="StaticBodies" type="Node2D" parent="doubleside-mirror/Mirror"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doubleside-mirror/Mirror/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror/Mirror/StaticBodies/StaticBody2D"]
+position = Vector2(-10.5, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="doubleside-mirror/Mirror/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror/Mirror/StaticBodies/StaticBody2D2"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_5823m")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="doubleside-mirror/Mirror/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror/Mirror/StaticBodies/StaticBody2D3"]
+position = Vector2(9.75, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="Mirror2" type="StaticBody2D" parent="doubleside-mirror" groups=["Mirror"]]
+position = Vector2(1, 0.7)
+rotation = 1.5708
+script = SubResource("GDScript_5o7h0")
+rotation_degree = 5.0
+rotation_speed = 70.0
+cluster_controlled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="doubleside-mirror/Mirror2"]
+scale = Vector2(0.765625, 0.437172)
+texture = ExtResource("2_o3yd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror/Mirror2"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_5o7h0")
+
+[node name="StaticBodies" type="Node2D" parent="doubleside-mirror/Mirror2"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doubleside-mirror/Mirror2/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror/Mirror2/StaticBodies/StaticBody2D"]
+position = Vector2(-10.5, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="doubleside-mirror/Mirror2/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror/Mirror2/StaticBodies/StaticBody2D2"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_5823m")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="doubleside-mirror/Mirror2/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror/Mirror2/StaticBodies/StaticBody2D3"]
+position = Vector2(9.75, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="doubleside-mirror2" type="Node2D" parent="."]
 position = Vector2(0, 12)
 
-[node name="doubleside-mirror3" parent="." instance=ExtResource("1_dh8op")]
+[node name="Mirror" type="StaticBody2D" parent="doubleside-mirror2" groups=["Mirror"]]
+position = Vector2(-1, 0)
+rotation = 4.71239
+script = SubResource("GDScript_5o7h0")
+rotation_degree = 5.0
+rotation_speed = 70.0
+cluster_controlled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="doubleside-mirror2/Mirror"]
+scale = Vector2(0.765625, 0.437172)
+texture = ExtResource("2_o3yd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror2/Mirror"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_5o7h0")
+
+[node name="StaticBodies" type="Node2D" parent="doubleside-mirror2/Mirror"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doubleside-mirror2/Mirror/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror2/Mirror/StaticBodies/StaticBody2D"]
+position = Vector2(-10.5, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="doubleside-mirror2/Mirror/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror2/Mirror/StaticBodies/StaticBody2D2"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_5823m")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="doubleside-mirror2/Mirror/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror2/Mirror/StaticBodies/StaticBody2D3"]
+position = Vector2(9.75, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="Mirror2" type="StaticBody2D" parent="doubleside-mirror2" groups=["Mirror"]]
+position = Vector2(1, 0.7)
+rotation = 1.5708
+script = SubResource("GDScript_5o7h0")
+rotation_degree = 5.0
+rotation_speed = 70.0
+cluster_controlled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="doubleside-mirror2/Mirror2"]
+scale = Vector2(0.765625, 0.437172)
+texture = ExtResource("2_o3yd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror2/Mirror2"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_5o7h0")
+
+[node name="StaticBodies" type="Node2D" parent="doubleside-mirror2/Mirror2"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doubleside-mirror2/Mirror2/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror2/Mirror2/StaticBodies/StaticBody2D"]
+position = Vector2(-10.5, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="doubleside-mirror2/Mirror2/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror2/Mirror2/StaticBodies/StaticBody2D2"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_5823m")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="doubleside-mirror2/Mirror2/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror2/Mirror2/StaticBodies/StaticBody2D3"]
+position = Vector2(9.75, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="doubleside-mirror3" type="Node2D" parent="."]
 position = Vector2(7, -9)
 rotation = 0.436332
+
+[node name="Mirror" type="StaticBody2D" parent="doubleside-mirror3" groups=["Mirror"]]
+position = Vector2(-1, 0)
+rotation = 4.71239
+script = SubResource("GDScript_5o7h0")
+rotation_degree = 5.0
+rotation_speed = 70.0
+cluster_controlled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="doubleside-mirror3/Mirror"]
+scale = Vector2(0.765625, 0.437172)
+texture = ExtResource("2_o3yd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror3/Mirror"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_5o7h0")
+
+[node name="StaticBodies" type="Node2D" parent="doubleside-mirror3/Mirror"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doubleside-mirror3/Mirror/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror3/Mirror/StaticBodies/StaticBody2D"]
+position = Vector2(-10.5, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="doubleside-mirror3/Mirror/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror3/Mirror/StaticBodies/StaticBody2D2"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_5823m")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="doubleside-mirror3/Mirror/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror3/Mirror/StaticBodies/StaticBody2D3"]
+position = Vector2(9.75, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="Mirror2" type="StaticBody2D" parent="doubleside-mirror3" groups=["Mirror"]]
+position = Vector2(1, 0.7)
+rotation = 1.5708
+script = SubResource("GDScript_5o7h0")
+rotation_degree = 5.0
+rotation_speed = 70.0
+cluster_controlled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="doubleside-mirror3/Mirror2"]
+scale = Vector2(0.765625, 0.437172)
+texture = ExtResource("2_o3yd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror3/Mirror2"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_5o7h0")
+
+[node name="StaticBodies" type="Node2D" parent="doubleside-mirror3/Mirror2"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doubleside-mirror3/Mirror2/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror3/Mirror2/StaticBodies/StaticBody2D"]
+position = Vector2(-10.5, 0)
+shape = SubResource("RectangleShape2D_nha6m")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="doubleside-mirror3/Mirror2/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror3/Mirror2/StaticBodies/StaticBody2D2"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_5823m")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="doubleside-mirror3/Mirror2/StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doubleside-mirror3/Mirror2/StaticBodies/StaticBody2D3"]
+position = Vector2(9.75, 0)
+shape = SubResource("RectangleShape2D_nha6m")
 
 [node name="InteractArea" type="Area2D" parent="."]
 
