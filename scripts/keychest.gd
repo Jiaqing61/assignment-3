@@ -15,6 +15,9 @@ var _lit := false
 @onready var _sprite: Sprite2D = $Sprite2D
 @onready var _decay_timer: Timer = Timer.new()
 
+func is_lit() -> bool:
+	return _lit
+	
 func _ready() -> void:
 	_decay_timer.wait_time = decay_seconds
 	_decay_timer.one_shot = true

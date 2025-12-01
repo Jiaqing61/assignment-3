@@ -1512,7 +1512,7 @@ size = Vector2(33, 48)
 
 [node name="Player" parent="." instance=ExtResource("3_pklsh")]
 z_index = 1
-position = Vector2(746, 607)
+position = Vector2(148, 120)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
@@ -2374,14 +2374,14 @@ color = Color(1, 1, 0, 1)
 position = Vector2(5, 47)
 
 [node name="KeyChest" parent="FinalRoom/Chests/Green Chest" groups=["GateChest"] instance=ExtResource("7_ub6r0")]
-position = Vector2(-39, 153)
+position = Vector2(-47, 106)
 color = Color(0, 1, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="FinalRoom/Chests/Green Chest"]
-offset_left = -41.0
-offset_top = 155.0
-offset_right = -37.0
-offset_bottom = 159.0
+offset_left = -49.0
+offset_top = 108.0
+offset_right = -45.0
+offset_bottom = 112.0
 color = Color(0, 1, 0, 1)
 
 [node name="FinalGate" parent="FinalRoom" groups=["LaserEmitters"] instance=ExtResource("9_8f203")]

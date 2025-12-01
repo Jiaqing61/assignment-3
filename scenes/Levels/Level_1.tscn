@@ -1159,7 +1159,7 @@ tile_set = SubResource("TileSet_cxgh7")
 
 [node name="Player" parent="." instance=ExtResource("3_6wnyt")]
 z_index = 1
-position = Vector2(104, 103)
+position = Vector2(962, 105)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)

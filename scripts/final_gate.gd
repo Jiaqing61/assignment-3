@@ -14,6 +14,10 @@ var _chests: Array = []
 
 func _ready() -> void:
 	# Set initial animation state
+	print("--- GateChest GROUP MEMBERS ---")
+	for n in get_tree().get_nodes_in_group("GateChest"):
+		print(n.name, " |  scene path: ", n.get_path())
+
 	if _anim and _anim.sprite_frames.has_animation("close"):
 		_anim.play("close")
 
@@ -43,7 +47,7 @@ func _on_chest_lit_changed(lit: bool) -> void:
 	# Recalculate from scratch to avoid double-counting
 	_current_lit_chests = 0
 	for c in _chests:
-		if c.is_lit():
+		if c.has_method("is_lit") and c.is_lit():
 			_current_lit_chests += 1
 
 	_update_gate_state()

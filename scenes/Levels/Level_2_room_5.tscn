@@ -288,7 +288,7 @@ rotation = 4.73356
 color = Color(0, 0, 1, 1)
 turned_on = true
 
-[node name="Chests" type="Node2D" parent="." groups=["GateChest"]]
+[node name="Chests" type="Node2D" parent="."]
 position = Vector2(197, 47)
 
 [node name="Chest1" parent="Chests" groups=["GateChest"] instance=ExtResource("9_471ga")]

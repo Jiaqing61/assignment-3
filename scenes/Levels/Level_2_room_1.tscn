@@ -379,14 +379,10 @@ zoom = Vector2(2.5, 2.5)
 position = Vector2(126, 77)
 rotation = 0.453786
 scale = Vector2(0.99863, 1.00336)
-rotation_degree = 5.0
-rotation_speed = 70.0
 
 [node name="Mirror 2" parent="Mirrors" instance=ExtResource("4_a0ksw")]
 position = Vector2(81, 139)
 rotation = 0.453786
-rotation_degree = 5.0
-rotation_speed = 70.0
 
 [node name="lockedmirror" parent="Mirrors" instance=ExtResource("5_ed1h1")]
 position = Vector2(76, 52)

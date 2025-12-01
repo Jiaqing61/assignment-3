@@ -374,31 +374,21 @@ zoom = Vector2(2.5, 2.5)
 [node name="Mirror 1" parent="Mirrors" instance=ExtResource("6_q47ol")]
 position = Vector2(217, 105)
 rotation = 0.453786
-rotation_degree = 5.0
-rotation_speed = 70.0
 
 [node name="Mirror 2" parent="Mirrors" instance=ExtResource("6_q47ol")]
 position = Vector2(71, 106)
 rotation = -1.32645
-rotation_degree = 5.0
-rotation_speed = 70.0
 
 [node name="Mirror 3" parent="Mirrors" instance=ExtResource("6_q47ol")]
 position = Vector2(102, 146)
 rotation = 2.37365
-rotation_degree = 5.0
-rotation_speed = 70.0
 
 [node name="Mirror 4" parent="Mirrors" instance=ExtResource("6_q47ol")]
 position = Vector2(163, 71)
 rotation = 0.610865
-rotation_degree = 5.0
-rotation_speed = 70.0
 
 [node name="Mirror 5" parent="Mirrors" instance=ExtResource("6_q47ol")]
 position = Vector2(165, 143)
-rotation_degree = 5.0
-rotation_speed = 70.0
 
 [node name="Laser Emitters" type="Node2D" parent="."]
 
