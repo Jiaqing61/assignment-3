@@ -2244,6 +2244,7 @@ offset_bottom = 13.0
 color = Color(0.784314, 0.196078, 1, 1)
 
 [node name="Green Chest" type="Node2D" parent="Masterpiece/Chests"]
+position = Vector2(-3, 305)
 
 [node name="Chest 3" parent="Masterpiece/Chests/Green Chest" instance=ExtResource("8_ila8s")]
 position = Vector2(99, 7)
@@ -2369,6 +2370,7 @@ offset_bottom = -34.0
 color = Color(1, 1, 0, 1)
 
 [node name="Green Chest" type="Node2D" parent="FinalRoom/Chests"]
+position = Vector2(5, 47)
 
 [node name="KeyChest" parent="FinalRoom/Chests/Green Chest" groups=["GateChest"] instance=ExtResource("7_ub6r0")]
 position = Vector2(-39, 153)
