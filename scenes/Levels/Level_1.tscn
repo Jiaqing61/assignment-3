@@ -1159,7 +1159,7 @@ tile_set = SubResource("TileSet_cxgh7")
 
 [node name="Player" parent="." instance=ExtResource("3_6wnyt")]
 z_index = 1
-position = Vector2(962, 105)
+position = Vector2(951, 199)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)
@@ -1356,7 +1356,7 @@ position = Vector2(287, -80)
 [node name="Mirrors" type="Node2D" parent="Laser Moving"]
 
 [node name="Mirror 1" parent="Laser Moving/Mirrors" instance=ExtResource("4_y2vpr")]
-position = Vector2(217, 105)
+position = Vector2(218, 130)
 rotation = 0.453786
 
 [node name="Mirror 2" parent="Laser Moving/Mirrors" instance=ExtResource("4_y2vpr")]
@@ -1468,5 +1468,6 @@ position = Vector2(728, 232)
 [node name="Laser rail UI" parent="." instance=ExtResource("13_cxgh7")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("14_l2fsl")]
+visible = false
 
 [editable path="Room Doors/1 to 2"]
