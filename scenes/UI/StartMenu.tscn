@@ -105,7 +105,9 @@ V        Grab / Release
 
 — MIRRORS —
 ←  →     Rotate
-"
+
+— Pause —
+Esc"
 horizontal_alignment = 1
 
 [node name="Title" type="Label" parent="."]

@@ -1512,7 +1512,7 @@ size = Vector2(33, 48)
 
 [node name="Player" parent="." instance=ExtResource("3_pklsh")]
 z_index = 1
-position = Vector2(293, 105)
+position = Vector2(1017, 195)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
