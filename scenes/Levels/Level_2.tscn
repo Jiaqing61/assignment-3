@@ -1512,7 +1512,7 @@ size = Vector2(33, 48)
 
 [node name="Player" parent="." instance=ExtResource("3_pklsh")]
 z_index = 1
-position = Vector2(148, 120)
+position = Vector2(293, 105)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
@@ -1601,7 +1601,7 @@ turned_on = true
 rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Red")
 
 [node name="Laser Emitter Green" parent="LockedMirror/Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_xxpiu")]
-position = Vector2(7, 140)
+position = Vector2(8, 89)
 rotation = 1.309
 color = Color(0.282353, 1, 0.443137, 1)
 turned_on = true

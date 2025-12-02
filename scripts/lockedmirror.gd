@@ -27,11 +27,14 @@ func _ready() -> void:
 func _connect_to_key_chest() -> void:
 	for chest in get_tree().get_nodes_in_group("KeyChest"):
 		if chest.has_signal("key_obtained"):
+			print("Mirror", name, " (group =", unlock_group, ") connects to chest:", chest.name, " (group =", chest.unlock_group, ")")
 			chest.key_obtained.connect(_on_key_obtained)
 
 
 func _on_key_obtained(group_id: int) -> void:
+	print("Mirror", name, " (group =", unlock_group, ") received key_obtained(", group_id, ")")
 	if group_id == unlock_group:
+		print(" -> group match, unlocking mirror ", name)
 		_unlock()
 
 
@@ -64,3 +67,4 @@ func _process(delta: float) -> void:
 			rotation_degrees -= rotation_speed * delta
 		elif Input.is_action_pressed("rotate_right"):
 			rotation_degrees += rotation_speed * delta
+			
