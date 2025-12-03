@@ -324,6 +324,7 @@ size = Vector2i(624, 624)
 script = ExtResource("13_5ycmn")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer"]
+visible = false
 material = SubResource("ShaderMaterial_cpt8e")
 anchors_preset = 15
 anchor_right = 1.0
