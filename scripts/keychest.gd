@@ -28,7 +28,7 @@ func _ready() -> void:
 
 
 func laser_hit(laser_color: Color, hit_point: Vector2, power: float = 1.0) -> void:
-	print("[KeyChest]", name, "laser_hit, color =", laser_color, "from point", hit_point)
+	# print("[KeyChest]", name, "laser_hit, color =", laser_color, "from point", hit_point)
 	if laser_color == Color.WHITE or laser_color == color:
 		_set_lit(true)
 		_decay_timer.start()
@@ -41,14 +41,14 @@ func _on_decay_timeout() -> void:
 func _set_lit(v: bool) -> void:
 	if _lit == v:
 		return
-	print("[KeyChest]", name, "set_lit from", _lit, "to", v)
+	# print("[KeyChest]", name, "set_lit from", _lit, "to", v)
 	_lit = v
 	emit_signal("lit_changed", _lit)
 	_apply_visual()
 
 	if _lit and is_key_chest:
 		_give_key_to_player()
-		print("[KeyChest]", name, "emitting key_obtained(", unlock_group, ")")
+		# print("[KeyChest]", name, "emitting key_obtained(", unlock_group, ")")
 		emit_signal("key_obtained", unlock_group) 
 
 
@@ -63,4 +63,4 @@ func _give_key_to_player() -> void:
 	var player = get_tree().get_first_node_in_group("Player")
 	if player:
 		player.has_key = true
-		print("🗝️ Player obtained a key!")
+		# print("🗝️ Player obtained a key!")

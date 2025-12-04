@@ -13,7 +13,7 @@ func _ready():
 		drawer = get_node("%LaserMaskDrawer")
 	if drawer:
 		LaserVisibilityMask.drawer = drawer
-		print("✅ Success: LaserMaskDrawer found and registered!")
+		# print("✅ Success: LaserMaskDrawer found and registered!")
 	else:
 		push_error("❌ CRITICAL: Could not find LaserMaskDrawer! Check the path in dark_level.gd")
 	
@@ -44,7 +44,7 @@ func _process(_dt):
 
 func _on_dark_room_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") or body.name == "Player":
-		print("Player entered Dark Room") # 调试信息
+		# print("Player entered Dark Room") # 调试信息
 		# 通知所有黑暗控制器开始变黑
 		get_tree().call_group("DarknessController", "fade_in_darkness", 1.0)
 		
@@ -52,6 +52,6 @@ func _on_dark_room_area_body_entered(body: Node2D) -> void:
 
 func _on_dark_room_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player") or body.name == "Player":
-		print("Player exited Dark Room") # 调试信息
+		# print("Player exited Dark Room") # 调试信息
 		# 通知所有黑暗控制器变亮
 		get_tree().call_group("DarknessController", "fade_out_darkness", 1.0) 

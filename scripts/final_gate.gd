@@ -14,9 +14,9 @@ var _chests: Array = []
 
 func _ready() -> void:
 	# Set initial animation state
-	print("--- GateChest GROUP MEMBERS ---")
-	for n in get_tree().get_nodes_in_group("GateChest"):
-		print(n.name, " |  scene path: ", n.get_path())
+	# print("--- GateChest GROUP MEMBERS ---")
+	# for n in get_tree().get_nodes_in_group("GateChest"):
+	#	print(n.name, " |  scene path: ", n.get_path())
 
 	if _anim and _anim.sprite_frames.has_animation("close"):
 		_anim.play("close")
