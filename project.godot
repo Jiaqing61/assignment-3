@@ -38,6 +38,7 @@ Mirror=""
 LaserEmitter=""
 AlwaysReveal=""
 GateChest=""
+DarknessController=""
 
 [input]
 

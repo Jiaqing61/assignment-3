@@ -58,7 +58,6 @@ func _on_dark_room_ui_area_body_entered(body: Node2D) -> void:
 		Global.dark_room_ui = true
 
 
-
 func _on_dark_room_ui_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		Global.dark_room_ui = false

@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://32qauk8sid1x" path="res://scripts/level_controller.gd" id="8_jt5ey"]
 [ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="9_qfsu5"]
 [ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="10_vgb85"]
-[ext_resource type="Script" uid="uid://4x1tv6rt0uh8" path="res://scripts/darknesscontroller.gd" id="11_s37vt"]
+[ext_resource type="Script" uid="uid://4x1tv6rt0uh8" path="res://scripts/darkness_controller.gd" id="11_s37vt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c13y7"]
 texture = ExtResource("1_jc7ld")

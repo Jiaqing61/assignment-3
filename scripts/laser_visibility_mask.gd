@@ -2,11 +2,8 @@ extends Node
 
 var drawer: Node2D
 
-func _ready() -> void:
-	drawer = get_tree().get_root().find_child("LaserMaskDrawer", true, false)
-
 func begin() -> void:
-	if drawer:
+	if is_instance_valid(drawer):
 		drawer.call("begin_frame")
 
 # 统一的 世界 → 屏幕 坐标转换（避免错位）
@@ -26,4 +23,5 @@ func add_reveal_world(pos_world: Vector2, radius: float, feather: float = 14.0) 
 	if drawer == null:
 		return
 	var screen_pos := _world_to_screen(pos_world)
-	drawer.call("add_reveal_circle_screen", screen_pos, radius, feather)
+	var zoom_scale = get_viewport().get_canvas_transform().get_scale().x
+	drawer.call("add_reveal_circle_screen", screen_pos, radius * zoom_scale, feather * zoom_scale)

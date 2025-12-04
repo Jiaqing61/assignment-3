@@ -3,35 +3,8 @@ extends Node
 @export var chests: Array[NodePath] = []
 @export var door: NodePath
 
-@export var player_reveal_radius := 32.0
-@export var player_reveal_feather := 32.0
-@export var reveal_radius   := 24.0
-@export var reveal_feather  := 24.0
-
 var _lit_count := 0
 var _chest_nodes: Array[Node] = []
-
-func _process(_dt):
-	LaserVisibilityMask.begin()   # cleaning last frame
-	# collect laser
-	for emitter in get_tree().get_nodes_in_group("LaserEmitters"):
-		if emitter.has_method("get_points_global"):
-			LaserVisibilityMask.add_path_world(emitter.get_points_global())
-	
-	for r in get_tree().get_nodes_in_group("Revealables"):
-		if r.has_method("is_lit") and r.is_lit():
-			var pos :Vector2 = r.get_reveal_position() if r.has_method("get_reveal_position") else r.global_position
-			var rad :float = r.reveal_radius if r.has_method("reveal_radius") else reveal_radius
-			LaserVisibilityMask.add_reveal_world(pos, rad, reveal_feather)
-	
-	var player : CharacterBody2D = get_tree().get_first_node_in_group("Player")
-	if player:
-		var pos: Vector2 = player.global_position
-		LaserVisibilityMask.add_reveal_world(pos, player_reveal_radius, player_reveal_feather)
-		
-	for door in get_tree().get_nodes_in_group("AlwaysReveal"):
-		var pos: Vector2 = door.global_position
-		LaserVisibilityMask.add_reveal_world(pos, reveal_radius, reveal_feather)			
 
 
 func _ready() -> void:

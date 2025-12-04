@@ -1,7 +1,8 @@
-[gd_scene load_steps=53 format=4 uid="uid://bj0mdxwh0yjrs"]
+[gd_scene load_steps=54 format=4 uid="uid://bj0mdxwh0yjrs"]
 
 [ext_resource type="Script" uid="uid://cw3k1rshdx3x2" path="res://scripts/door_open.gd" id="1_0cp3y"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_fn4ql"]
+[ext_resource type="Script" uid="uid://bryn8bgonwu3m" path="res://scripts/dark_level.gd" id="1_pvawu"]
 [ext_resource type="PackedScene" uid="uid://b2135l5apw28" path="res://scenes/prefebs/laser_rail.tscn" id="2_e1qoi"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="3_pklsh"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="4_e8c4m"]
@@ -15,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cmvyg7iue008r" path="res://scenes/prefebs/big_laser.tscn" id="13_0cp3y"]
 [ext_resource type="PackedScene" uid="uid://bv5inuvppb2bf" path="res://scenes/tests/lockedmirror.tscn" id="14_pcon5"]
 [ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="15_toi8m"]
-[ext_resource type="Script" uid="uid://4x1tv6rt0uh8" path="res://scripts/darknesscontroller.gd" id="17_nx5ue"]
+[ext_resource type="Script" uid="uid://4x1tv6rt0uh8" path="res://scripts/darkness_controller.gd" id="17_nx5ue"]
 [ext_resource type="Script" uid="uid://hl403p0t0kpa" path="res://scripts/mirror_cluster.gd" id="17_pvawu"]
 [ext_resource type="Texture2D" uid="uid://c1qdmrtuanuv1" path="res://assets/New Piskel-11.png" id="18_s58fl"]
 [ext_resource type="PackedScene" uid="uid://dh0eashre7oa2" path="res://scenes/prefebs/Doublemirror.tscn" id="19_s58fl"]
@@ -1163,14 +1164,8 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0fmwa")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_13jjs"]
-viewport_path = NodePath("DarkRoom/DarknessLayer/MaskViewport")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ml1qv"]
-resource_local_to_scene = true
-shader = ExtResource("4_xmsgp")
-shader_parameter/mask_tex = SubResource("ViewportTexture_13jjs")
-shader_parameter/darkness_amount = 1.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s58fl"]
+size = Vector2(305.5, 291.875)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ahn3"]
 texture = ExtResource("1_fn4ql")
@@ -1505,10 +1500,15 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ru5o0")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pvawu"]
+shader = ExtResource("4_xmsgp")
+shader_parameter/darkness_amount = 1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvawu"]
 size = Vector2(33, 48)
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_pvawu")
 
 [node name="TileMaps" type="Node2D" parent="."]
 
@@ -1523,7 +1523,7 @@ tile_set = SubResource("TileSet_ml1qv")
 
 [node name="Player" parent="." instance=ExtResource("3_pklsh")]
 z_index = 1
-position = Vector2(470, 638)
+position = Vector2(927, 246)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
@@ -1782,6 +1782,7 @@ color = Color(1, 0, 1, 1)
 
 [node name="DarkRoom" type="Node2D" parent="."]
 position = Vector2(992, 0)
+script = ExtResource("1_0cp3y")
 
 [node name="TileMaps" type="Node2D" parent="DarkRoom"]
 
@@ -1862,6 +1863,7 @@ position = Vector2(0, 1)
 [node name="Chest" parent="DarkRoom/Chests/ChestRed" instance=ExtResource("8_ila8s")]
 position = Vector2(276, 5)
 color = Color(1, 0, 0, 1)
+ends_darkness = true
 
 [node name="Color" type="ColorRect" parent="DarkRoom/Chests/ChestRed"]
 offset_left = 274.0
@@ -1884,32 +1886,12 @@ offset_right = 96.0
 offset_bottom = 11.0
 color = Color(0, 1, 0, 1)
 
-[node name="level_controller" type="Node" parent="DarkRoom"]
-script = ExtResource("10_oxay8")
-chests = Array[NodePath]([NodePath("../Chests/ChestBlue/Chest"), NodePath("../Chests/ChestRed/Chest"), NodePath("../Chests/ChestGreen/Chest")])
-final_gate = NodePath("../../Room Doors/3 to 4")
+[node name="Dark Room area" type="Area2D" parent="DarkRoom"]
+position = Vector2(-992, 0)
 
-[node name="DarknessLayer" type="Node" parent="DarkRoom"]
-
-[node name="MaskViewport" type="SubViewport" parent="DarkRoom/DarknessLayer"]
-disable_3d = true
-transparent_bg = true
-size = Vector2i(624, 624)
-
-[node name="LaserMaskDrawer" type="Node2D" parent="DarkRoom/DarknessLayer/MaskViewport" groups=["LaserMask"]]
-script = ExtResource("15_toi8m")
-
-[node name="Darkness" type="ColorRect" parent="DarkRoom/DarknessLayer"]
-material = SubResource("ShaderMaterial_ml1qv")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 992.0
-offset_right = 672.0
-offset_bottom = -336.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("17_nx5ue")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarkRoom/Dark Room area"]
+position = Vector2(1143, 143)
+shape = SubResource("RectangleShape2D_s58fl")
 
 [node name="Masterpiece" type="Node2D" parent="."]
 position = Vector2(639, 496)
@@ -2412,27 +2394,29 @@ script = ExtResource("10_oxay8")
 chests = Array[NodePath]([NodePath("../Chests/Purple Chest/Chest1"), NodePath("../Chests/Yellow Chest/Chest2"), NodePath("../Chests/Green Chest/KeyChest")])
 final_gate = NodePath("../FinalGate")
 
-[node name="DarknessLayer" type="Node" parent="FinalRoom"]
+[node name="DarknessLayer" type="CanvasLayer" parent="."]
+layer = 100
 
-[node name="MaskViewport" type="SubViewport" parent="FinalRoom/DarknessLayer"]
+[node name="MaskViewport" type="SubViewport" parent="DarknessLayer"]
 disable_3d = true
 transparent_bg = true
 size = Vector2i(624, 624)
 
-[node name="LaserMaskDrawer" type="Node2D" parent="FinalRoom/DarknessLayer/MaskViewport" groups=["LaserMask"]]
+[node name="LaserMaskDrawer" type="Node2D" parent="DarknessLayer/MaskViewport" groups=["LaserMask"]]
+unique_name_in_owner = true
 script = ExtResource("15_toi8m")
 
-[node name="Darkness" type="ColorRect" parent="FinalRoom/DarknessLayer"]
-material = SubResource("ShaderMaterial_ml1qv")
+[node name="Darkness" type="ColorRect" parent="DarknessLayer" groups=["DarknessController"]]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_pvawu")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 96.0
-offset_top = 496.0
-offset_right = -224.0
-offset_bottom = 80.0
+offset_right = -320.0
+offset_bottom = -416.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(4.26657, 3.93109)
 script = ExtResource("17_nx5ue")
 
 [node name="Room Doors" type="Node2D" parent="."]
@@ -2460,21 +2444,23 @@ visible = false
 
 [node name="Dark room UI" parent="UI" instance=ExtResource("22_nx5ue")]
 
-[node name="Dark room UI area" type="Area2D" parent="UI"]
+[node name="Dark room UI area 1 in" type="Area2D" parent="UI"]
 position = Vector2(979, 249)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Dark room UI area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Dark room UI area 1 in"]
 position = Vector2(-3.5, -1)
 shape = SubResource("RectangleShape2D_pvawu")
 
-[node name="Dark room UI area2" type="Area2D" parent="UI"]
+[node name="Dark room UI area 2 in" type="Area2D" parent="UI"]
 position = Vector2(414, 633)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Dark room UI area2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Dark room UI area 2 in"]
 position = Vector2(-3.5, -1)
 shape = SubResource("RectangleShape2D_pvawu")
 
-[connection signal="body_entered" from="UI/Dark room UI area" to="Player" method="_on_dark_room_ui_area_body_entered"]
-[connection signal="body_exited" from="UI/Dark room UI area" to="Player" method="_on_dark_room_ui_area_body_exited"]
-[connection signal="body_entered" from="UI/Dark room UI area2" to="Player" method="_on_dark_room_ui_area_body_entered"]
-[connection signal="body_exited" from="UI/Dark room UI area2" to="Player" method="_on_dark_room_ui_area_body_exited"]
+[connection signal="body_entered" from="DarkRoom/Dark Room area" to="." method="_on_dark_room_area_body_entered"]
+[connection signal="body_exited" from="DarkRoom/Dark Room area" to="." method="_on_dark_room_area_body_exited"]
+[connection signal="body_entered" from="UI/Dark room UI area 1 in" to="Player" method="_on_dark_room_ui_area_body_entered"]
+[connection signal="body_exited" from="UI/Dark room UI area 1 in" to="Player" method="_on_dark_room_ui_area_body_exited"]
+[connection signal="body_entered" from="UI/Dark room UI area 2 in" to="Player" method="_on_dark_room_ui_area_body_entered"]
+[connection signal="body_exited" from="UI/Dark room UI area 2 in" to="Player" method="_on_dark_room_ui_area_body_exited"]
