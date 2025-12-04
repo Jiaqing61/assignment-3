@@ -3,9 +3,10 @@ extends Node
 @export var chests: Array[NodePath] = []
 @export var final_gate: NodePath
 
-@export var reveal_radius := 24.0 
-@export var player_reveal_radius := 28.0
-@export var reveal_feather := 24.0
+@export var player_reveal_radius := 32.0
+@export var player_reveal_feather := 32.0
+@export var reveal_radius   := 24.0
+@export var reveal_feather  := 24.0
 
 var _lit_count := 0
 var _chest_nodes: Array[Node] = []
@@ -26,7 +27,7 @@ func _process(_dt):
 	var player : CharacterBody2D = get_tree().get_first_node_in_group("Player")
 	if player:
 		var pos: Vector2 = player.global_position
-		LaserVisibilityMask.add_reveal_world(pos, player_reveal_radius, reveal_feather)
+		LaserVisibilityMask.add_reveal_world(pos, player_reveal_radius, player_reveal_feather)
 		
 	for door in get_tree().get_nodes_in_group("AlwaysReveal"):
 		var pos: Vector2 = door.global_position
@@ -34,8 +35,9 @@ func _process(_dt):
 
 
 func _ready() -> void:
-	_wireup()
-
+	_wireup()	
+	
+	
 func _wireup() -> void:
 	_lit_count = 0
 	_chest_nodes.clear()

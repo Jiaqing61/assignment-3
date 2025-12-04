@@ -1,7 +1,5 @@
 extends StaticBody2D
 
-@export var next_scene: PackedScene
-
 @export var required_lit_chests: int = 0    
 
 var is_open: bool = false
@@ -13,10 +11,8 @@ var _current_lit_chests: int = 0
 func _ready() -> void:
 	if _anim and _anim.sprite_frames and _anim.sprite_frames.has_animation("close"):
 		_anim.play("close")
-
 	
 	var chests := get_tree().get_nodes_in_group("GateChest")
-
 	
 	if required_lit_chests == 0:
 		required_lit_chests = chests.size()

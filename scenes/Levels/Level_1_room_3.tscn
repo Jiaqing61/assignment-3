@@ -417,7 +417,7 @@ rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Green")
 [node name="Blue Chest" type="Node2D" parent="Chests"]
 position = Vector2(1, 0)
 
-[node name="Chest" parent="Chests/Blue Chest" groups=["GateChest"] instance=ExtResource("3_d6lwf")]
+[node name="Chest" parent="Chests/Blue Chest" instance=ExtResource("3_d6lwf")]
 position = Vector2(71, 12)
 color = Color(0.388235, 0.556863, 1, 1)
 
@@ -430,7 +430,7 @@ color = Color(0.388235, 0.556863, 1, 1)
 
 [node name="Red Chest" type="Node2D" parent="Chests"]
 
-[node name="Chest" parent="Chests/Red Chest" groups=["GateChest"] instance=ExtResource("3_d6lwf")]
+[node name="Chest" parent="Chests/Red Chest" instance=ExtResource("3_d6lwf")]
 position = Vector2(10, 75)
 color = Color(1, 0.223529, 0.345098, 1)
 
@@ -443,7 +443,7 @@ color = Color(1, 0.223529, 0.345098, 1)
 
 [node name="Green Chest" type="Node2D" parent="Chests"]
 
-[node name="Chest" parent="Chests/Green Chest" groups=["GateChest"] instance=ExtResource("3_d6lwf")]
+[node name="Chest" parent="Chests/Green Chest" instance=ExtResource("3_d6lwf")]
 position = Vector2(292, 140)
 color = Color(0.282353, 1, 0.443137, 1)
 

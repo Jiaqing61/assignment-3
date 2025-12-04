@@ -5,7 +5,6 @@ extends ColorRect
 func _ready() -> void:
 	
 	add_to_group("DarknessController")
-
 	
 	if _mat == null and material is ShaderMaterial:
 		_mat = material
@@ -25,7 +24,6 @@ func fade_out_darkness(duration: float = 0.8) -> void:
 	var from_value: float = _mat.get_shader_parameter("darkness_amount")
 	var tween := create_tween()
 	tween.tween_method(set_darkness_amount, from_value, 0.0, duration)
-
 
 
 func turn_off_immediately() -> void:
