@@ -1,37 +1,44 @@
 extends Node2D
 
-
-@export var player_reveal_radius := 32.0
-@export var player_reveal_feather := 32.0
-@export var reveal_radius   := 24.0
-@export var reveal_feather  := 24.0
+@export var player_reveal_radius := 20.0
+@export var player_reveal_feather := 20.0
+@export var reveal_radius   := 18.0
+@export var reveal_feather  := 18.0
 
 
 func _ready():
-	var drawer = %LaserMaskDrawer
-	LaserVisibilityMask.drawer = drawer
+	var drawer = get_node_or_null("DarknessLayer/MaskViewport/LaserMaskDrawer")
+	
+	if drawer == null and has_node("%LaserMaskDrawer"):
+		drawer = get_node("%LaserMaskDrawer")
+	if drawer:
+		LaserVisibilityMask.drawer = drawer
+		print("✅ Success: LaserMaskDrawer found and registered!")
+	else:
+		push_error("❌ CRITICAL: Could not find LaserMaskDrawer! Check the path in dark_level.gd")
 	
 func _process(_dt):
 	LaserVisibilityMask.begin()   # cleaning last frame
-	# collect laser
+	# collect LaserEmitters
 	for emitter in get_tree().get_nodes_in_group("LaserEmitters"):
 		if emitter.has_method("get_points_global"):
 			LaserVisibilityMask.add_path_world(emitter.get_points_global())
-	
+	# collect Revealables
 	for r in get_tree().get_nodes_in_group("Revealables"):
 		if r.has_method("is_lit") and r.is_lit():
 			var pos :Vector2 = r.get_reveal_position() if r.has_method("get_reveal_position") else r.global_position
 			var rad :float = r.reveal_radius if r.has_method("reveal_radius") else reveal_radius
 			LaserVisibilityMask.add_reveal_world(pos, rad, reveal_feather)
-	
+	# collect player
 	var player : CharacterBody2D = get_tree().get_first_node_in_group("Player")
 	if player:
 		var pos: Vector2 = player.global_position
 		LaserVisibilityMask.add_reveal_world(pos, player_reveal_radius, player_reveal_feather)
-		
-	for door in get_tree().get_nodes_in_group("AlwaysReveal"):
-		var pos: Vector2 = door.global_position
-		LaserVisibilityMask.add_reveal_world(pos, reveal_radius, reveal_feather)			
+	# collect AlwaysReveal	
+	for node in get_tree().get_nodes_in_group("AlwaysReveal"):
+		if "global_position" in node:
+			var pos: Vector2 = node.global_position
+			LaserVisibilityMask.add_reveal_world(pos, reveal_radius, reveal_feather)			
 
 
 
