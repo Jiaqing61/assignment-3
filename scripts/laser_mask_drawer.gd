@@ -6,6 +6,13 @@ extends Node2D
 var _paths: Array[PackedVector2Array] = []
 var _circles := []  # [(pos, radius, feather)]
 
+func _ready() -> void:
+	if LaserVisibilityMask:
+		LaserVisibilityMask.drawer = self
+		print("LaserMaskDrawer registered successfully!")
+	else:
+		push_error("LaserVisibilityMask Autoload not found! Please enable it in Project Settings.")
+
 func begin_frame() -> void:
 	_paths.clear()
 	_circles.clear()

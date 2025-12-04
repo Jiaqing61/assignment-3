@@ -14,6 +14,7 @@ corner_radius_bottom_left = 12
 font_color = Color(0, 0, 0, 1)
 
 [node name="Dark room UI" type="CanvasLayer"]
+layer = 101
 script = ExtResource("1_c1lfs")
 
 [node name="ColorRect" type="Panel" parent="."]
@@ -37,7 +38,7 @@ offset_left = 19.0
 offset_top = -40.624
 offset_right = 167.0
 offset_bottom = -17.624
-text = "Another dark room.."
+text = "Oh it is a dark room.."
 label_settings = SubResource("LabelSettings_sn4fd")
 
 [node name="Text2" type="Label" parent="ColorRect"]

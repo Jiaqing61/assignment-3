@@ -10,7 +10,7 @@ size = Vector2(16, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqd3d"]
 size = Vector2(14, 12)
 
-[node name="KeyChest" type="Area2D" groups=["KeyChest", "Revealables"]]
+[node name="KeyChest" type="Area2D" groups=["GateChest", "KeyChest", "Revealables"]]
 script = ExtResource("1_lav3v")
 lit_texture = ExtResource("2_ssn85")
 closed_texture = ExtResource("2_8y6x1")

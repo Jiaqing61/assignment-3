@@ -14,6 +14,7 @@ corner_radius_bottom_left = 12
 font_color = Color(0, 0, 0, 1)
 
 [node name="Big laser UI" type="CanvasLayer"]
+layer = 101
 script = ExtResource("1_1xleo")
 
 [node name="ColorRect" type="Panel" parent="."]
