@@ -291,16 +291,16 @@ turned_on = true
 [node name="Chests" type="Node2D" parent="."]
 position = Vector2(197, 47)
 
-[node name="Chest1" parent="Chests" groups=["GateChest"] instance=ExtResource("9_471ga")]
+[node name="Chest1" parent="Chests" instance=ExtResource("9_471ga")]
 position = Vector2(-191, 27)
 color = Color(1, 0, 1, 1)
 
-[node name="Chest2" parent="Chests" groups=["GateChest"] instance=ExtResource("9_471ga")]
+[node name="Chest2" parent="Chests" instance=ExtResource("9_471ga")]
 position = Vector2(-127, -42)
 color = Color(1, 1, 0, 1)
 ends_darkness = true
 
-[node name="KeyChest" parent="Chests" groups=["GateChest"] instance=ExtResource("10_4wlv8")]
+[node name="KeyChest" parent="Chests" instance=ExtResource("10_4wlv8")]
 position = Vector2(-39, 153)
 color = Color(0, 1, 0, 1)
 

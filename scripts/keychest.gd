@@ -41,15 +41,18 @@ func _on_decay_timeout() -> void:
 func _set_lit(v: bool) -> void:
 	if _lit == v:
 		return
-	# print("[KeyChest]", name, "set_lit from", _lit, "to", v)
+
 	_lit = v
 	emit_signal("lit_changed", _lit)
 	_apply_visual()
 
+	if _lit:
+		AudioManager.chest_open_sfx.play()
+
 	if _lit and is_key_chest:
 		_give_key_to_player()
-		# print("[KeyChest]", name, "emitting key_obtained(", unlock_group, ")")
-		emit_signal("key_obtained", unlock_group) 
+		emit_signal("key_obtained", unlock_group)
+
 
 
 func _apply_visual() -> void:

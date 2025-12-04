@@ -57,7 +57,7 @@ func _set_lit(v: bool) -> void:
 		
 	if _lit and ends_darkness:
 		_disable_darkness()
-		AudioManager.play_move()
+		#AudioManager.play_move()
 
 
 func _apply_visual() -> void:
