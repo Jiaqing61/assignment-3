@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://bj0mdxwh0yjrs"]
+[gd_scene load_steps=56 format=4 uid="uid://bj0mdxwh0yjrs"]
 
 [ext_resource type="Script" uid="uid://cw3k1rshdx3x2" path="res://scripts/door_open.gd" id="1_0cp3y"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_fn4ql"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2135l5apw28" path="res://scenes/prefebs/laser_rail.tscn" id="2_e1qoi"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="3_pklsh"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="4_e8c4m"]
+[ext_resource type="Script" uid="uid://u4xjiwftktbc" path="res://scripts/camera_2d.gd" id="4_s58fl"]
 [ext_resource type="Shader" uid="uid://dv67pbpk4ajwx" path="res://scripts/dark.gdshader" id="4_xmsgp"]
 [ext_resource type="PackedScene" uid="uid://dwjsyuyshemhn" path="res://scenes/prefebs/lockedmirror.tscn" id="5_j2fhe"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="6_xxpiu"]
@@ -1533,6 +1534,7 @@ position = Vector2(40, 47)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
 zoom = Vector2(2, 2)
+script = ExtResource("4_s58fl")
 
 [node name="LockedMirror" type="Node2D" parent="."]
 position = Vector2(1, 0)
@@ -1710,6 +1712,20 @@ position = Vector2(54, 189)
 rotation = -2.25522
 decay_seconds = 0.1
 colors = Array[Color]([Color(1, 0, 0, 1), Color(0, 0, 1, 1)])
+
+[node name="ColorRect" type="ColorRect" parent="Laser Intersect/Big Laser"]
+offset_left = 2.0
+offset_top = -5.0
+offset_right = 7.0
+offset_bottom = 3.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Laser Intersect/Big Laser"]
+offset_left = -7.0
+offset_top = -5.0
+offset_right = -2.0
+offset_bottom = 3.0
+color = Color(0, 0, 1, 1)
 
 [node name="Laser Emitters" type="Node2D" parent="Laser Intersect"]
 
@@ -2347,6 +2363,20 @@ position = Vector2(158, -123)
 rotation = 1.5708
 colors = Array[Color]([Color(1, 0, 0, 1), Color(0, 0, 1, 1)])
 
+[node name="ColorRect" type="ColorRect" parent="FinalRoom/LaserEmitters/Big Laser"]
+offset_left = -7.0
+offset_top = -6.0
+offset_right = -2.0
+offset_bottom = 2.0
+color = Color(0, 0, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="FinalRoom/LaserEmitters/Big Laser"]
+offset_left = 2.0
+offset_top = -6.0
+offset_right = 7.0
+offset_bottom = 2.0
+color = Color(1, 0, 0, 1)
+
 [node name="Chests" type="Node2D" parent="FinalRoom" groups=["GateChest"]]
 position = Vector2(197, 47)
 
@@ -2404,6 +2434,7 @@ final_gate = NodePath("../FinalGate")
 position = Vector2(-956, -40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinalRoom/Dark Room area2"]
+visible = false
 position = Vector2(1110.46, 140)
 scale = Vector2(1.07503, 1.11552)
 shape = SubResource("RectangleShape2D_s58fl")
@@ -2423,6 +2454,7 @@ script = ExtResource("15_toi8m")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer" groups=["DarknessController"]]
 unique_name_in_owner = true
+visible = false
 material = SubResource("ShaderMaterial_pvawu")
 anchors_preset = 15
 anchor_right = 1.0
@@ -2456,6 +2488,7 @@ required_lit_chests = 12
 layer = 102
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("23_toi8m")]
+visible = false
 
 [node name="Locked mirror UI" parent="UI" instance=ExtResource("20_pcon5")]
 

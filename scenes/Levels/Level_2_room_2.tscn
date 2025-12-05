@@ -407,7 +407,6 @@ rotation = -1.09956
 [node name="Locked Mirror" parent="Mirrors" instance=ExtResource("7_v65nk")]
 position = Vector2(24, 139)
 rotation = 3.83622
-rotation_degree = 5.0
 rotation_speed = 70.0
 
 [node name="Mirror 3" parent="Mirrors" instance=ExtResource("5_qte6d")]
