@@ -1528,7 +1528,7 @@ tile_set = SubResource("TileSet_ml1qv")
 
 [node name="Player" parent="." instance=ExtResource("3_pklsh")]
 z_index = 1
-position = Vector2(714, 593)
+position = Vector2(40, 47)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
@@ -1746,7 +1746,6 @@ rotation = -1.09956
 [node name="Locked Mirror" parent="Laser Intersect/Mirrors" instance=ExtResource("14_pcon5")]
 position = Vector2(24, 139)
 rotation = 3.83622
-rotation_degree = 5.0
 rotation_speed = 70.0
 
 [node name="Mirror 3" parent="Laser Intersect/Mirrors" instance=ExtResource("4_e8c4m")]
@@ -2367,15 +2366,15 @@ color = Color(1, 0, 1, 1)
 [node name="Yellow Chest" type="Node2D" parent="FinalRoom/Chests"]
 
 [node name="Chest2" parent="FinalRoom/Chests/Yellow Chest" instance=ExtResource("8_ila8s")]
-position = Vector2(-127, -40)
+position = Vector2(-131, -40)
 color = Color(1, 1, 0, 1)
 ends_darkness = true
 
 [node name="ColorRect" type="ColorRect" parent="FinalRoom/Chests/Yellow Chest"]
-offset_left = -129.0
-offset_top = -38.0
-offset_right = -125.0
-offset_bottom = -34.0
+offset_left = -133.0
+offset_top = -39.0
+offset_right = -129.0
+offset_bottom = -35.0
 color = Color(1, 1, 0, 1)
 
 [node name="Green Chest" type="Node2D" parent="FinalRoom/Chests"]
@@ -2394,7 +2393,7 @@ color = Color(0, 1, 0, 1)
 
 [node name="FinalGate" parent="FinalRoom" groups=["LaserEmitters"] instance=ExtResource("9_8f203")]
 position = Vector2(296, 200)
-required_lit_chests = 3
+required_lit_chests = 15
 
 [node name="level_controller" type="Node" parent="FinalRoom"]
 script = ExtResource("10_oxay8")

@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var rotation_degree: float = 5.0  
-@export var rotation_speed: float = 60.0  
+@export var rotation_speed: float = 50.0  
 @export var cluster_controlled: bool = false 
 
 var player_touching: bool = false        

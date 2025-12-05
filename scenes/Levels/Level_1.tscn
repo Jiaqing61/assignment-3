@@ -1118,25 +1118,25 @@ position = Vector2(94, 60)
 rotation = 1.20428
 
 [node name="Mirror5" parent="Multi Laser/mirrors" instance=ExtResource("4_y2vpr")]
-position = Vector2(192, -20)
+position = Vector2(190, -30)
 rotation = 0.523599
 
 [node name="laser emitter" type="Node2D" parent="Multi Laser"]
 position = Vector2(73, 121)
 
 [node name="Laser Emitter" parent="Multi Laser/laser emitter" instance=ExtResource("5_cxgh7")]
-position = Vector2(27, -110)
+position = Vector2(27, -111)
 rotation = 3.14159
 color = Color(0.282353, 1, 0.443137, 1)
 turned_on = true
 
 [node name="Laser Emitter2" parent="Multi Laser/laser emitter" instance=ExtResource("5_cxgh7")]
-position = Vector2(190, 95)
+position = Vector2(190, 93)
 color = Color(0.388235, 0.556863, 1, 1)
 turned_on = true
 
 [node name="Laser Emitter3" parent="Multi Laser/laser emitter" instance=ExtResource("5_cxgh7")]
-position = Vector2(-64, 59)
+position = Vector2(-63, 59)
 rotation = 1.5708
 color = Color(1, 0.223529, 0.345098, 1)
 turned_on = true
@@ -1145,7 +1145,7 @@ turned_on = true
 position = Vector2(74, 21)
 
 [node name="blue chest" type="Node2D" parent="Multi Laser/chest"]
-position = Vector2(-67, 67)
+position = Vector2(-65, 73)
 
 [node name="Chest" parent="Multi Laser/chest/blue chest" instance=ExtResource("6_l2fsl")]
 position = Vector2(2, 9)
@@ -1263,14 +1263,14 @@ rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Green")
 position = Vector2(1, 0)
 
 [node name="Chest" parent="Laser Moving/Chests/Blue Chest" instance=ExtResource("6_l2fsl")]
-position = Vector2(71, 12)
+position = Vector2(71, 10)
 color = Color(0.388235, 0.556863, 1, 1)
 
 [node name="Color" type="ColorRect" parent="Laser Moving/Chests/Blue Chest"]
 offset_left = 69.0
-offset_top = 14.0
+offset_top = 11.0
 offset_right = 73.0
-offset_bottom = 18.0
+offset_bottom = 15.0
 color = Color(0.388235, 0.556863, 1, 1)
 
 [node name="Red Chest" type="Node2D" parent="Laser Moving/Chests"]
