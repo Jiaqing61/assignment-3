@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=4 uid="uid://cvbbm1vtho2xb"]
+[gd_scene load_steps=30 format=4 uid="uid://cvbbm1vtho2xb"]
 
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="2_e5mxv"]
+[ext_resource type="Script" uid="uid://u4xjiwftktbc" path="res://scripts/camera_2d.gd" id="3_6q3ph"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="3_6wnyt"]
 [ext_resource type="PackedScene" uid="uid://dwn0leaklhyuk" path="res://scenes/prefebs/mirror.tscn" id="4_y2vpr"]
 [ext_resource type="PackedScene" uid="uid://dvprtuxgi6q46" path="res://scenes/prefebs/laser_emitter.tscn" id="5_cxgh7"]
@@ -1031,6 +1032,7 @@ position = Vector2(105, 104)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
+script = ExtResource("3_6q3ph")
 
 [node name="Tutorial" type="Node2D" parent="."]
 script = ExtResource("12_bk6va")
