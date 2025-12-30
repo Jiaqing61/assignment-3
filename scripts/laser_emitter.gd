@@ -1,8 +1,8 @@
 extends Node2D
 
 # === Laser configuration ===
-@export var max_distance: float = 2000.0        # Maximum laser length in pixels
-@export var max_reflections: int = 10          # Maximum number of reflections
+@export var max_distance: float = 8000.0        # Maximum laser length in pixels
+@export var max_reflections: int = 30          # Maximum number of reflections
 @export_flags_2d_physics var collision_mask := 1  # Physics layers the laser ray should hit
 @export var color: Color = Color.WHITE         # Laser color (also used for laser_hit())
 @export var turned_on = false
