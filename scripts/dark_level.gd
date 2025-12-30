@@ -8,6 +8,7 @@ extends Node2D
 
 func _ready():
 	var drawer = get_node_or_null("DarknessLayer/MaskViewport/LaserMaskDrawer")
+	AudioManager.play_music(&"BGM", 0.0)
 	
 	if drawer == null and has_node("%LaserMaskDrawer"):
 		drawer = get_node("%LaserMaskDrawer")

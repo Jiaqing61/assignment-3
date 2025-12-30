@@ -35,9 +35,6 @@ func _physics_process(delta: float) -> void:
 		if animator and (animator.animation != idle_anim or !animator.is_playing()):
 			animator.play(idle_anim)
 	
-	if Global.laser_grabbed:
-		animator.play("move")
-	
 	_update_walk_sfx(input_vec)
 	move_and_slide()
 	

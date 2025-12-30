@@ -386,13 +386,13 @@ turned_on = true
 
 [node name="Chests" type="Node2D" parent="."]
 
-[node name="Chest 1" parent="Chests" groups=["GateChest"] instance=ExtResource("6_ktqce")]
+[node name="Chest 1" parent="Chests" instance=ExtResource("6_ktqce")]
 position = Vector2(197, 47)
 
-[node name="Chest 2" parent="Chests" groups=["GateChest"] instance=ExtResource("6_ktqce")]
+[node name="Chest 2" parent="Chests" instance=ExtResource("6_ktqce")]
 position = Vector2(150, 10)
 
-[node name="Chest 3" parent="Chests" groups=["GateChest"] instance=ExtResource("6_ktqce")]
+[node name="Chest 3" parent="Chests" instance=ExtResource("6_ktqce")]
 position = Vector2(51, 197)
 
 [node name="FinalGate" parent="." instance=ExtResource("7_a52cr")]

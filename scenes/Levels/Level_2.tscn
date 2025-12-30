@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://bj0mdxwh0yjrs"]
+[gd_scene load_steps=57 format=4 uid="uid://bj0mdxwh0yjrs"]
 
 [ext_resource type="Script" uid="uid://cw3k1rshdx3x2" path="res://scripts/door_open.gd" id="1_0cp3y"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_fn4ql"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cmvyg7iue008r" path="res://scenes/prefebs/big_laser.tscn" id="13_0cp3y"]
 [ext_resource type="PackedScene" uid="uid://bv5inuvppb2bf" path="res://scenes/tests/lockedmirror.tscn" id="14_pcon5"]
 [ext_resource type="Script" uid="uid://bmx006rm3xbxj" path="res://scripts/laser_mask_drawer.gd" id="15_toi8m"]
+[ext_resource type="Script" uid="uid://dmh865ldba3ho" path="res://scripts/DarkRoomArea.gd" id="16_2ahn3"]
 [ext_resource type="Script" uid="uid://4x1tv6rt0uh8" path="res://scripts/darkness_controller.gd" id="17_nx5ue"]
 [ext_resource type="Script" uid="uid://hl403p0t0kpa" path="res://scripts/mirror_cluster.gd" id="17_pvawu"]
 [ext_resource type="Texture2D" uid="uid://c1qdmrtuanuv1" path="res://assets/New Piskel-11.png" id="18_s58fl"]
@@ -1529,7 +1530,8 @@ tile_set = SubResource("TileSet_ml1qv")
 
 [node name="Player" parent="." instance=ExtResource("3_pklsh")]
 z_index = 1
-position = Vector2(40, 47)
+position = Vector2(860, 250)
+collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
@@ -1909,6 +1911,7 @@ color = Color(0, 1, 0, 1)
 [node name="Dark Room area" type="Area2D" parent="DarkRoom"]
 position = Vector2(-992, 0)
 scale = Vector2(1.01936, 1)
+script = ExtResource("16_2ahn3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DarkRoom/Dark Room area"]
 position = Vector2(1118.35, 145)
@@ -2432,9 +2435,9 @@ final_gate = NodePath("../FinalGate")
 
 [node name="Dark Room area2" type="Area2D" parent="FinalRoom"]
 position = Vector2(-956, -40)
+script = ExtResource("16_2ahn3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinalRoom/Dark Room area2"]
-visible = false
 position = Vector2(1110.46, 140)
 scale = Vector2(1.07503, 1.11552)
 shape = SubResource("RectangleShape2D_s58fl")
@@ -2454,7 +2457,6 @@ script = ExtResource("15_toi8m")
 
 [node name="Darkness" type="ColorRect" parent="DarknessLayer" groups=["DarknessController"]]
 unique_name_in_owner = true
-visible = false
 material = SubResource("ShaderMaterial_pvawu")
 anchors_preset = 15
 anchor_right = 1.0

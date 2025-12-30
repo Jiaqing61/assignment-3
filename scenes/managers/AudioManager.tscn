@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://0kk5huy08rhe"]
+[gd_scene load_steps=9 format=3 uid="uid://0kk5huy08rhe"]
 
 [ext_resource type="Script" uid="uid://cmrp2ur3g700j" path="res://scripts/audio_manager.gd" id="1_4qayb"]
 [ext_resource type="AudioStream" uid="uid://dprvyh1rombl4" path="res://assets/Sounds/click.mp3" id="2_i3nb5"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://qu217l361pi8" path="res://assets/Sounds/chestOpen.mp3" id="5_5sv3h"]
 [ext_resource type="AudioStream" uid="uid://dqgaofkgyhvu3" path="res://assets/Sounds/doorOpen.wav" id="6_bspy7"]
 [ext_resource type="AudioStream" uid="uid://bxn0oo84dhe17" path="res://assets/Sounds/bgm.mp3" id="7_busbu"]
+[ext_resource type="AudioStream" uid="uid://bviybg18o4huu" path="res://assets/Sounds/Iwan Gabovitch - Dark Ambience Loop.mp3" id="8_23ert"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_4qayb")
@@ -30,4 +31,8 @@ stream = ExtResource("6_bspy7")
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_busbu")
 volume_db = -9.0
-autoplay = true
+attenuation = 1e-05
+
+[node name="Dark" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_23ert")
+attenuation = 0.0145785
