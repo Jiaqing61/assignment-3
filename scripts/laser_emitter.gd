@@ -112,11 +112,13 @@ func _grab(player: Node2D) -> void:
 	_grabber = player
 	# Record current offset relative to the player so movement feels natural
 	follow_offset = global_position - player.global_position
+	Global.laser_grabbed = true
 
 
 func _release() -> void:
 	_grabbed = false
 	_grabber = null
+	Global.laser_grabbed = false
 
 
 func _on_area_body_entered(body: Node2D) -> void:
