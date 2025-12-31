@@ -1206,15 +1206,15 @@ tile_set = SubResource("TileSet_j87di")
 position = Vector2(1, 0)
 
 [node name="LaserRail Blue" parent="Laser Moving/TileMaps/Laser Rails" instance=ExtResource("8_6q3ph")]
-position = Vector2(320, 192)
+position = Vector2(192, 192)
 rotation = 1.5708
 
 [node name="LaserRail Red" parent="Laser Moving/TileMaps/Laser Rails" instance=ExtResource("8_6q3ph")]
-position = Vector2(111, 16)
+position = Vector2(238, 17)
 rotation = -1.5708
 
 [node name="LaserRail Green" parent="Laser Moving/TileMaps/Laser Rails" instance=ExtResource("8_6q3ph")]
-position = Vector2(287, -80)
+position = Vector2(286, 50)
 
 [node name="Mirrors" type="Node2D" parent="Laser Moving"]
 

@@ -125,7 +125,7 @@ func _on_area_body_entered(body: Node2D) -> void:
 	# Only care about nodes that are tagged as "Player"
 	if body.is_in_group("Player"):
 		_player_in_range = body
-		Global.laser_rail_ui = true
+
 
 
 func _on_area_body_exited(body: Node2D) -> void:
@@ -134,7 +134,6 @@ func _on_area_body_exited(body: Node2D) -> void:
 		# Auto-release when the player leaves the interaction area
 		if _grabbed and body == _grabber:
 			_release()
-		Global.laser_rail_ui = false
 
 
 # ============================

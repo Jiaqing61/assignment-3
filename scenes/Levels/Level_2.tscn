@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://bj0mdxwh0yjrs"]
+[gd_scene load_steps=59 format=4 uid="uid://bj0mdxwh0yjrs"]
 
 [ext_resource type="Script" uid="uid://cw3k1rshdx3x2" path="res://scripts/door_open.gd" id="1_0cp3y"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_fn4ql"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://byyyab87st2op" path="res://scenes/UI/big_laser_ui.tscn" id="21_toi8m"]
 [ext_resource type="PackedScene" uid="uid://ievyc1ngjgh0" path="res://scenes/UI/dark_room_ui.tscn" id="22_nx5ue"]
 [ext_resource type="PackedScene" uid="uid://ocpo7r76xx28" path="res://scenes/UI/PauseMenu.tscn" id="23_toi8m"]
+[ext_resource type="PackedScene" uid="uid://btqjvht4rxdul" path="res://scenes/UI/mirror_ui.tscn" id="28_8cihd"]
+[ext_resource type="PackedScene" uid="uid://7hieh7rjtic3" path="res://scenes/UI/laser_rail_ui.tscn" id="29_32the"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oxay8"]
 texture = ExtResource("1_fn4ql")
@@ -1530,7 +1532,7 @@ tile_set = SubResource("TileSet_ml1qv")
 
 [node name="Player" parent="." instance=ExtResource("3_pklsh")]
 z_index = 1
-position = Vector2(860, 250)
+position = Vector2(36, 50)
 collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -1561,17 +1563,17 @@ tile_set = SubResource("TileSet_xwxbw")
 position = Vector2(1, 0)
 
 [node name="LaserRail Blue" parent="LockedMirror/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(349, 192)
+position = Vector2(128, 191)
 rotation = 1.5708
-tile_map_data = PackedByteArray("AAAAAAwAAAAHAAUAAAAAAA0AAAAKAAUAAGAAAA4AAAAKAAUAAGAAAA8AAAAKAAUAAGAAABAAAAAHAAYAAGA=")
+tile_map_data = PackedByteArray("AAAAAP7/AAAHAAUAAAAAAP//AAAJAAYAAAAAAAAAAAAJAAYAAAAAAAEAAAAJAAYAAAAAAAIAAAAIAAUAAAA=")
 
 [node name="LaserRail Red" parent="LockedMirror/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(111, 16)
+position = Vector2(239, 18)
 rotation = -1.5708
 
 [node name="LaserRail Green" parent="LockedMirror/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(287, -80)
-tile_map_data = PackedByteArray("AADu/woAAAAHAAUAAADu/wsAAAAJAAYAAADu/wwAAAAJAAYAAADu/w0AAAAJAAYAAADu/w4AAAAIAAUAAAA=")
+position = Vector2(0, 115)
+tile_map_data = PackedByteArray("AAAAAP7/AAAHAAUAAAAAAP//AAAJAAYAAAAAAAAAAAAJAAYAAAAAAAEAAAAJAAYAAAAAAAIAAAAIAAUAAAA=")
 
 [node name="Mirrors" type="Node2D" parent="LockedMirror"]
 
@@ -1698,15 +1700,15 @@ tile_set = SubResource("TileSet_8t8p7")
 [node name="Laser Rails" type="Node2D" parent="Laser Intersect/TileMaps"]
 
 [node name="LaserRail Blue" parent="Laser Intersect/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(208, 0)
+position = Vector2(77, 2)
 rotation = 1.5708
 
 [node name="LaserRail Red" parent="Laser Intersect/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(336, 0)
+position = Vector2(210, 2)
 rotation = 1.5708
 
 [node name="LaserRail Green" parent="Laser Intersect/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(336, 256)
+position = Vector2(212, 257)
 rotation = 1.5708
 
 [node name="Big Laser" parent="Laser Intersect" instance=ExtResource("13_0cp3y")]
@@ -1815,7 +1817,7 @@ tile_set = SubResource("TileSet_8ho6b")
 
 [node name="LaserRail" parent="DarkRoom/TileMaps" instance=ExtResource("2_e1qoi")]
 position = Vector2(0, -1)
-tile_map_data = PackedByteArray("AAAAAAYAAAAIAAUAAAAAAAMAAAAHAAUAAAAAAAQAAAAJAAYAAAAAAAUAAAAJAAYAAAASAAkAAAAHAAYAAFASAAoAAAAKAAUAAFASAAsAAAAKAAUAAFACAAAAAAAKAAUAAAADAAAAAAAKAAUAAAAEAAAAAAAIAAYAAAAAAAAAAAAHAAYAAAABAAAAAAAKAAUAAAASAAwAAAAIAAYAAFA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAHAAYAAAAAAAYAAAAIAAUAAAAAAAMAAAAHAAUAAAAAAAQAAAAJAAYAAAAAAAUAAAAJAAYAAAASAAkAAAAHAAYAAFASAAoAAAAKAAUAAFASAAsAAAAKAAUAAFACAAAAAAAKAAUAAAADAAAAAAAKAAUAAAAEAAAAAAAIAAYAAAABAAAAAAAKAAUAAAASAAwAAAAIAAYAAFA=")
 
 [node name="Obstacles" type="TileMapLayer" parent="DarkRoom/TileMaps"]
 position = Vector2(16, -4)
@@ -1944,24 +1946,22 @@ rotation = 1.5708
 tile_map_data = PackedByteArray("AAAHAAQAAAAHAAUAAAAHAAUAAAALAAYAAAAHAAYAAAALAAYAAAAHAAcAAAALAAYAAAAHAAgAAAAIAAUAAAD4/wAAAAAHAAYAAAD5/wAAAAAKAAUAAAD6/wAAAAAKAAUAAAD7/wAAAAAKAAUAAAD8/wAAAAAIAAYAAAABABMAAAAHAAYAAAACABMAAAAKAAUAAAADABMAAAAKAAUAAAAEABMAAAAKAAUAAAAFABMAAAAIAAYAAAD0/wQAAAAHAAUAAAD0/wUAAAALAAYAAAD0/wYAAAALAAYAAAD0/wcAAAALAAYAAAD0/wgAAAAIAAUAAAA=")
 
 [node name="LaserRail Purple" parent="Masterpiece/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(320, 192)
+position = Vector2(221, 2)
 rotation = 1.5708
-tile_map_data = PackedByteArray("AAD0/wQAAAAHAAUAAAD0/wUAAAALAAYAAAD0/wYAAAALAAYAAAD0/wcAAAALAAYAAAD0/wgAAAAIAAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAP7/AAAHAAUAAAAAAP//AAAJAAYAAAAAAAAAAAAJAAYAAAAAAAEAAAAJAAYAAAAAAAIAAAAIAAUAAAA=")
 
 [node name="LaserRail Red" parent="Masterpiece/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(320, 192)
-rotation = 1.5708
-tile_map_data = PackedByteArray("AAD4/wAAAAAHAAYAAAD9/wAAAAAIAAYAAAD5/wAAAAAKAAUAAAD6/wAAAAAKAAUAAAD7/wAAAAAKAAUAAAD8/wAAAAAKAAUAAAA=")
+position = Vector2(304, 107)
+tile_map_data = PackedByteArray("AAAAAP7/AAAHAAUAAAAAAP//AAAJAAYAAAAAAAAAAAAJAAYAAAAAAAEAAAAJAAYAAAAAAAIAAAAIAAUAAAA=")
 
 [node name="LaserRail Blue" parent="Masterpiece/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(320, 192)
+position = Vector2(225, 303)
 rotation = 1.5708
-tile_map_data = PackedByteArray("AAAHAAUAAAALAAYAAAAHAAYAAAALAAYAAAAHAAcAAAALAAYAAAAHAAgAAAAIAAUAAAAHAAQAAAAHAAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAP7/AAAHAAUAAAAAAP//AAAJAAYAAAAAAAAAAAAJAAYAAAAAAAEAAAAJAAYAAAAAAAIAAAAIAAUAAAA=")
 
 [node name="LaserRail Green" parent="Masterpiece/TileMaps/Laser Rails" instance=ExtResource("2_e1qoi")]
-position = Vector2(320, 192)
-rotation = 1.5708
-tile_map_data = PackedByteArray("AAD//xMAAAAHAAYAAAAFABMAAAAIAAYAAAAAABMAAAAKAAUAAAABABMAAAAKAAUAAAACABMAAAAKAAUAAAADABMAAAAKAAUAAAAEABMAAAAKAAUAAAA=")
+position = Vector2(2, 222)
+tile_map_data = PackedByteArray("AAAAAP7/AAAJAAYAAAAAAP//AAAJAAYAAAAAAAAAAAAJAAYAAAAAAAEAAAAJAAYAAAAAAAIAAAAJAAYAAAAAAP3/AAAHAAUAAAAAAAMAAAAIAAUAAAA=")
 
 [node name="Mirrors" type="Node2D" parent="Masterpiece"]
 
@@ -2309,7 +2309,7 @@ tile_set = SubResource("TileSet_bqkeo")
 
 [node name="LaserRail" parent="FinalRoom/TileMaps" instance=ExtResource("2_e1qoi")]
 position = Vector2(0, -1)
-tile_map_data = PackedByteArray("AAAAAAEAAAAJAAYAAAAAAAIAAAAJAAYAAAAAAAAAAAAHAAUAAAAAAAMAAAAIAAUAAAAAAAwAAAAHAAYAAAAEAAwAAAAIAAYAAAABAAwAAAAKAAUAAAACAAwAAAAKAAUAAAADAAwAAAAKAAUAAAAJAAAAAAAKAAUAAAAKAAAAAAAKAAUAAAALAAAAAAAKAAUAAAAIAAAAAAAHAAYAAAAMAAAAAAAIAAYAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAHAAUAAAAAAAEAAAAJAAYAAAAAAAIAAAAJAAYAAAAAAAMAAAAIAAUAAAAAAAwAAAAHAAYAAAAEAAwAAAAIAAYAAAABAAwAAAAKAAUAAAACAAwAAAAKAAUAAAADAAwAAAAKAAUAAAAJAAAAAAAKAAUAAAAKAAAAAAAKAAUAAAALAAAAAAAKAAUAAAAIAAAAAAAHAAYAAAAMAAAAAAAIAAYAAAA=")
 
 [node name="Mirrors" type="Node2D" parent="FinalRoom"]
 
@@ -2497,6 +2497,10 @@ visible = false
 [node name="Big laser UI" parent="UI" instance=ExtResource("21_toi8m")]
 
 [node name="Dark room UI" parent="UI" instance=ExtResource("22_nx5ue")]
+
+[node name="Mirror UI" parent="UI" instance=ExtResource("28_8cihd")]
+
+[node name="Laser rail UI" parent="UI" instance=ExtResource("29_32the")]
 
 [node name="Dark room UI area 1 in" type="Area2D" parent="UI"]
 position = Vector2(979, 249)
