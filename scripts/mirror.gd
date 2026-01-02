@@ -5,7 +5,7 @@ extends Node2D
 @export var cluster_controlled: bool = false 
 
 var player_touching: bool = false        
-
+var _dialogue_shown := false
 
 func _process(delta):
 	if cluster_controlled:
@@ -21,6 +21,10 @@ func _process(delta):
 		elif Input.is_action_pressed("rotate_right"):
 			rotation_degrees += rotation_speed * delta
 			rotating_now  = true
+			
+			if not _dialogue_shown:
+					DialogueUI.show_line("You see it differently now.")
+					_dialogue_shown = true
 		
 	_update_move_sfx(rotating_now)	
 

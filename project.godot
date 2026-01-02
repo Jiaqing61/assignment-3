@@ -22,6 +22,7 @@ Global="*res://scripts/Global.gd"
 SceneTransition="*res://scenes/managers/SceneTransition.tscn"
 AudioManager="*res://scenes/managers/AudioManager.tscn"
 PauseMenu="*res://scenes/UI/PauseMenu.tscn"
+DialogueUI="*res://scenes/DialogueUI.tscn"
 
 [display]
 

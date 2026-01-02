@@ -64,6 +64,8 @@ func open_gate() -> void:
 	if is_open:
 		return
 	is_open = true
+	
+	DialogueUI.show_line("The path reconnects.")
 
 	if _anim and _anim.sprite_frames.has_animation("open"):
 		_anim.play("open")
@@ -72,7 +74,6 @@ func open_gate() -> void:
 
 	if _collider:
 		_collider.disabled = true
-
 
 func close_gate() -> void:
 	if not is_open:

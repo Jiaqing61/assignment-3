@@ -9,6 +9,8 @@ extends Node2D
 var _lit_count := 0
 var _chest_nodes: Array[Node] = []
 
+@onready var opening_anim := $OpeningLayer/AnimationPlayer
+
 func _process(_dt):
 	LaserVisibilityMask.begin()   # cleaning last frame
 	# collect laser
@@ -34,6 +36,15 @@ func _process(_dt):
 
 func _ready() -> void:
 	_wireup()
+	#_disable_player()
+
+	opening_anim.play("opening")
+	await opening_anim.animation_finished
+
+	DialogueUI.show_line("You've been here before.")
+
+	await get_tree().create_timer(1.2).timeout
+	#_enable_player()
 
 func _wireup() -> void:
 	_lit_count = 0
@@ -57,3 +68,4 @@ func _try_open_gate() -> void:
 	var gate := get_node_or_null(final_gate)
 	if gate and gate.has_method("open_gate"):
 		gate.open_gate()
+	

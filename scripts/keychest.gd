@@ -60,10 +60,9 @@ func _apply_visual() -> void:
 		_sprite.texture = lit_texture
 	elif not _lit and closed_texture:
 		_sprite.texture = closed_texture
-
-
-func _give_key_to_player() -> void:
+		
+func _give_key_to_player():
 	var player = get_tree().get_first_node_in_group("Player")
 	if player:
 		player.has_key = true
-		# print("🗝️ Player obtained a key!")
+		DialogueUI.show_line("You allow yourself to remember.")
