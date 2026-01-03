@@ -5,7 +5,8 @@
 [node name="DialogueUI" type="CanvasLayer"]
 script = ExtResource("1_0qyo7")
 
-[node name="Label" type="Label" parent="."]
+[node name="DialogueLabel" type="Label" parent="."]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, -80)
 anchors_preset = 7
 anchor_left = 0.5
