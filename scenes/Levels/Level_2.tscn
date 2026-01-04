@@ -1533,7 +1533,7 @@ tile_set = SubResource("TileSet_ml1qv")
 
 [node name="Player" parent="." instance=ExtResource("3_pklsh")]
 z_index = 1
-position = Vector2(42, 42)
+position = Vector2(40, 46)
 collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -2219,7 +2219,7 @@ rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Red")
 
 [node name="Laser Emitter 1" parent="Masterpiece/Laser Emitters" node_paths=PackedStringArray("rail_tilemap") instance=ExtResource("6_xxpiu")]
 position = Vector2(202, 311)
-rotation = -0.244346
+rotation = -0.261799
 color = Color(0, 0.470588, 0.784314, 1)
 turned_on = true
 rail_tilemap = NodePath("../../TileMaps/Laser Rails/LaserRail Blue")
