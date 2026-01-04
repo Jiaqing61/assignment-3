@@ -1,5 +1,6 @@
-[gd_scene load_steps=32 format=4 uid="uid://cvbbm1vtho2xb"]
+[gd_scene load_steps=33 format=4 uid="uid://cvbbm1vtho2xb"]
 
+[ext_resource type="Script" uid="uid://8xrybo5tdie8" path="res://scripts/level_1.gd" id="1_bk6va"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="2_e5mxv"]
 [ext_resource type="Script" uid="uid://u4xjiwftktbc" path="res://scripts/camera_2d.gd" id="3_6q3ph"]
 [ext_resource type="PackedScene" uid="uid://br8qxhjlrwm5e" path="res://scenes/prefebs/player.tscn" id="3_6wnyt"]
@@ -1035,6 +1036,7 @@ _data = {
 }
 
 [node name="Level_1" type="Node2D"]
+script = ExtResource("1_bk6va")
 
 [node name="TileMaps" type="Node2D" parent="."]
 
@@ -1345,13 +1347,10 @@ required_lit_chests = 6
 [node name="UI" type="Node2D" parent="."]
 
 [node name="Mirror UI" parent="UI" instance=ExtResource("9_euy30")]
-visible = false
 
 [node name="Laser rail UI" parent="UI" instance=ExtResource("13_cxgh7")]
-visible = false
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("14_l2fsl")]
-visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false

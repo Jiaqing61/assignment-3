@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://bj0mdxwh0yjrs"]
+[gd_scene load_steps=60 format=4 uid="uid://bj0mdxwh0yjrs"]
 
 [ext_resource type="Script" uid="uid://cw3k1rshdx3x2" path="res://scripts/door_open.gd" id="1_0cp3y"]
 [ext_resource type="Texture2D" uid="uid://rfow11dyplrl" path="res://assets/Tilemap/tilemap.png" id="1_fn4ql"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://hl403p0t0kpa" path="res://scripts/mirror_cluster.gd" id="17_pvawu"]
 [ext_resource type="Texture2D" uid="uid://c1qdmrtuanuv1" path="res://assets/New Piskel-11.png" id="18_s58fl"]
 [ext_resource type="PackedScene" uid="uid://dh0eashre7oa2" path="res://scenes/prefebs/Doublemirror.tscn" id="19_s58fl"]
+[ext_resource type="PackedScene" uid="uid://dy0ukyechfgsg" path="res://scenes/UI/EndMenu.tscn" id="20_32the"]
 [ext_resource type="PackedScene" uid="uid://bonkhc6hq05tb" path="res://scenes/UI/locked_mirror_ui.tscn" id="20_pcon5"]
 [ext_resource type="PackedScene" uid="uid://db5c1gwkvymf4" path="res://scenes/prefebs/room_door.tscn" id="21_pcon5"]
 [ext_resource type="PackedScene" uid="uid://byyyab87st2op" path="res://scenes/UI/big_laser_ui.tscn" id="21_toi8m"]
@@ -1532,7 +1533,7 @@ tile_set = SubResource("TileSet_ml1qv")
 
 [node name="Player" parent="." instance=ExtResource("3_pklsh")]
 z_index = 1
-position = Vector2(36, 50)
+position = Vector2(42, 42)
 collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -2426,6 +2427,7 @@ color = Color(0, 1, 0, 1)
 
 [node name="FinalGate" parent="FinalRoom" groups=["LaserEmitters"] instance=ExtResource("9_8f203")]
 position = Vector2(296, 200)
+next_scene = ExtResource("20_32the")
 required_lit_chests = 15
 
 [node name="level_controller" type="Node" parent="FinalRoom"]
@@ -2490,7 +2492,6 @@ required_lit_chests = 12
 layer = 102
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("23_toi8m")]
-visible = false
 
 [node name="Locked mirror UI" parent="UI" instance=ExtResource("20_pcon5")]
 
