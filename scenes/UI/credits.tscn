@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://8g40y0aln8o4"]
+
+[ext_resource type="FontFile" uid="uid://be2lgtg308t1m" path="res://assets/Fonts/KiriFont.otf" id="1_2lgad"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_228wp"]
+font = ExtResource("1_2lgad")
+font_size = 25
+font_color = Color(0.269259, 0.0985029, 0.0583326, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_21wcu"]
+font = ExtResource("1_2lgad")
+font_size = 18
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 624.0
+offset_bottom = 624.0
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 624.0
+offset_bottom = 624.0
+color = Color(0.447982, 0.297588, 0.257573, 1)
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 87.0
+offset_right = 190.0
+offset_bottom = 110.0
+text = "Game Credits"
+label_settings = SubResource("LabelSettings_228wp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 138.0
+offset_right = 583.0
+offset_bottom = 581.0
+text = "Jiaqing Huang - dark room, lighting system, level room, BGM, player animation
+
+Xiaosai Li - mirror rotation, mirror design, UI hints, level room
+
+Roxana Micu - tutorial level, color lasers, laser intersect, two level rooms
+
+Yihui (Cris) Peng - room layout design, chest-laser detection, chest animation, scroll animation, level room
+
+Haoran (Esme) Tang - door logic, locked mirror, scene transitions, menus, narrative storytelling
+
+Tony Tian - laser emitter, zoom in/out, laser track, double-sided mirror, end darkness, dark room BGM"
+label_settings = SubResource("LabelSettings_21wcu")
+autowrap_mode = 3

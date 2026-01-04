@@ -77,9 +77,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 87.0
-offset_top = 347.0
+offset_top = 348.0
 offset_right = 541.0
-offset_bottom = 556.0
+offset_bottom = 557.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -88,7 +88,8 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_u3u7k")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_t6w0q")
-text = "🌟 The End! 🌟
+text = "
+🌟 The End! 🌟
 
 🎮 Thanks for playing!
 
@@ -159,5 +160,31 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_3srpq")
 text = "Exit"
 
+[node name="Credits" type="Button" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 197.0
+offset_top = 290.0
+offset_right = 457.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.905882, 0.627451, 1)
+theme_override_fonts/font = ExtResource("2_u3u7k")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_erpb7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1s2wh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_anrb1")
+text = "Credits"
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
